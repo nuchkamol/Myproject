@@ -6,9 +6,11 @@ var session = require('express-session');
 var flash = require('connect-flash');
 var passport = require('passport');
 var config = require('./config');
+// const requestIp = require('request-ip');
 
 module.exports = function(){
     var app = express();
+    var ipc = "22.22.22.22";
     if(process.env.NODE_ENV === 'development'){
         app.use(morgan('dev'));
     }else{
@@ -27,14 +29,21 @@ module.exports = function(){
     app.use(flash());
     app.use(passport.initialize());
     app.use(passport.session());
-
+    // app.use(requestIp.mw())
+    // app.use(function(req, res) {
+    //     const ip = req.clientIp;
+    //   app.set(ipc ,);  
+    // });
+ 
+    app.set('trust proxy', true)
     app.set('views' , './app/views');
     app.set('view engine' , 'jade');
 
-    require('../app/routes/index.routes')(app);
+    // require('../app/routes/index.routes')(app);
     require('../app/routes/user.routes')(app);
     require('../app/routes/search.routes')(app);
     app.use(express.static('./public'));
+  
     return app;
 
 };

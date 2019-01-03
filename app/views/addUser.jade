@@ -1,58 +1,81 @@
 doctype html
-html
+html( class="no-js")  
     head
         title= title
-        meta( name='viewport', content='width=device-width, initial-scale=1,shrink-to-fit=no' )
-        link(href='/bootstrap/dist/css/bootstrap.css', rel='stylesheet')
-        link(href='/css/all.css', rel='stylesheet') 
+       
+
         link(href='/css/main.css', rel='stylesheet')
+        //-    //- link(href='/css/all.css', rel='stylesheet') 
+        //-   <meta charset="utf-8">
+        //- //- <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+        meta( name='keywords', content='' ) 
+        meta( name='description', content='' ) 
+        
+        //- <!--    Authentic Template   http://www.templatemo.com/tm-412-authentic    -->
+        meta( name='viewport', content='width=device-width' ) 
+        link(rel='stylesheet', type='text/css', href='templateInside/css/templatemo_main.css') 
+     
     body
-        form(name='addUser' , method='POST' , action='/addUser')
-            .content
-                .input-group.mb-3
-                    .input-group-prepend
-                        span.input-group-text Username
-                    input.form-control(placeholder="username" name="userName" width="200px" )
-              
-                .input-group.mb-3
-                    .input-group-prepend
-                        span.input-group-text Password
-                    input.form-control(placeholder="password" type='password' name="passWord"  width="200px" )
+        div#main-wrapper
+                div.container
+                    include ./templateAdmin
+                    div.pagename Add User         
+            
+        form(name='addUser' , method='POST' , action='/addUser') 
            
-                .input-group.mb-3
-                    .input-group-prepend
-                        span.input-group-text สิทธ์ผู้ใช้งาน
-                    select.form-control( name="role"  width="200px" )
-                        option(value='admin') ผู้ดูแลระบบ
-                         option(value='general') ผู้ใช้งานทั่วไป
-             
-                .input-group.mb-3
-                    .input-group-prepend
-                        span.input-group-text ชื่อ นามสกุล
-                    input.form-control(placeholder="fullname" name="fullName"  width="200px" value="fgg" )
-            
-                .input-group.mb-3
-                    .input-group-prepend
-                        span.input-group-text ตำแหน่ง
-                    input.form-control(placeholder="position" name="position"  width="200px" )
-              
-                .input-group.mb-3
-                    .input-group-prepend
-                        span.input-group-text เบอร์โทรศัพท์
-                    input.form-control(placeholder="mobileno" name="mobileNo"  width="200px" )
-              
-                .input-group.mb-3
-                    .input-group-prepend
-                        span.input-group-text Line ID
-                    input.form-control(placeholder="lineid" name="lineId"  width="200px" )
-               
-                .input-group.mb-3
-                    .input-group-prepend
-                        span.input-group-text Email
-                    input.form-control(placeholder="email" name="Email"  width="200px" )
-              br 
-            
-            input.btn.btn-primary.btn-block(type="submit"  value="Save" )
-         each msg in messages   
-            .flash
-                = msg
+            .container
+                    .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                    .input-group.col-xs-6.col-sm-6.col-md-6.col-lg-6
+                        .input-group-prepend
+                            span.input-group-text Username
+                        input.form-control(placeholder="username" name="userName" width="200px" value="" )
+                    .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                    .input-group.col-xs-6.col-sm-6.col-md-6.col-lg-6
+                        .input-group-prepend
+                            span.input-group-text Password
+                        input.form-control(placeholder="password" type='password' name="passWord"  width="200px" value="" )
+                    .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                    .input-group.col-xs-6.col-sm-6.col-md-6.col-lg-6
+                        .input-group-prepend
+                            span.input-group-text สิทธ์ผู้ใช้งาน
+                        select.form-control( name="role"  width="200px" )
+                            option(value='admin') ผู้ดูแลระบบ
+                            option(value='general') ผู้ใช้งานทั่วไป
+                    .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                    .input-group.col-xs-6.col-sm-6.col-md-6.col-lg-6
+                        .input-group-prepend
+                            span.input-group-text ชื่อ นามสกุล
+                        input.form-control(placeholder="fullname" name="fullName"  width="200px"  value="" )
+                    .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                    .input-group.col-xs-6.col-sm-6.col-md-6.col-lg-6
+                        .input-group-prepend
+                            span.input-group-text ตำแหน่ง
+                        input.form-control(placeholder="position" name="position"  width="200px" value="" )
+                    .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                    .input-group.col-xs-6.col-sm-6.col-md-6.col-lg-6
+                        .input-group-prepend
+                            span.input-group-text เบอร์โทรศัพท์
+                        input.form-control(placeholder="mobileno" name="mobileNo"  width="200px"  type="tel" maxlength="13" value="" )
+                    .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                    .input-group.col-xs-6.col-sm-6.col-md-6.col-lg-6
+                        .input-group-prepend
+                            span.input-group-text Line ID
+                        input.form-control(placeholder="lineid" name="lineId"  width="200px" value="" )
+                    .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                    .input-group.col-xs-6.col-sm-6.col-md-6.col-lg-6
+                        .input-group-prepend
+                            span.input-group-text Email
+                        input.form-control(placeholder="email" name="Email"  width="200px" type="email" value="" )
+                    .col-xs-3.col-sm-3.col-md-3.col-lg-3 
+                    br 
+                    input.btn.btn-primary.btn-block(type="submit"  value="Save" style="width:150px; margin:auto;"  )
+                    br 
+                    each msg in messages   
+                        .flash
+                            = msg
+                
+                script(src='templateInside/js/jquery.min.js')
+                script(src='templateInside/js/jquery.backstretch.min.js')
+                script(src='templateInside/js/jquery.flexslider.min.js')
+                script(src='templateInside/js/bootstrap.min.js')
+                script(src='templateInside/js/templatemo_script.js')

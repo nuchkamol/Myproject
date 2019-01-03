@@ -1,13 +1,40 @@
 doctype html
-html    
+html( class="no-js")  
     head    
         title=title
+        //- meta( name='viewport', content='width=device-width, initial-scale=1.0' ) 
+        //- link(rel='stylesheet', type='text/css', href='Login_v9/fonts/font-awesome-4.7.0/css/font-awesome.min.css')
+        //- link(rel='stylesheet', type='text/css', href='Login_v9/fonts/iconic/css/material-design-iconic-font.min.css')
+        //- link(href='/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+        link(href='/css/main.css', rel='stylesheet')
+       
+        //- link(href='/css/all.css', rel='stylesheet') 
+          <meta charset="utf-8">
+        //- <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+        meta( name='keywords', content='' ) 
+        meta( name='description', content='' ) 
+        
+        //- <!--    Authentic Template   http://www.templatemo.com/tm-412-authentic    -->
+        meta( name='viewport', content='width=device-width' ) 
+        link(rel='stylesheet', type='text/css', href='templateInside/css/templatemo_main.css')
+ 
     body
-        if username
-            h2 Hello #{username}
-            div
-                form(name='logout' , method='post' , action='/logout')
-                    input(type='submit' , value='Log out')
-        else
-            div 
-                a(href='/') Log in
+        
+            div#main-wrapper
+                div.container
+                    if(role=='general')
+                        include ./templateGeneral
+                    else
+                        include ./templateAdmin
+                    div.pagename Search         
+           
+            script(src='templateInside/js/jquery.min.js')
+            script(src='templateInside/js/jquery.backstretch.min.js')
+            script(src='templateInside/js/jquery.flexslider.min.js')
+            script(src='templateInside/js/bootstrap.min.js')
+            script(src='templateInside/js/templatemo_script.js')
+      
+           
+//- if username
+//-             h2 Hello #{username}
+  

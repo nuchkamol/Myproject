@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var crypto = require('crypto');
+
 var Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
@@ -12,39 +13,58 @@ var UserSchema = new Schema({
     lineId: String,
     email: String,
     role: String,
-    createDate: Date,
-    updateDate: Date,
+    createDate: String,
+    updateDate: String,
     admin: String,
     ip: String,
     ua: String
 })
 
-mongoose.model('User' , UserSchema);
 
-UserSchema.pre('save' , function(next){
+
+
+
+UserSchema.pre('save' , function(next,req, callback){
+
+    
     if(this.passWord){
-        this.salt = new Buffer(crypto.ramdomBytes(16).toString('base64'), 'base64');
+        
+       // this.salt = new Buffer(crypto.ramdomBytes(16).toString('base64'),'base64');
+       var str_salt = crypto.randomBytes(16).toString('base64');
+        // var str_salt = crypto.randomBytes(64).toString('base64');
+        this.salt = str_salt;
         this.passWord = this.hashPassword(this.passWord);
     }
    
     var d = new Date();
     var n = d.toISOString();
-    this.createDate = n;
-    this.updateDate = n;
-    this.admin = "nuchn204";
-    var yip2=java.net.InetAddress.getLocalHost();	
-    var yip=yip2.getHostAddress();
 
-    this.ip = yip;
-    this.ua = navigator.userAgent;
+    this.createDate = n.toString();
+    this.updateDate = n.toString();
+    this.admin = "nuchn204";
+
+    this.ip = "1.1.1.1";
+    this.ua = "firefox";
+
+   
     next();
 });
 
-UserSchema.method.hashPassword =function(password){
-    return crypto.pbkdf2Sync(password,this.salt,10000,64).toString('base64');
-}
+UserSchema.methods.hashPassword =function(password){
+    
+    var hash =  crypto.pbkdf2Sync(password, new Buffer(this.salt,'binary'),10000,64,'sha1').toString('base64');
+   
+    return  hash;
 
-UserSchema.method.authenticate = function(password){
-    return this.passWord === this.hashPassword(password);
-}
+    // return crypto.pbkdf2Sync(password,this.salt,10000,64).toString('base64');
 
+};
+
+
+
+module.exports.authenticate = function(password , salt){
+
+    var hash =  crypto.pbkdf2Sync(password, new Buffer(salt,'binary'),10000,64,'sha1').toString('base64');
+    return hash;
+};
+mongoose.model('User' , UserSchema);

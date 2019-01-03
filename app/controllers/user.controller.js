@@ -1,5 +1,7 @@
 var User = require('mongoose').model('User');
 var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+var users = require('../models/user.model');
 
 var getErrorMessage = function(err){
     var message = '';
@@ -22,23 +24,96 @@ var getErrorMessage = function(err){
     return message;
 }
 
-exports.renderLogin = function(req , res){
-    if(!req.user){
-        res.render('index' , {
-            title: 'Log in',
-            messages: req.flash('error') || req.flash('info')
+exports.renderLogin = function(req,res){
+     if(!req.user){
+         res.render('index' , {
+            'title' : "ระบบจัดการครุภัณฑ์" ,
+             messages: req.flash('error') || req.flash('info')          
         });
-    }else{
-        return res.redirect('/search')
-    }
+     } else{
+         return res.redirect('/search');
+     }
+
+
 }
+
+  
+exports.renderManageUser = function(req,res){
+    User.find({},function(err,users){
+        res.render('manageUser' , {
+            title: 'ระบบจัดการครุภัณฑ์',
+            messages:req.flash('error'),
+            rows:users,
+            fullname:  req.session.fullname,
+            role: req.session.role 
+        });
+    })
+};
+        
 
 exports.renderAddUser = function(req,res){
     res.render('addUser' , {
-        title: 'Add User',
-        messages:req.flash('error')
+        title: 'ระบบจัดการครุภัณฑ์',
+        messages:req.flash('error'),
+        fullname:   req.session.fullname,
+        role: req.session.role 
     });
 };
+
+
+
+exports.login = function(req,res){
+
+    // passport.authenticate('local' ,{
+    //     successRedirect: '/search',
+    //     failureRedirect: '/login',
+    //     failureFlash:true
+    // })
+    var user = new User(req.body);
+    
+        User.findOne({userName:req.body.username},function(err,user){
+            if(!user){
+                res.render('index' , {
+                    'title' : "ระบบจัดการครุภัณฑ์" ,
+                     messages: 'ไม่มี username นี้ในระบบ'
+                });
+            }else{
+                if(req.body.username == user.userName){
+                    process.nextTick(function() {
+                    var passhash = users.authenticate(req.body.password, user.salt)
+                        console.log(passhash);
+                        if(passhash == user.passWord){
+                                req.login(user,function(err){
+                                    if(err){ 
+                                        return next(err)
+                                    }else{
+                                        req.session.username = user.username;
+                                        req.session.fullname = user.fullName;
+                                        req.session.role = user.role;
+                                        req.session.cookie.maxAge = 60*60*24*7;
+                                        return res.redirect('/search');
+                                    }
+                                });
+                        }else{
+                            res.render('index' , {
+                                messages: 'Invalid password'       
+                            });
+                        
+                        }
+                    });
+                }else{
+                    res.render('index' , {
+                        messages: 'Invalid username'
+                    });
+
+                }
+            }
+        });
+           
+}
+
+
+  
 
 
 exports.addUser = function(req,res){
@@ -48,7 +123,7 @@ exports.addUser = function(req,res){
             if(err){ 
                 var messages = getErrorMessage(err);
                 req.flash('error',messages);
-                return res.redirect('/');
+                return res.redirect('/login');
             }else{
                 req.login(user,function(err){
                     if(err) return next(err);
@@ -57,6 +132,7 @@ exports.addUser = function(req,res){
              }
         });
     }else{
+
         return res.redirect('/search');
     }
 }
@@ -73,11 +149,18 @@ exports.create = function(req,res,next){
 };
 
 exports.list = function(req,res,next){
-    User.find({},function(err,users){
+    User.find({userName:req.body.username},function(err,users){
         if(err){
+            console.log(err);
             return next(err);
         }else{
-            res.json(users);
+            console.log("test : " + res.json(users));
+           return res.json(users);
         }
     })
+};
+
+exports.logout = function(req,res){
+    req.logout();
+    res.redirect('/login')
 };
