@@ -1,0 +1,90 @@
+doctype html
+html( class="no-js")  
+    head
+        title= title
+       
+
+        link(href='../css/main.css', rel='stylesheet')
+        //-    //- link(href='/css/all.css', rel='stylesheet') 
+        //-   <meta charset="utf-8">
+        //- //- <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+        meta( name='keywords', content='' ) 
+        meta( name='description', content='' ) 
+        
+        //- <!--    Authentic Template   http://www.templatemo.com/tm-412-authentic    -->
+        meta( name='viewport', content='width=device-width' ) 
+        link(rel='stylesheet', type='text/css', href='../templateInside/css/templatemo_main.css') 
+
+    body
+        div#main-wrapper
+                div.container
+                    include ./templateAdmin
+                    div.pagename Upload
+            
+    
+           
+            .container
+                div.row
+                    .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                    .input-group.col-xs-6.col-sm-6.col-md-6.col-lg-6
+                    br 
+                    br 
+                    div.panel.panel-info
+                        div.panel-heading 
+                            i.fa.fa-file-excel-o  Upload data
+                        div.panel-body   
+                         form(name='Upload' , method='POST' , action='/uploadData'  enctype="multipart/form-data") 
+                           
+                            input( type="file" id="fileUpload" name="txtFileName" style="width:150px; margin:auto;" )
+                            br 
+                            br 
+                            input.btn.btn-info.btn-block(type="submit"  value="Upload" style="width:150px; margin:auto;"  )
+                            br 
+                            br 
+                    .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                div.row
+                    .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                    .input-group.col-xs-6.col-sm-6.col-md-6.col-lg-6
+                    br 
+                    br 
+                    div.panel.panel-success
+                        div.panel-heading 
+                            i.fa.fa-file-image-o  Upload images
+                        div.panel-body
+                           form(name='Upload' , method='POST' , action='/uploadImage' enctype="multipart/form-data") 
+                           
+                            input( type="file" name="txtFolderImage" style="width:150px; margin:auto;" webkitdirectory directory multiple)
+                            br 
+                            br 
+                            input.btn.btn-success.btn-block(type="submit"  value="Upload" style="width:150px; margin:auto;"  )
+                            br 
+                            br 
+                    .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                div.row
+                    .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                    .input-group.col-xs-6.col-sm-6.col-md-6.col-lg-6
+                    br 
+                    br 
+                    div.panel.panel-default
+                        div.panel-heading 
+                            i.fa.fa-barcode   Upload Barcode
+                        div.panel-body
+                           form(name='Upload' , method='POST' , action='/uploadBarcode' enctype="multipart/form-data") 
+                           
+                            input( type="file" name="txtFolderBarcode" style="width:150px; margin:auto;" webkitdirectory directory multiple)
+                            br 
+                            br 
+                            input.btn.btn-default.btn-block(type="submit"  value="Upload" style="width:150px; margin:auto;"  )
+                            br 
+                            br 
+                    .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                            span
+                                each msg in messages   
+                                    .flash
+                                        = msg
+                    .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                script(src='../templateInside/js/jquery.min.js')
+                script(src='../templateInside/js/jquery.backstretch.min.js')
+                script(src='../templateInside/js/jquery.flexslider.min.js')
+                script(src='../templateInside/js/bootstrap.min.js')
+                script(src='../templateInside/js/templatemo_script.js')

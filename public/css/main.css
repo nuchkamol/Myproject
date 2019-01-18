@@ -67,106 +67,6 @@ h3{
     text-align: center;
     padding-bottom:10px;
 }
-.divmenuGeneral{
-    width:35%;margin-left:auto;margin-right:auto;
-  }
-  .divmenu{
-     width:73%;margin:auto; 
-  }
-  .menuall{
-    padding:10px;
-}
-#menu1{
-  
-    width: 90px; /* ความกว้าง */
-    height: 90px; /* ความสูง */
-    background-image:url(/img/menu/upload.png);
-    background-size: contain;
-    -moz-border-radius: 70px; 
-    -webkit-border-radius: 70px; 
-    border-radius: 70px;
-    margin-left:auto;
-    margin-right:auto;
-    text-align: center;
-}
-#menu1:hover{
-    background-image:url(/img/menu/upload_h.png);
-}
-#menu2{
-
-    width: 90px; /* ความกว้าง */
-    height: 90px; /* ความสูง */
-    background-image:url(/img/menu/scan.png);
-    background-size: contain;
-    -moz-border-radius: 70px; 
-    -webkit-border-radius: 70px; 
-    border-radius: 70px;
-    margin-left:auto;
-    margin-right:auto;
-}
-#menu2:hover{
-    background-image:url(/img/menu/scan_h.png);
-}
-#menu3{
-
-    width: 90px; /* ความกว้าง */
-    height: 90px; /* ความสูง */
-    background-image:url(/img/menu/view.png);
-    background-size: contain;
-    -moz-border-radius: 70px; 
-    -webkit-border-radius: 70px; 
-    border-radius: 70px;
-    margin-left:auto;
-    margin-right:auto;
-}
-#menu3:hover{
-    background-image:url(/img/menu/view_h.png);
-}
-#menu4{
-
-    width: 90px; /* ความกว้าง */
-    height: 90px; /* ความสูง */
-    background-image:url(/img/menu/search.png);
-    background-size: contain;
-    -moz-border-radius: 70px; 
-    -webkit-border-radius: 70px; 
-    border-radius: 70px;
-    margin-left:auto;
-    margin-right:auto;
-}
-#menu4:hover{
-    background-image:url(/img/menu/search_h.png);
-}
-#menu5{
-
-    width: 90px; /* ความกว้าง */
-    height: 90px; /* ความสูง */
-    background-image:url(/img/menu/user.png);
-    background-size: contain;
-    -moz-border-radius: 70px; 
-    -webkit-border-radius: 70px; 
-    border-radius: 70px;
-    margin-left:auto;
-    margin-right:auto;
-}
-#menu5:hover{
-    background-image:url(/img/menu/user_h.png);
-}
-#menu6{
-   
-    width: 90px; /* ความกว้าง */
-    height: 90px; /* ความสูง */
-    background-image:url(/img/menu/myaccount.png);
-    background-size: contain;
-    -moz-border-radius: 70px; 
-    -webkit-border-radius: 70px; 
-    border-radius: 70px;
-    margin-left:auto;
-    margin-right:auto;
-}
-#menu6:hover{
-    background-image:url(/img/menu/myaccount_h.png);
-}
 
 #pichead{
     float:right;
@@ -180,9 +80,20 @@ h3{
     vertical-align:bottom;
     width:130px;
   }
+  .tbUser{
+    font-size: 1.5em;
+  }
+
 
 /* ipad */
   @media only screen and (max-width: 1200px) {
+    .pagename{
+        width:100%;
+        height:30px;
+        text-align: center;
+        background-color:#b1e7ff;
+        font-size: 1em;
+    }
     #accountname{
         color:#16A085;
         font-size: 14px;
@@ -202,105 +113,17 @@ h3{
       vertical-align:bottom;
       width:150px;
     }
-    .divmenu{
-        width:93%;margin-left:auto;margin-right:auto;min-width:00px;;
-      }
-    .menuall{
-        padding:7px;
-    }
-    #menu1{
-     
-        width: 90px; /* ความกว้าง */
-        height: 90px; /* ความสูง */
-        background-image:url(/img/menu/upload.png);
-        background-size: contain;
-        -moz-border-radius: 70px; 
-        -webkit-border-radius: 70px; 
-        border-radius: 70px;
-        margin-left:auto;
-        margin-right:auto;
-    }
-    #menu1:hover{
-        background-image:url(/img/menu/upload_h.png);
-    }
-    #menu2{
-    
-        width: 90px; /* ความกว้าง */
-        height: 90px; /* ความสูง */
-        background-image:url(/img/menu/scan.png);
-        background-size: contain;
-        -moz-border-radius: 70px; 
-        -webkit-border-radius: 70px; 
-        border-radius: 70px;
-        margin-left:auto;
-        margin-right:auto;
-    }
-    #menu2:hover{
-        background-image:url(/img/menu/scan_h.png);
-    }
-    #menu3{
-    
-        width: 90px; /* ความกว้าง */
-        height: 90px; /* ความสูง */
-        background-image:url(/img/menu/view.png);
-        background-size: contain;
-        -moz-border-radius: 70px; 
-        -webkit-border-radius: 70px; 
-        border-radius: 70px;
-        margin-left:auto;
-        margin-right:auto;
-    }
-    #menu3:hover{
-        background-image:url(/img/menu/view_h.png);
-    }
-    #menu4{
-    
-        width: 90px; /* ความกว้าง */
-        height: 90px; /* ความสูง */
-        background-image:url(/img/menu/search.png);
-        background-size: contain;
-        -moz-border-radius: 70px; 
-        -webkit-border-radius: 70px; 
-        border-radius: 70px;
-        margin-left:auto;
-        margin-right:auto;
-    }
-    #menu4:hover{
-        background-image:url(/img/menu/search_h.png);
-    }
-    #menu5{
-    
-        width: 90px; /* ความกว้าง */
-        height: 90px; /* ความสูง */
-        background-image:url(/img/menu/user.png);
-        background-size: contain;
-        -moz-border-radius: 70px; 
-        -webkit-border-radius: 70px; 
-        border-radius: 70px;
-        margin-left:auto;
-        margin-right:auto;
-    }
-    #menu5:hover{
-        background-image:url(/img/menu/user_h.png);
-    }
-    #menu6{
-     
-        width: 90px; /* ความกว้าง */
-        height: 90px; /* ความสูง */
-        background-image:url(/img/menu/myaccount.png);
-        background-size: contain;
-        -moz-border-radius: 70px; 
-        -webkit-border-radius: 70px; 
-        border-radius: 70px;
-        margin-left:auto;
-        margin-right:auto;
-    }
-    #menu6:hover{
-        background-image:url(/img/menu/myaccount_h.png);
-    }
+   
     }
 
     @media only screen and (max-width: 1000px) {
+        .pagename{
+            width:100%;
+            height:30px;
+            text-align: center;
+            background-color:#b1e7ff;
+            font-size: 1em;
+        }
         #accountname{
             color:#16A085;
             font-size: 14px;
@@ -320,101 +143,17 @@ h3{
           vertical-align:bottom;
           width:100px;
         }
-        .divmenu{
-            width:93%;margin-left:auto;margin-right:auto;
-          }
-        .menuall{
-            padding:6px;
-        }
-        #menu1{
-            width: 80px; /* ความกว้าง */
-            height: 80px; /* ความสูง */
-            background-image:url(/img/menu/upload.png);
-            background-size: contain;
-            -moz-border-radius: 70px; 
-            -webkit-border-radius: 70px; 
-            border-radius: 70px;
-            margin-left:auto;
-            margin-right:auto;
-        }
-        #menu1:hover{
-            background-image:url(/img/menu/upload_h.png);
-        }
-        #menu2{
-            width: 80px; /* ความกว้าง */
-            height: 80px; /* ความสูง */
-            background-image:url(/img/menu/scan.png);
-            background-size: contain;
-            -moz-border-radius: 70px; 
-            -webkit-border-radius: 70px; 
-            border-radius: 70px;
-            margin-left:auto;
-            margin-right:auto;
-        }
-        #menu2:hover{
-            background-image:url(/img/menu/scan_h.png);
-        }
-        #menu3{
-            width: 80px; /* ความกว้าง */
-            height: 80px; /* ความสูง */
-            background-image:url(/img/menu/view.png);
-            background-size: contain;
-            -moz-border-radius: 70px; 
-            -webkit-border-radius: 70px; 
-            border-radius: 70px;
-            margin-left:auto;
-            margin-right:auto;
-        }
-        #menu3:hover{
-            background-image:url(/img/menu/view_h.png);
-        }
-        #menu4{
-            width: 80px; /* ความกว้าง */
-            height: 80px; /* ความสูง */
-            background-image:url(/img/menu/search.png);
-            background-size: contain;
-            -moz-border-radius: 70px; 
-            -webkit-border-radius: 70px; 
-            border-radius: 70px;
-            margin-left:auto;
-            margin-right:auto;
-        }
-        #menu4:hover{
-            background-image:url(/img/menu/search_h.png);
-        }
-        #menu5{
-        
-            width: 80px; /* ความกว้าง */
-            height: 80px; /* ความสูง */
-            background-image:url(/img/menu/user.png);
-            background-size: contain;
-            -moz-border-radius: 70px; 
-            -webkit-border-radius: 70px; 
-            border-radius: 70px;
-            margin-left:auto;
-            margin-right:auto;
-        }
-        #menu5:hover{
-            background-image:url(/img/menu/user_h.png);
-        }
-        #menu6{
-         
-            width: 80px; /* ความกว้าง */
-            height: 80px; /* ความสูง */
-            background-image:url(/img/menu/myaccount.png);
-            background-size: contain;
-            -moz-border-radius: 70px; 
-            -webkit-border-radius: 70px; 
-            border-radius: 70px;
-            margin-left:auto;
-            margin-right:auto;
-        }
-        #menu6:hover{
-            background-image:url(/img/menu/myaccount_h.png);
-        }
+    
         }
 
   @media only screen and (max-width: 800px) {
+    .pagename{
+        width:100%;
+        height:30px;
+        text-align: center;
+        background-color:#b1e7ff;
+        font-size: 1em;
+    }
 
     #accountname{
         color:#16A085;
@@ -439,103 +178,16 @@ h3{
       vertical-align:bottom;
       width:100px;
     }
-    .divmenu{
-        width:93%;margin-left:auto;margin-right:auto;
-      }
-    .menuall{
-        padding:4px;
-    }
-    #menu1{
-        width: 50px; /* ความกว้าง */
-        height: 50px; /* ความสูง */
-        background-image:url(/img/menu/upload.png);
-        background-size: contain;
-        -moz-border-radius: 70px; 
-        -webkit-border-radius: 70px; 
-        border-radius: 70px;
-        margin-left:auto;
-        margin-right:auto;
-    }
-    #menu1:hover{
-        background-image:url(/img/menu/upload_h.png);
-    }
-    #menu2{
-    
-        width: 50px; /* ความกว้าง */
-        height: 50px; /* ความสูง */
-        background-image:url(/img/menu/scan.png);
-        background-size: contain;
-        -moz-border-radius: 70px; 
-        -webkit-border-radius: 70px; 
-        border-radius: 70px;
-        margin-left:auto;
-        margin-right:auto;
-    }
-    #menu2:hover{
-        background-image:url(/img/menu/scan_h.png);
-    }
-    #menu3{
-    
-        width: 50px; /* ความกว้าง */
-        height: 50px; /* ความสูง */
-        background-image:url(/img/menu/view.png);
-        background-size: contain;
-        -moz-border-radius: 70px; 
-        -webkit-border-radius: 70px; 
-        border-radius: 70px;
-        margin-left:auto;
-        margin-right:auto;
-    }
-    #menu3:hover{
-        background-image:url(/img/menu/view_h.png);
-    }
-    #menu4{
-    
-        width: 50px; /* ความกว้าง */
-        height: 50px; /* ความสูง */
-        background-image:url(/img/menu/search.png);
-        background-size: contain;
-        -moz-border-radius: 70px; 
-        -webkit-border-radius: 70px; 
-        border-radius: 70px;
-        margin-left:auto;
-        margin-right:auto;
-    }
-    #menu4:hover{
-        background-image:url(/img/menu/search_h.png);
-    }
-    #menu5{
-    
-        width: 50px; /* ความกว้าง */
-        height: 50px; /* ความสูง */
-        background-image:url(/img/menu/user.png);
-        background-size: contain;
-        -moz-border-radius: 70px; 
-        -webkit-border-radius: 70px; 
-        border-radius: 70px;
-        margin-left:auto;
-        margin-right:auto;
-    }
-    #menu5:hover{
-        background-image:url(/img/menu/user_h.png);
-    }
-    #menu6{
-     
-        width: 50px; /* ความกว้าง */
-            height: 50px; /* ความสูง */
-        background-image:url(/img/menu/myaccount.png);
-        background-size: contain;
-        -moz-border-radius: 70px; 
-        -webkit-border-radius: 70px; 
-        border-radius: 70px;
-        margin-left:auto;
-        margin-right:auto;
-    }
-    #menu6:hover{
-        background-image:url(/img/menu/myaccount_h.png);
-    }
+  
     }
 @media only screen and (max-width: 500px) {
+    .pagename{
+        width:100%;
+        height:30px;
+        text-align: center;
+        background-color:#b1e7ff;
+        font-size: 1em;
+    }
     #accountname{
         color:#16A085; 
         font-size: 15px;
@@ -558,105 +210,25 @@ h3{
     vertical-align:bottom;
     width:50px;
   }
-  .divmenu{
-    width:93%;margin-left:auto;margin-right:auto;
-  }
-    .menuall{
-        padding:2px;
-    }
-    #menu1{
-     
-        width: 35px; /* ความกว้าง */
-        height: 35px; /* ความสูง */
-        background-image:url(/img/menu/upload.png);
-        background-size: contain;
-        -moz-border-radius: 70px; 
-        -webkit-border-radius: 70px; 
-        border-radius: 70px;
-        margin-left:auto;
-        margin-right:auto;
-
-    }
-    #menu1:hover{
-        background-image:url(/img/menu/upload_h.png);
-    }
-    #menu2{
-
-        width: 35px; /* ความกว้าง */
-        height: 35px; /* ความสูง */
-        background-image:url(/img/menu/scan.png);
-        background-size: contain;
-        -moz-border-radius: 70px; 
-        -webkit-border-radius: 70px; 
-        border-radius: 70px;
-        margin-left:auto;
-        margin-right:auto;
-    }
-    #menu2:hover{
-        background-image:url(/img/menu/scan_h.png);
-    }
-    #menu3{
-        width: 35px; /* ความกว้าง */
-        height: 35px; /* ความสูง */
-        background-image:url(/img/menu/view.png);
-        background-size: contain;
-        -moz-border-radius: 70px; 
-        -webkit-border-radius: 70px; 
-        border-radius: 70px;
-        margin-left:auto;
-        margin-right:auto;
-    }
-    #menu3:hover{
-        background-image:url(/img/menu/view_h.png);
-    }
-    #menu4{
-        width: 35px; /* ความกว้าง */
-        height: 35px; /* ความสูง */
-        background-image:url(/img/menu/search.png);
-        background-size: contain;
-        -moz-border-radius: 70px; 
-        -webkit-border-radius: 70px; 
-        border-radius: 70px;
-        margin-left:auto;
-        margin-right:auto;
-    }
-    #menu4:hover{
-        background-image:url(/img/menu/search_h.png);
-    }
-    #menu5{
-        width: 35px; /* ความกว้าง */
-        height: 35px; /* ความสูง */
-        background-image:url(/img/menu/user.png);
-        background-size: contain;
-        -moz-border-radius: 70px; 
-        -webkit-border-radius: 70px; 
-        border-radius: 70px;
-        margin-left:auto;
-        margin-right:auto;
-    }
-    #menu5:hover{
-        background-image:url(/img/menu/user_h.png);
-    }
-    #menu6{
-       
-        width: 35px; /* ความกว้าง */
-        height: 35px; /* ความสูง */
-        background-image:url(/img/menu/myaccount.png);
-        background-size: contain;
-        -moz-border-radius: 70px; 
-        -webkit-border-radius: 70px; 
-        border-radius: 70px;
-        margin-left:auto;
-        margin-right:auto;
-    }
-    #menu6:hover{
-        background-image:url(/img/menu/myaccount_h.png);
-    }
+  
     }
   
       
     
     @media only screen and (max-width: 375px) {
+        .btnEditDelete{
+            font-size:0.4em;
+        }
+        body {
+            font-size: 0.6em;
+        }
+        .pagename{
+            width:100%;
+            height:30px;
+            text-align: center;
+            background-color:#b1e7ff;
+            font-size: 1.5em;
+        }
         #accountname{
             color:#16A085;
             font-size: 13px;;
@@ -679,104 +251,24 @@ h3{
           vertical-align:bottom;
           width:50px;
         }
-        .divmenu{
-            width:93%;margin-left:auto;margin-right:auto;
-          }
-          .menuall{
-              padding:2px;
-          }
-          #menu1{
-           
-              width: 35px; /* ความกว้าง */
-              height: 35px; /* ความสูง */
-              background-image:url(/img/menu/upload.png);
-              background-size: contain;
-              -moz-border-radius: 70px; 
-              -webkit-border-radius: 70px; 
-              border-radius: 70px;
-              margin-left:auto;
-              margin-right:auto;
-      
-          }
-          #menu1:hover{
-            background-image:url(/img/menu/upload_h.png);
-        }
-          #menu2{
-      
-            width: 35px; /* ความกว้าง */
-            height: 35px; /* ความสูง */
-            background-image:url(/img/menu/scan.png);
-            background-size: contain;
-              -moz-border-radius: 70px; 
-              -webkit-border-radius: 70px; 
-              border-radius: 70px;
-              margin-left:auto;
-              margin-right:auto;
-          }
-          #menu2:hover{
-            background-image:url(/img/menu/scan_h.png);
-        }
-          #menu3{
-            width: 35px; /* ความกว้าง */
-            height: 35px; /* ความสูง */
-            background-image:url(/img/menu/view.png);
-            background-size: contain;
-              -moz-border-radius: 70px; 
-              -webkit-border-radius: 70px; 
-              border-radius: 70px;
-              margin-left:auto;
-              margin-right:auto;
-          }
-          #menu3:hover{
-            background-image:url(/img/menu/view_h.png);
-            }
-          #menu4{
-      
-            width: 35px; /* ความกว้าง */
-            height: 35px; /* ความสูง */
-            background-image:url(/img/menu/search.png);
-            background-size: contain;
-              -moz-border-radius: 70px; 
-              -webkit-border-radius: 70px; 
-              border-radius: 70px;
-              margin-left:auto;
-              margin-right:auto;
-          }
-          #menu4:hover{
-            background-image:url(/img/menu/search_h.png);
-        }
-          #menu5{
-            width: 35px; /* ความกว้าง */
-            height: 35px; /* ความสูง */
-            background-image:url(/img/menu/user.png);
-            background-size: contain;
-              -moz-border-radius: 70px; 
-              -webkit-border-radius: 70px; 
-              border-radius: 70px;
-              margin-left:auto;
-              margin-right:auto;
-          }
-          #menu5:hover{
-            background-image:url(/img/menu/user_h.png);
-        }
-          #menu6{
-           
-            width: 35px; /* ความกว้าง */
-            height: 35px; /* ความสูง */
-            background-image:url(/img/menu/myaccount.png);
-            background-size: contain;
-              -moz-border-radius: 70px; 
-              -webkit-border-radius: 70px; 
-              border-radius: 70px;
-              margin-left:auto;
-              margin-right:auto;
-          }
-          #menu6:hover{
-            background-image:url(/img/menu/myaccount_h.png);
-        }
+       
         }
       
         @media only screen and (max-width: 360px) {
+
+            .btnEditDelete{
+                font-size: 0.3em;
+            }
+            body {
+                font-size: 0.6em;
+            }
+            .pagename{
+                width:100%;
+                height:30px;
+                text-align: center;
+                background-color:#b1e7ff;
+                font-size: 1.5em;
+            }
             #accountname{
                 color:#16A085;
                 font-size: 12px;;
@@ -799,102 +291,25 @@ h3{
 
             }
     
-            .divmenu{
-                width:73%;margin-left:auto;margin-right:auto;
-              }
-              .menuall{
-                  padding:1px;
-              }
-              #menu1{
-               
-                  width: 30px; /* ความกว้าง */
-                  height: 30px; /* ความสูง */
-                  background-image:url(/img/menu/upload.png);
-                  background-size: contain;
-                  -moz-border-radius: 70px; 
-                  -webkit-border-radius: 70px; 
-                  border-radius: 70px;
-                  margin-left:auto;
-                  margin-right:auto;
-          
-              }
-              #menu1:hover{
-                background-image:url(/img/menu/upload_h.png);
-            }
-              #menu2{
-          
-                width: 30px; /* ความกว้าง */
-                height: 30px; /* ความสูง */
-                background-image:url(/img/menu/scan.png);
-                background-size: contain;
-                  -moz-border-radius: 70px; 
-                  -webkit-border-radius: 70px; 
-                  border-radius: 70px;
-                  margin-left:auto;
-                  margin-right:auto;
-              }
-              #menu2:hover{
-                background-image:url(/img/menu/scan_h.png);
-            }
-              #menu3{
-                width: 30px; /* ความกว้าง */
-                height: 30px; /* ความสูง */
-                background-image:url(/img/menu/view.png);
-                background-size: contain;
-                  -webkit-border-radius: 70px; 
-                  border-radius: 70px;
-                  margin-left:auto;
-                  margin-right:auto;
-              }
-              #menu3:hover{
-                background-image:url(/img/menu/view_h.png);
-            }
-              #menu4{
-          
-                width: 30px; /* ความกว้าง */
-                height: 30px; /* ความสูง */
-                background-image:url(/img/menu/search.png);
-                background-size: contain;
-                  -moz-border-radius: 70px; 
-                  -webkit-border-radius: 70px; 
-                  border-radius: 70px;
-                  margin-left:auto;
-                  margin-right:auto;
-              }
-              #menu4:hover{
-                background-image:url(/img/menu/search_h.png);
-            }
-              #menu5{
-                width: 30px; /* ความกว้าง */
-                height: 30px; /* ความสูง */
-                background-image:url(/img/menu/user.png);
-                background-size: contain;
-                  -moz-border-radius: 70px; 
-                  -webkit-border-radius: 70px; 
-                  border-radius: 70px;
-                  margin-left:auto;
-                  margin-right:auto;
-              }
-              #menu5:hover{
-                background-image:url(/img/menu/user_h.png);
-            }
-              #menu6{
-               
-                width: 30px; /* ความกว้าง */
-                  height: 30px; /* ความสูง */
-                background-image:url(/img/menu/myaccount.png);
-                background-size: contain;
-                  -moz-border-radius: 70px; 
-                  -webkit-border-radius: 70px; 
-                  border-radius: 70px;
-                  margin-left:auto;
-                  margin-right:auto;
-              }
-              #menu6:hover{
-                background-image:url(/img/menu/myaccount_h.png);
-            }
+            
             }
           @media only screen and (max-width: 320px) {
+
+            .btnEditDelete{
+                font-size: 0.4em;
+            }
+            body {
+                font-size: 0.4em;
+            }
+
+            
+            .pagename{
+                width:100%;
+                height:30px;
+                text-align: center;
+                background-color:#b1e7ff;
+                font-size: 1.5em;
+            }
             #accountname{
                 color:#16A085; 
                 font-size:10px;
@@ -918,98 +333,5 @@ h3{
               vertical-align:bottom;
               width:50px;
             }
-            .divmenu{
-                width:93%;margin-left:auto;margin-right:auto;
-              }
-              .menuall{
-                  padding:1px;
-              }
-              #menu1{
-               
-                width: 25px; /* ความกว้าง */
-                height: 25px; /* ความสูง */
-                background-image:url(/img/menu/upload.png);
-                background-size: contain;
-                  -moz-border-radius: 70px; 
-                  -webkit-border-radius: 70px; 
-                  border-radius: 70px;
-                  margin-left:auto;
-                  margin-right:auto;
           
-              }
-              #menu1:hover{
-                background-image:url(/img/menu/upload_h.png);
-              }
-              #menu2{
-             
-                width: 25px; /* ความกว้าง */
-                height: 25px; /* ความสูง */
-                background-image:url(/img/menu/scan.png);
-                background-size: contain;
-                  -moz-border-radius: 70px; 
-                  -webkit-border-radius: 70px; 
-                  border-radius: 70px;
-                  margin-left:auto;
-                  margin-right:auto;
-              }
-              #menu2:hover{
-                background-image:url(/img/menu/scan_h.png);
-            }
-              #menu3{
-                width: 25px; /* ความกว้าง */
-                height: 25px; /* ความสูง */
-                background-image:url(/img/menu/view.png);
-                background-size: contain;
-                  -moz-border-radius: 70px; 
-                  -webkit-border-radius: 70px; 
-                  border-radius: 70px;
-                  margin-left:auto;
-                  margin-right:auto;
-              }
-              #menu3:hover{
-                background-image:url(/img/menu/view_h.png);
-            }
-              #menu4{
-                width: 25px; /* ความกว้าง */
-                height: 25px; /* ความสูง */
-                background-image:url(/img/menu/search.png);
-                background-size: contain;
-                  -moz-border-radius: 70px; 
-                  -webkit-border-radius: 70px; 
-                  border-radius: 70px;
-                  margin-left:auto;
-                  margin-right:auto;
-              }
-              #menu4:hover{
-                background-image:url(/img/menu/search_h.png);
-            }
-              #menu5{
-                width: 25px; /* ความกว้าง */
-                height: 25px; /* ความสูง */
-                background-image:url(/img/menu/user.png);
-                background-size: contain;
-                  -moz-border-radius: 70px; 
-                  -webkit-border-radius: 70px; 
-                  border-radius: 70px;
-                  margin-left:auto;
-                  margin-right:auto;
-              }
-              #menu5:hover{
-                background-image:url(/img/menu/user_h.png);
-            }
-              #menu6{
-
-                width: 25px; /* ความกว้าง */
-                height: 25px; /* ความสูง */
-                background-image:url(/img/menu/myaccount.png);
-                background-size: contain;
-                  -moz-border-radius: 70px; 
-                  -webkit-border-radius: 70px; 
-                  border-radius: 70px;
-                  margin-left:auto;
-                  margin-right:auto;
-              }
-              #menu6:hover{
-                background-image:url(/img/menu/myaccount_h.png);
-            }
             }

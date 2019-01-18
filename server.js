@@ -8,8 +8,11 @@ var db = mongoose();
 var app = express();
 var passport = passport();
 
-app.listen(3000);
-
+// app.listen(3000);
+app.listen(app.get('PORT'), function () {
+    console.log('Express started on http://localhost:' +
+        app.get('PORT') + '; press Ctrl-C to terminate.');
+});
 module.exports = app;
 
 

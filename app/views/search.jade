@@ -17,7 +17,33 @@ html( class="no-js")
         //- <!--    Authentic Template   http://www.templatemo.com/tm-412-authentic    -->
         meta( name='viewport', content='width=device-width' ) 
         link(rel='stylesheet', type='text/css', href='templateInside/css/templatemo_main.css')
- 
+        script(src='jquery/dist/jquery-3.3.1.js')
+        script(src='jquery/dist/jquery.dataTables.min.js')
+        script(src='bootstrap/dist/js/dataTables.bootstrap.min.js')
+        script.
+            $(document).ready(function(){
+                $("#myInput").on("keyup", function() {
+                    var value = $(this).val().toLowerCase();
+                    $("#tbmaterial tr").filter(function() {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+
+              
+            });
+               $( window ).on( "load", function() {
+                    var url_string  = window.location.href;  
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const myParam = urlParams.get('room');
+                   
+                  
+                    var value = myParam.toLowerCase();
+                    $("#tbmaterial tr").filter(function() {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+               
+                });
+             
     body
         
             div#main-wrapper
@@ -26,14 +52,58 @@ html( class="no-js")
                         include ./templateGeneral
                     else
                         include ./templateAdmin
-                    div.pagename Search         
-           
+                    div.pagename 
+                        div.row    
+                                div.col-xs-1.col-sm-1.col-md-1.col-lg-1
+                                    button.btn.btn-info.btn-sm(type='submit' style="float:left;" onclick="window.location.href='/map'")
+                                        i.fa.fa-map-marker  Map
+                                div.col-xs-11.col-sm-11.col-md-11.col-lg-11
+                                    span Search   
+                        br
+                        div.row    
+                                div.col-xs-8.col-sm-8.col-md-8.col-lg-8
+                               
+                                div.col-xs-4.col-sm-4.col-md-4.col-lg-4 
+                                    input.form-control#myInput.input-xs( type="text" placeholder="Search..")
+ 
+                    table#tbmaterial.tbUser.table.table-striped.table-bordered.table-sm(cellspacing="0" width="100%" data-show-header="true" data-pagination="true"
+           data-id-field="name"
+           data-page-list="[5, 10, 25, 50, 100, ALL]"
+           data-page-size="5")
+                                thead
+                                    tr.header
+                                        td(style="font-weight: bold;") ชื่อครุภัณฑ์
+                                        td(style="font-weight: bold;") รูปภาพ
+                                        td(style="font-weight: bold;") บาร์โคด
+                                        td(style="font-weight: bold;") หมายเลขครุภัณฑ์
+                                        td(style="font-weight: bold;") ตำแหน่ง
+                                        td(style="font-weight: bold;") จัดการ
+                                tbody
+                                   - each item in rows
+                                        tr
+                                            td= item.nameobject
+                                            td(style="width:15%") 
+                                                img.picintb(src='data:image/jpg;base64,'+item.imageobject.data style="width:100%;display: block;"  class="img-responsive")
+                                            td(style="width:15%") 
+                                                img.picintb(src='data:image/jpg;base64,'+item.imagebarcode.data style="width:100%;display: block;"  class="img-responsive")
+                                            
+                                            td= item.materialid
+                                            td= item.location
+                                            td 
+                                                div(style="display:inline;")
+                                                    a.btn.btn-warning.btn-xs.btnEditDelete(type='submit' style="float:left;" href="/editUser/"+item._id  )
+                                                        i.fa.fa-pencil-square-o  แก้ไข
+                                                 form(name="deleteUser" , method="POST" , action="/deleteUser") 
+                                                    input(type="text",name="id",value=item._id style="display:none;") 
+                                                    button.btn.btn-danger.btn-xs.btnEditDelete(type='submit' style="float:left; margin-left:10px;" onClick="return confirm('Are you sure you want to delete " + item.fullName + "?')") 
+                                                        i.fa.fa-trash-o  ลบ
+                                                      
             script(src='templateInside/js/jquery.min.js')
             script(src='templateInside/js/jquery.backstretch.min.js')
             script(src='templateInside/js/jquery.flexslider.min.js')
             script(src='templateInside/js/bootstrap.min.js')
             script(src='templateInside/js/templatemo_script.js')
-      
+   
            
 //- if username
 //-             h2 Hello #{username}

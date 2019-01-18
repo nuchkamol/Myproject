@@ -24,7 +24,13 @@ html( class="no-js")
                     else
                         include ./templateAdmin
 
-                    div.pagename Manage User         
+                    div.pagename 
+                        div.row    
+                            div.col-xs-1.col-sm-1.col-md-1.col-lg-1
+                                button.btn.btn-info.btn-sm(type='submit' style="float:left;" onclick="window.location.href='/addUser'")
+                                    i.fa.fa-plus-square  Add User
+                            div.col-xs-11.col-sm-11.col-md-11.col-lg-11
+                            span Manage User         
                     div.row
                         div.col-xs-12.col-sm-12.col-md-12.col-lg-12
                        
@@ -44,10 +50,16 @@ html( class="no-js")
                                                 td="ผู้ดูแลระบบ"
                                             td 
                                                 div(style="display:inline;")
-                                                 button.btn.btn-warning.btn-xs(type='submit' style="float:left; ")
-                                                    i.fa.fa-pencil-square-o แก้ไข
-                                                 button.btn.btn-danger.btn-xs(type='submit' style="float:left; margin-left:10px; ")
-                                                    i.fa.fa-pencil-square-o ลบ
+                                                        a.btn.btn-warning.btn-xs.btnEditDelete(type='submit' style="float:left;" href="/editUser/"+item._id  )
+                                                            i.fa.fa-pencil-square-o  แก้ไข
+                                                    form(name="deleteUser" , method="POST" , action="/deleteUser") 
+                                                            input(type="text",name="id",value=item._id style="display:none;") 
+                                                            button.btn.btn-danger.btn-xs.btnEditDelete(type='submit' style="float:left; margin-left:10px;" onClick="return confirm('Are you sure you want to delete " + item.fullName + "?')") 
+                                                                 i.fa.fa-trash-o  ลบ
+                                                      
+                    each msg in messages   
+                        .flash
+                            = msg                        
                                    
                              
 

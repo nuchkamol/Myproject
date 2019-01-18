@@ -24,6 +24,16 @@ module.exports = function(app){
 
     app.route('/manageUser')
         .get(user.renderManageUser)
+    app.route('/editUser/(:id)')
+        .get(user.renderEditUser)
+    app.route('/editUser')
+        .post(user.editUser)
+    app.route('/deleteUser')
+        .post(user.deleteUser)
+    app.route('/myAccount')
+        .get(user.renderMyAccount)
+ 
+        
 
    // app.route('/user')
     // .post(user.create)

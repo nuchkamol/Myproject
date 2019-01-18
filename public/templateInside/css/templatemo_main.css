@@ -259,6 +259,10 @@ img {  vertical-align: middle; }
 /* 6. Media Queries
 --------------------------------------------- */
 @media screen and (max-width: 991px) {
+  
+    .btnEditDelete{
+        font-size:0.5em;
+    }
     body {
         font-size: 0.8em;
     }
@@ -279,7 +283,7 @@ img {  vertical-align: middle; }
 }
 
 @media screen and (max-width: 767px) {
-    body {
+    /* body {
         font-size: 0.8em;
     }
     
@@ -301,5 +305,27 @@ img {  vertical-align: middle; }
     .navbar-default {
         background: rgba(0,0,0,0.4);
         border: none;
+    } */
+  
+    .btnEditDelete{
+        font-size:0.5em;
     }
+    
+    body {
+        font-size: 0.6em;
+    }
+    .navbar { font-size: 1em; }
+    .nav i { padding: 10px 0 10px 0; }
+    .nav .fa { font-size: 1.6em; }
+    .navbar-default .navbar-nav > li > a {
+        width: 70px;
+        height: 70px;
+    }
+
+    .footer {
+        overflow:hidden; 
+        position:static;
+        text-align: center;        
+    }
+    #tm-copyright { margin-left: 0; }
 }
