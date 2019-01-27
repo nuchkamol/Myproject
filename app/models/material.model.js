@@ -7,7 +7,7 @@ var UserSchema = new Schema({
     imagebarcode:{ data: Buffer, contentType: String },
     nameobject: String,
     imageobject: { data: Buffer, contentType: String },
-    nameUser: String,
+    nameuser: String,
     createDate: Date,
     updateDate: Date,
     price: String,

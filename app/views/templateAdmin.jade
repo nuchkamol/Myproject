@@ -8,10 +8,10 @@ body
         div.col-xs-7.col-sm-7.col-md-7.col-lg-7  
         div.col-xs-3.col-sm-3.col-md-3.col-lg-3
             form(name='logout' , method='post' , action='/search')
-                    button.btn.btn-light.btn-sm#btn_signout(type='submit' style="float:right; margin-right:10px; margin-bottom:10px;")
+                    button.btn.btn-default.btn-sm#btn_signout(type='submit' style="float:right; margin-right:10px; margin-bottom:10px;")
                         i.fa.fa-sign-out sign out
-        div.row
-                span.col-xs-12.col-sm-12.col-md-12.col-lg-12(id="accountname")=fullname 
+        div.row  
+                span.col-xs-12.col-sm-12.col-md-12.col-lg-12.fa.fa-user(id="accountname")=fullname 
     div.navbar.navbar-default( role="navigation")
         div.container-fluid
             div.navbar-header
@@ -27,11 +27,11 @@ body
                             i.fa.fa-upload
                             span Upload
                     li
-                        a(href="#templatemo-page2")
+                        a(href="/scan")
                             i.fa.fa-barcode
                             span Scan
                     li
-                        a(href="#templatemo-page3")
+                        a(href="/overview")
                             i.fa.fa-eye
                             span View
                     li

@@ -1,0 +1,165 @@
+doctype html
+
+html(lang="en")
+head
+	meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+	title=title
+	link(href='/css/main.css', rel='stylesheet')
+	link(rel='stylesheet', type='text/css', href='templateInside/css/templatemo_main.css')
+	script(src="scan/jquery-1.9.0.min.js" type="text/javascript")
+	script(src="scan/quagga.js" type="text/javascript")
+	script(src="scan/file_input.js" type="text/javascript")
+	style.
+		body { font-family: Helvetica, sans-serif; }
+		h2, h3 { margin-top:0; }
+		form { margin-top: 15px; }
+		form > input { margin-right: 15px; }
+		#results { float:right; margin:20px; padding:20px; }
+	
+body
+	div#main-wrapper
+		div.container
+			if(role=='general')
+				include ./templateGeneral
+			else
+				include ./templateAdmin
+			div.pagename
+				span Scan
+			div.row
+				div.col-xs-2.col-sm-2.col-md-2.col-lg-2
+				div.col-xs-6.col-sm-6.col-md-6.col-lg-6#my_camera
+				div.col-xs-2.col-sm-2.col-md-2.col-lg-2#results
+				div.col-xs-2.col-sm-2.col-md-2.col-lg-2
+			div.row
+				div.col-xs-2.col-sm-2.col-md-2.col-lg-2
+				div.col-xs-8.col-sm-8.col-md-8.col-lg-8
+					form
+						input.btn.btn-info.btn-block#startDecode(type="button" value="Scan"  style="width:150px; margin:auto;")
+				div.col-xs-2.col-sm-2.col-md-2.col-lg-2
+			br
+			div#codeResult
+		script(src='jquery/dist/jquery-3.3.1.js')
+		script(type="text/javascript" src="/scan/webcam.js")
+
+		script.
+
+			Webcam.set({
+				width: 700,
+				height: 800,
+				image_format: 'jpeg',
+				jpeg_quality: 90,
+				constraints: {
+					width: 700, // { exact: 320 },
+					height: 800, // { exact: 180 },
+					facingMode: 'environment',
+					frameRate: 30
+				}
+			});
+				
+			Webcam.attach( '#my_camera' );
+			
+			function b64toBlob(b64Data, contentType, sliceSize) {
+					contentType = contentType || '';
+					sliceSize = sliceSize || 512;
+
+					var byteCharacters = atob(b64Data);
+					var byteArrays = [];
+
+					for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+						var slice = byteCharacters.slice(offset, offset + sliceSize);
+
+						var byteNumbers = new Array(slice.length);
+						for (var i = 0; i < slice.length; i++) {
+							byteNumbers[i] = slice.charCodeAt(i);
+						}
+
+						var byteArray = new Uint8Array(byteNumbers);
+
+						byteArrays.push(byteArray);
+					}
+
+				var blob = new Blob(byteArrays, {type: contentType});
+				
+				return blob;
+			}
+
+			 $(function() {
+					var App = {
+						init: function() {
+							App.attachListeners();
+						} ,
+						debugApp : function(msg){
+								if(true)
+								{
+								debugCon = $("#codeResult");
+								debugCon.text(debugCon.text()+" , "+msg) ;
+								}
+							},
+						attachListeners: function() {
+							
+							var self = this; 
+							
+							$("#startDecode").on("click", function(e) {
+								Webcam.snap( function(data_uri) {
+									var block = data_uri.split(";");
+									// Get the content type of the image
+									var contentType = block[0].split(":")[1];// In this case "image/gif"
+									// get the real base64 content of the file
+									var realData = block[1].split(",")[1];// In this case "R0lGODlhPQBEAPeoAJosM...."
+
+									// Convert it to a blob to upload
+									var blob = b64toBlob(realData, contentType);
+									document.getElementById('results').innerHTML = "<img id='imgtemp' src='"+window.URL.createObjectURL(blob)+"' width='200' height='200px'/>";
+						
+									alert(window.URL.createObjectURL(blob));
+								
+									App.decode(window.URL.createObjectURL(blob));
+								} );
+						
+								
+								
+							}); 
+
+						},
+						detachListeners: function() {
+							$("#startDecode").off("click");
+						},
+
+						decode: function(src) {
+							Quagga.decodeSingle(
+								{
+								inputStream: {
+									size: 640,
+									singleChannel: false
+								},
+								locator: {
+									patchSize: "large",
+									halfSample: false
+								},
+								decoder: {
+									readers: ["upc_reader", "code_128_reader", "code_39_reader", "code_39_vin_reader", "ean_8_reader", "ean_reader", "upc_e_reader", "codabar_reader"]
+								},
+								locate: true,
+								src: src
+								},
+							function(result){
+								if(result && result.codeResult && result.codeResult.code)
+								{
+									window.location.href='/search?room='+result.codeResult.code;
+									alert(result.codeResult.code);
+									//- $("#codeResult").text('Code - '+result.codeResult.code);
+								}else{
+									alert("unable to read");
+									//- $("#codeResult").text("unable to read");
+								}
+								});
+						}
+					};
+					App.init();
+				});
+
+			
+		//- input(type=button value="Take Snapshot" onClick="take_snapshot()")
+	
+
+

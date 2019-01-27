@@ -62,7 +62,13 @@ h3{
   }
 
   #accountname{
-    color:#16A085;
+    color: black; text-shadow: black 0.1em 0.1em 0.9em;
+    font-size: 14px;
+    text-align: center;
+    padding-bottom:10px;
+}
+#accountname:hover{
+    color: black; text-shadow: black 0.1em 0.1em 0.5em;
     font-size: 14px;
     text-align: center;
     padding-bottom:10px;
@@ -80,13 +86,17 @@ h3{
     vertical-align:bottom;
     width:130px;
   }
-  .tbUser{
-    font-size: 1.5em;
+  .tb{
+    font-size: 1.3em;
   }
 
 
 /* ipad */
   @media only screen and (max-width: 1200px) {
+
+    .tb{
+        font-size: 1.0em;
+      }
     .pagename{
         width:100%;
         height:30px;
@@ -95,7 +105,13 @@ h3{
         font-size: 1em;
     }
     #accountname{
-        color:#16A085;
+        color: black; text-shadow: black 0.1em 0.1em 0.9em;
+        font-size: 14px;
+        text-align: center;
+        padding-bottom:10px;
+    }
+    #accountname:hover{
+        color: black; text-shadow: black 0.1em 0.1em 0.5em;
         font-size: 14px;
         text-align: center;
         padding-bottom:10px;
@@ -117,6 +133,9 @@ h3{
     }
 
     @media only screen and (max-width: 1000px) {
+        .tb{
+            font-size: 1.0em;
+          }
         .pagename{
             width:100%;
             height:30px;
@@ -125,7 +144,13 @@ h3{
             font-size: 1em;
         }
         #accountname{
-            color:#16A085;
+            color: black; text-shadow: black 0.1em 0.1em 0.9em;
+            font-size: 14px;
+            text-align: center;
+            padding-bottom:10px;
+        }
+        #accountname:hover{
+            color: black; text-shadow: black 0.1em 0.1em 0.5em;
             font-size: 14px;
             text-align: center;
             padding-bottom:10px;
@@ -147,6 +172,9 @@ h3{
         }
 
   @media only screen and (max-width: 800px) {
+    .tb{
+        font-size: 1.0em;
+      }
     .pagename{
         width:100%;
         height:30px;
@@ -156,7 +184,13 @@ h3{
     }
 
     #accountname{
-        color:#16A085;
+        color: black; text-shadow: black 0.1em 0.1em 0.9em;
+        font-size: 18px;;
+        text-align: center;
+        padding-bottom:10px;
+    }
+    #accountname:hover{
+        color: black; text-shadow: black 0.1em 0.1em 0.5em;
         font-size: 18px;;
         text-align: center;
         padding-bottom:10px;
@@ -181,6 +215,9 @@ h3{
   
     }
 @media only screen and (max-width: 500px) {
+    .tb{
+        font-size: 1.0em;
+      }
     .pagename{
         width:100%;
         height:30px;
@@ -189,7 +226,12 @@ h3{
         font-size: 1em;
     }
     #accountname{
-        color:#16A085; 
+        color: black; text-shadow: black 0.1em 0.1em 0.9em;
+        font-size: 15px;
+        text-align: center;
+    }
+    #accountname:hover{
+        color: black; text-shadow: black 0.1em 0.1em 0.5em;
         font-size: 15px;
         text-align: center;
     }
@@ -216,6 +258,9 @@ h3{
       
     
     @media only screen and (max-width: 375px) {
+        .tb{
+            font-size: 1.0em;
+          }
         .btnEditDelete{
             font-size:0.4em;
         }
@@ -230,7 +275,12 @@ h3{
             font-size: 1.5em;
         }
         #accountname{
-            color:#16A085;
+            color: black; text-shadow: black 0.1em 0.1em 0.9em;
+            font-size: 13px;;
+            text-align: center;
+        }
+        #accountname:hover{
+            color: black; text-shadow: black 0.1em 0.1em 0.5em;
             font-size: 13px;;
             text-align: center;
         }
@@ -255,6 +305,9 @@ h3{
         }
       
         @media only screen and (max-width: 360px) {
+            .tb{
+                font-size: 1.0em;
+              }
 
             .btnEditDelete{
                 font-size: 0.3em;
@@ -270,7 +323,11 @@ h3{
                 font-size: 1.5em;
             }
             #accountname{
-                color:#16A085;
+                color: black; text-shadow: black 0.1em 0.1em 0.9em;
+                font-size: 12px;;
+            }
+            #accountname:hover{
+                color: black; text-shadow: black 0.1em 0.1em 0.5em;
                 font-size: 12px;;
             }
             #btn_signout{
@@ -294,6 +351,9 @@ h3{
             
             }
           @media only screen and (max-width: 320px) {
+            .tb{
+                font-size: 0.8em;
+              }
 
             .btnEditDelete{
                 font-size: 0.4em;
@@ -311,10 +371,18 @@ h3{
                 font-size: 1.5em;
             }
             #accountname{
-                color:#16A085; 
+                /* color:#16A085;  */
                 font-size:10px;
                 text-align: center;
                 padding:3px;
+                color: black; text-shadow: black 0.1em 0.1em 0.9em;
+            }
+            #accountname:hover{
+                /* color:#16A085;  */
+                font-size:10px;
+                text-align: center;
+                padding:3px;
+                color: black; text-shadow: black 0.1em 0.1em 0.5em
             }
             #btn_signout{
                 font-size: 0.5em;

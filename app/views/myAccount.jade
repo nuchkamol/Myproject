@@ -18,7 +18,10 @@ html( class="no-js")
     body
         div#main-wrapper
                 div.container
-                    include ./templateAdmin
+                    if(role=='general')
+                        include ./templateGeneral
+                    else
+                        include ./templateAdmin
                     div.pagename My Account
             
         form(name='myAccount' , method='POST' , action='/editUser') 
@@ -35,17 +38,7 @@ html( class="no-js")
                             span.input-group-text Password
                         input.form-control(placeholder="password" type='text' name="passWord"  width="200px" value=txt_password )
                     .col-xs-3.col-sm-3.col-md-3.col-lg-3
-                    .input-group.col-xs-6.col-sm-6.col-md-6.col-lg-6
-                        .input-group-prepend
-                            span.input-group-text สิทธ์ผู้ใช้งาน
-                        select.form-control( name="role"  width="200px" )
-                          if(role=='general')
-                            option(value='admin' ) ผู้ดูแลระบบ
-                            option(value='general' selected) ผู้ใช้งานทั่วไป
-                          else                      
-                            option(value='admin' selected) ผู้ดูแลระบบ
-                            option(value='general') ผู้ใช้งานทั่วไป
-                    .col-xs-3.col-sm-3.col-md-3.col-lg-3
+                    
                     .input-group.col-xs-6.col-sm-6.col-md-6.col-lg-6
                         .input-group-prepend
                             span.input-group-text ชื่อ นามสกุล

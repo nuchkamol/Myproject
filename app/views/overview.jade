@@ -1,0 +1,111 @@
+doctype html
+html( class="no-js")  
+    head    
+        title=title
+        //- meta( name='viewport', content='width=device-width, initial-scale=1.0' ) 
+        //- link(rel='stylesheet', type='text/css', href='Login_v9/fonts/font-awesome-4.7.0/css/font-awesome.min.css')
+        //- link(rel='stylesheet', type='text/css', href='Login_v9/fonts/iconic/css/material-design-iconic-font.min.css')
+        //- link(href='/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+        link(href='/css/main.css', rel='stylesheet')
+       
+        //- link(href='/css/all.css', rel='stylesheet') 
+          <meta charset="utf-8">
+        //- <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+        meta( name='keywords', content='' ) 
+        meta( name='description', content='' ) 
+        
+        //- <!--    Authentic Template   http://www.templatemo.com/tm-412-authentic    -->
+        meta( name='viewport', content='width=device-width' ) 
+        link(rel='stylesheet', type='text/css', href='templateInside/css/templatemo_main.css')
+        link(rel='stylesheet', type='text/css', href='chart/wbn-datepicker.css')
+
+        script(src='chart/Chart.bundle.js')
+        script(src='chart/utils.js')
+        
+        style.
+            canvas {
+                -moz-user-select: none;
+                -webkit-user-select: none;
+                -ms-user-select: none; 
+                
+                 width: 100%;  }
+        script.
+            function resize(){    
+                    $("#chart-area").outerHeight($(window).height()-$("#chart-area").offset().top- Math.abs($("#chart-area").outerHeight(true) - $("#chart-area").outerHeight()));
+                }
+                $(document).ready(function(){
+                    resize();
+                    $(window).on("resize", function(){                      
+                        resize();
+                    });
+
+                   
+                });
+           
+    body
+        div#main-wrapper
+         
+                div.container
+                        include ./templateAdmin
+                    div.pagename 
+                        span overview   
+                        br
+        form(name='overview' , method='POST' , action='/overview') 
+            div.row   
+                div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
+                div.col-xs-6.col-sm-6.col-md-6.col-lg-6  
+                    span ครุภัณฑ์ 
+                    select.form-control( name="nameobject"  width="200px" )
+                        each obj in rows   
+                            option(value=obj)=obj
+                div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
+            div.row    
+                div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
+                div.col-xs-6.col-sm-6.col-md-6.col-lg-6  
+                    span วันที่เริ่มต้น 
+                    input#start-date.form-control.wbn-datepicker(type="text" name="updateDate"  width="200px")
+                div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
+            div.row    
+                div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
+                div.col-xs-6.col-sm-6.col-md-6.col-lg-6  
+                    span วันที่สิ้นสุด 
+                    input#end-date.form-control.wbn-datepicker(type="text" name="createDate"  data-start-src="start-date"  width="200px")
+                div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
+            div.row    
+                div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
+                input.btn.btn-default.col-xs-6.col-sm-6.col-md-6.col-lg-6(type="submit"  value="ตกลง"  style="margin-top:10px;")
+                div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
+                input#countSale(type="text" name="countSale" value=countSale style="display:none;")
+                input#countNormal(type="text" name="countNormal" value=countNormal style="display:none;")
+                input#countBorrow(type="text" name="countBorrow" value=countBorrow style="display:none;")
+            div.row   
+                div.col-md-2.col-lg-2
+                div.col-xs-12.col-sm-12.col-md-8.col-lg-8  
+                     div#stage-parent(style="width: 100%;") 
+                        canvas#chart-area
+
+
+                div.col-md-2.col-lg-2     
+
+            //- script(src='templateInside/js/jquery.min.js')
+            script(src='chart/jquery-3.3.1.min.js')
+            script(src='templateInside/js/jquery.backstretch.min.js')
+            script(src='templateInside/js/jquery.flexslider.min.js')
+            script(src='templateInside/js/bootstrap.min.js')
+            script(src='templateInside/js/templatemo_script.js')
+            script(src='templateInside/js/templatemo_script.js')
+            script(src='chart/wbn-datepicker.js')
+            script(src='chart/mychart.js')
+            script.
+            
+                $(document).ready(function(){
+                   
+                   $('.wbn-datepicker').datepicker()
+                });
+           
+            //- script(src="map/konva.min.js")
+           
+
+
+          
+  

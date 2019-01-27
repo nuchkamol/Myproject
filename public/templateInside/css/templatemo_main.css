@@ -110,7 +110,7 @@ img {  vertical-align: middle; }
 .nav .fa { font-size: 2em; }
 .navbar-default .navbar-nav > li > a {
     color: white;
-    background-color: rgba(0,0,0,0.5);
+    background-color:black;
     width: 120px;
     height: 120px;
     -moz-border-radius: 70px; 

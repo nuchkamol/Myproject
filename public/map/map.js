@@ -29,19 +29,23 @@ var stage = new Konva.Stage({
 //#region สร้างlayerและโครงสร้างitemทั้งหมดในstage
   var layer = new Konva.Layer();
   var text = new Konva.Text({
-	x: stage.width() - 550,
+	x: stage.width() - 850,
 	y: stage.height() - 650,
-	fontFamily: 'Calibri',
+	fontFamily: 'cordia',
 	fontSize: 42,
 	text: '',
-	fill: 'black'
+	fill: '#663300',
+	shadowColor: 'black',
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.5,
   });
   var floor3 = new Konva.Rect({
 	x: stage.width() - 650,
 	y: stage.height() - 200,
 	width: 300,
 	height: 70,
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
 	strokeWidth: 3
   });
@@ -58,7 +62,7 @@ var stage = new Konva.Stage({
 	y: stage.height() - 270,
 	width: 300,
 	height: 70,
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
 	strokeWidth: 3
   });
@@ -75,7 +79,7 @@ var stage = new Konva.Stage({
 	y: stage.height() - 340,
 	width: 300,
 	height: 70,
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
 	strokeWidth: 3
   });
@@ -92,7 +96,7 @@ var stage = new Konva.Stage({
 	y: stage.height() - 410,
 	width: 300,
 	height: 70,
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
 	strokeWidth: 3
   });
@@ -109,7 +113,7 @@ var stage = new Konva.Stage({
 	y: stage.height() - 480,
 	width: 300,
 	height: 70,
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
 	strokeWidth: 3
   });
@@ -124,7 +128,7 @@ var stage = new Konva.Stage({
 
 //#region สร้างitemชั้น3
   var f3all = new Konva.Rect({
-	fill: 'white',
+	fill: '#FFDAB9',
 	stroke: 'black',
 	strokeWidth: 3
   });
@@ -137,7 +141,10 @@ var stage = new Konva.Stage({
   var f3out = new Konva.Rect({
    fill: 'gray',
    stroke: 'black',
-   strokeWidth: 1
+   strokeWidth: 1,
+	 shadowBlur: 10,
+	 shadowOffset: [15, 15],
+	 shadowOpacity: 0.9,
   });
   var textf3out = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -148,7 +155,10 @@ var stage = new Konva.Stage({
   var f3ToiletWoman1 = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textf3ToiletWoman1 = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -159,7 +169,10 @@ var stage = new Konva.Stage({
   var f3ToiletMan1 = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textf3ToiletMan1 = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -170,7 +183,10 @@ var stage = new Konva.Stage({
   var f3lift1 = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textf3lift1 = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -181,7 +197,10 @@ var stage = new Konva.Stage({
   var f3lift2 = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textf3lift2 = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -192,7 +211,10 @@ var stage = new Konva.Stage({
   var f3lift3 = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textf3lift3 = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -203,7 +225,10 @@ var stage = new Konva.Stage({
   var f3lift4 = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textf3lift4 = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -212,164 +237,238 @@ var stage = new Konva.Stage({
 	fill: 'white'
   });
   var F3A01 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF3A01 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F3A02 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF3A02 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F3A03 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF3A03 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F3A04 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF3A04 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F3A05 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF3A05 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F3A06 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF3A06 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F3A07 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF3A07 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F3A08 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF3A08 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F3A09 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF3A09 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F3A10 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF3A10 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F3A11 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF3A11 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F3A12 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
+	
   });
   var textF3A12 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F3A13 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowColor: 'black',
+		shadowBlur: 10,
+		shadowOffset: [15, 15],
+		shadowOpacity: 0.9,
   });
   var textF3A13 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var f3Toilet = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowColor: 'black',
+		shadowBlur: 10,
+		shadowOffset: [15, 15],
+		shadowOpacity: 0.9,
+		
   });
   var textf3Toilet = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 10,
 	text: '',
 	fill: 'white'
-  });
+	});
+	
+	var F3doorfont = new Konva.Wedge({
+		radius: 70,
+		angle: 90,
+		fill: '#FFFF99',
+		stroke: 'black',
+		strokeWidth: 2,
+		rotation: -180,
+		shadowColor: 'black',
+		shadowBlur: 10,
+		shadowOffset: [15, 15],
+		shadowOpacity: 0.9,
+	});
+
+	var F3doorExit = new Konva.Wedge({
+		x:-150,
+		y:-150,
+		radius: 40,
+		angle: 90,
+		fill: '#FFFF99',
+		stroke: 'black',
+		strokeWidth: 2,
+		rotation: -0,
+		shadowColor: 'black',
+		shadowBlur: 10,
+		shadowOffset: [15, 15],
+		shadowOpacity: 0.9,
+	});
   //#endregion สร้างitemชั้น3
 
 //#region สร้างitemชั้น4
 var f4all = new Konva.Rect({
-	fill: 'white',
+	fill: '#FFDAB9',
 	stroke: 'black',
 	strokeWidth: 3
   });
@@ -382,7 +481,10 @@ var f4all = new Konva.Rect({
   var f4out = new Konva.Rect({
    fill: 'gray',
    stroke: 'black',
-   strokeWidth: 1
+   strokeWidth: 1,
+	 shadowBlur: 10,
+	 shadowOffset: [15, 15],
+	 shadowOpacity: 0.9,
   });
   var textf4out = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -393,7 +495,10 @@ var f4all = new Konva.Rect({
   var f4ToiletWoman1 = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textf4ToiletWoman1 = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -404,7 +509,10 @@ var f4all = new Konva.Rect({
   var f4ToiletMan1 = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textf4ToiletMan1 = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -415,7 +523,10 @@ var f4all = new Konva.Rect({
   var f4lift1 = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textf4lift1 = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -426,7 +537,10 @@ var f4all = new Konva.Rect({
   var f4lift2 = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textf4lift2 = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -437,7 +551,10 @@ var f4all = new Konva.Rect({
   var f4lift3 = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textf4lift3 = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -448,7 +565,10 @@ var f4all = new Konva.Rect({
   var f4lift4 = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textf4lift4 = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -457,108 +577,138 @@ var f4all = new Konva.Rect({
 	fill: 'white'
   });
   var staff = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textstaff = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F4A01 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF4A01 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F4A02 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF4A02 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F4A03 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF4A03 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F4A04 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF4A04 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F4A05 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF4A05 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F4A06 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF4A06 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F4A07 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF4A07 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F4A08 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF4A08 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var f4Toilet = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textf4Toilet = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -566,12 +716,36 @@ var f4all = new Konva.Rect({
 	text: '',
 	fill: 'white'
   });
-  
+  var F4doorfont = new Konva.Wedge({
+		radius: 70,
+		angle: 90,
+		fill: '#FFFF99',
+		stroke: 'black',
+		strokeWidth: 2,
+		rotation: -180,
+		shadowBlur: 10,
+		shadowOffset: [15, 15],
+		shadowOpacity: 0.9,
+	});
+
+	var F4doorExit = new Konva.Wedge({
+		x:-50,
+		y:-50,
+		radius: 40,
+		angle: 90,
+		fill: '#FFFF99',
+		stroke: 'black',
+		strokeWidth: 2,
+		rotation: -0,
+		shadowBlur: 10,
+		shadowOffset: [15, 15],
+		shadowOpacity: 0.9,
+	});
 //#endregion สร้างitemชั้น4
 
 //#region สร้างitemชั้น5
 var f5all = new Konva.Rect({
-	fill: 'white',
+	fill: '#FFDAB9',
 	stroke: 'black',
 	strokeWidth: 3
   });
@@ -584,7 +758,10 @@ var f5all = new Konva.Rect({
   var f5out = new Konva.Rect({
    fill: 'gray',
    stroke: 'black',
-   strokeWidth: 1
+   strokeWidth: 1,
+	 shadowBlur: 10,
+	 shadowOffset: [15, 15],
+	 shadowOpacity: 0.9,
   });
   var textf5out = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -595,7 +772,10 @@ var f5all = new Konva.Rect({
   var f5ToiletWoman1 = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textf5ToiletWoman1 = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -606,7 +786,10 @@ var f5all = new Konva.Rect({
   var f5ToiletMan1 = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textf5ToiletMan1 = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -617,7 +800,10 @@ var f5all = new Konva.Rect({
   var f5lift1 = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textf5lift1 = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -628,7 +814,10 @@ var f5all = new Konva.Rect({
   var f5lift2 = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textf5lift2 = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -639,7 +828,10 @@ var f5all = new Konva.Rect({
   var f5lift3 = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textf5lift3 = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -650,7 +842,10 @@ var f5all = new Konva.Rect({
   var f5lift4 = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textf5lift4 = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -659,109 +854,139 @@ var f5all = new Konva.Rect({
 	fill: 'white'
   });
   var F5A01 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF5A01 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
 	});
 	var testcenter = new Konva.Rect({
-		fill: '#6699FF',
+		fill: '#754a0e',
 		stroke: 'black',
-		strokeWidth: 1
+		strokeWidth: 1,
+		shadowBlur: 10,
+		shadowOffset: [15, 15],
+		shadowOpacity: 0.9,
 		});
 	var texttestcenter = new Konva.Text({
 		fontFamily: 'Calibri',
 		fontSize: 14,
 		text: '',
-		fill: 'black'
+		fill: 'white'
 		});
   var F5A03 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF5A03 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F5A04 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF5A04 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F5A05 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF5A05 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F5A06 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF5A06 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   
   var F5A08 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF5A08 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F5A09 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF5A09 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F5A10 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF5A10 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var f5Toilet = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textf5Toilet = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -769,12 +994,36 @@ var f5all = new Konva.Rect({
 	text: '',
 	fill: 'white'
   });
-  
+  var F5doorfont = new Konva.Wedge({
+		radius: 70,
+		angle: 90,
+		fill: '#FFFF99',
+		stroke: 'black',
+		strokeWidth: 2,
+		rotation: -180,
+		shadowBlur: 10,
+		shadowOffset: [15, 15],
+		shadowOpacity: 0.9,
+	});
+
+	var F5doorExit = new Konva.Wedge({
+		x:-50,
+		y:-50,
+		radius: 40,
+		angle: 90,
+		fill: '#FFFF99',
+		stroke: 'black',
+		strokeWidth: 2,
+		rotation: -0,
+		shadowBlur: 10,
+		shadowOffset: [15, 15],
+		shadowOpacity: 0.9,
+	});
 //#endregion สร้างitemชั้น5
 
 //#region สร้างitemชั้น6
 var f6all = new Konva.Rect({
-	fill: 'white',
+	fill: '#FFDAB9',
 	stroke: 'black',
 	strokeWidth: 3
   });
@@ -787,7 +1036,10 @@ var f6all = new Konva.Rect({
   var f6out = new Konva.Rect({
    fill: 'gray',
    stroke: 'black',
-   strokeWidth: 1
+   strokeWidth: 1,
+	 shadowBlur: 10,
+	 shadowOffset: [15, 15],
+	 shadowOpacity: 0.9,
   });
   var textf6out = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -798,7 +1050,10 @@ var f6all = new Konva.Rect({
   var f6ToiletWoman1 = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textf6ToiletWoman1 = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -809,7 +1064,10 @@ var f6all = new Konva.Rect({
   var f6ToiletMan1 = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textf6ToiletMan1 = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -820,7 +1078,10 @@ var f6all = new Konva.Rect({
   var f6lift1 = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textf6lift1 = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -831,7 +1092,10 @@ var f6all = new Konva.Rect({
   var f6lift2 = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textf6lift2 = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -842,7 +1106,10 @@ var f6all = new Konva.Rect({
   var f6lift3 = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textf6lift3 = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -853,7 +1120,10 @@ var f6all = new Konva.Rect({
   var f6lift4 = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textf6lift4 = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -862,164 +1132,209 @@ var f6all = new Konva.Rect({
 	fill: 'white'
   });
   var F6A01 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF6A01 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
 	});
 	var closeroom = new Konva.Rect({
-		fill: '#6699FF',
+		fill: '#754a0e',
 		stroke: 'black',
-		strokeWidth: 1
+		strokeWidth: 1,
+		shadowBlur: 10,
+		shadowOffset: [15, 15],
+		shadowOpacity: 0.9,
 		});
 	var textcloseroom = new Konva.Text({
 		fontFamily: 'Calibri',
 		fontSize: 14,
 		text: '',
-		fill: 'black'
+		fill: 'white'
 		});
 		var F6A02 = new Konva.Rect({
-			fill: '#6699FF',
+			fill: '#754a0e',
 			stroke: 'black',
-			strokeWidth: 1
+			strokeWidth: 1,
+			shadowBlur: 10,
+			shadowOffset: [15, 15],
+			shadowOpacity: 0.9,
 			});
 			var textF6A02 = new Konva.Text({
 			fontFamily: 'Calibri',
 			fontSize: 14,
 			text: '',
-			fill: 'black'
+			fill: 'white'
 			});
   var F6A03 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF6A03 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F6A04 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF6A04 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F6A05 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF6A05 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F6A06 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF6A06 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
 	var F6A07 = new Konva.Rect({
-		fill: '#6699FF',
+		fill: '#754a0e',
 		stroke: 'black',
-		strokeWidth: 1
+		strokeWidth: 1,
+		shadowBlur: 10,
+		shadowOffset: [15, 15],
+		shadowOpacity: 0.9,
 		});
 		var textF6A07 = new Konva.Text({
 		fontFamily: 'Calibri',
 		fontSize: 14,
 		text: '',
-		fill: 'black'
+		fill: 'white'
 		});
   var F6A08 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF6A08 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F6A09 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF6A09 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
   });
   var F6A10 = new Konva.Rect({
-	fill: '#6699FF',
+	fill: '#754a0e',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textF6A10 = new Konva.Text({
 	fontFamily: 'Calibri',
 	fontSize: 14,
 	text: '',
-	fill: 'black'
+	fill: 'white'
 	});
 	var F6A11 = new Konva.Rect({
-		fill: '#6699FF',
+		fill: '#754a0e',
 		stroke: 'black',
-		strokeWidth: 1
+		strokeWidth: 1,
+		shadowBlur: 10,
+		shadowOffset: [15, 15],
+		shadowOpacity: 0.9,
 		});
 		var textF6A11 = new Konva.Text({
 		fontFamily: 'Calibri',
 		fontSize: 14,
 		text: '',
-		fill: 'black'
+		fill: 'white'
 		});
 		var F6A12 = new Konva.Rect({
-			fill: '#6699FF',
+			fill: '#754a0e',
 			stroke: 'black',
-			strokeWidth: 1
+			strokeWidth: 1,
+			shadowBlur: 10,
+			shadowOffset: [15, 15],
+			shadowOpacity: 0.9,
 			});
 			var textF6A12 = new Konva.Text({
 			fontFamily: 'Calibri',
 			fontSize: 14,
 			text: '',
-			fill: 'black'
+			fill: 'white'
 			});
 
 			var F6A13 = new Konva.Rect({
-				fill: '#6699FF',
+				fill: '#754a0e',
 				stroke: 'black',
-				strokeWidth: 1
+				strokeWidth: 1,
+				shadowBlur: 10,
+				shadowOffset: [15, 15],
+				shadowOpacity: 0.9,
 				});
 				var textF6A13 = new Konva.Text({
 				fontFamily: 'Calibri',
 				fontSize: 14,
 				text: '',
-				fill: 'black'
+				fill: 'white'
 				});
   var f6Toilet = new Konva.Rect({
 	fill: 'black',
 	stroke: 'black',
-	strokeWidth: 1
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
   });
   var textf6Toilet = new Konva.Text({
 	fontFamily: 'Calibri',
@@ -1027,21 +1342,353 @@ var f6all = new Konva.Rect({
 	text: '',
 	fill: 'white'
   });
-  
+  var F6doorfont = new Konva.Wedge({
+		radius: 70,
+		angle: 90,
+		fill: '#FFFF99',
+		stroke: 'black',
+		strokeWidth: 2,
+		rotation: -180,
+		shadowBlur: 10,
+		shadowOffset: [15, 15],
+		shadowOpacity: 0.9,
+	});
+
+	var F6doorExit = new Konva.Wedge({
+		x:-50,
+		y:-50,
+		radius: 40,
+		angle: 90,
+		fill: '#FFFF99',
+		stroke: 'black',
+		strokeWidth: 2,
+		rotation: -0,
+		shadowBlur: 10,
+		shadowOffset: [15, 15],
+		shadowOpacity: 0.9,
+	});
 //#endregion สร้างitemชั้น6
+
+
+//#region สร้างitemชั้น7
+var f7all = new Konva.Rect({
+	fill: '#FFDAB9',
+	stroke: 'black',
+	strokeWidth: 3
+  });
+  var textf7all = new Konva.Text({
+	fontFamily: 'Calibri',
+	fontSize: 20,
+	text: '',
+	fill: 'black'
+  });
+  var f7out = new Konva.Rect({
+   fill: 'gray',
+   stroke: 'black',
+   strokeWidth: 1,
+	 shadowBlur: 10,
+	 shadowOffset: [15, 15],
+	 shadowOpacity: 0.9,
+  });
+  var textf7out = new Konva.Text({
+	fontFamily: 'Calibri',
+	fontSize: 20,
+	text: '',
+	fill: 'black'
+  });
+  var f7ToiletWoman1 = new Konva.Rect({
+	fill: 'black',
+	stroke: 'black',
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
+  });
+  var textf7ToiletWoman1 = new Konva.Text({
+	fontFamily: 'Calibri',
+	fontSize: 10,
+	text: '',
+	fill: 'white'
+  });
+  var f7ToiletMan1 = new Konva.Rect({
+	fill: 'black',
+	stroke: 'black',
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
+  });
+  var textf7ToiletMan1 = new Konva.Text({
+	fontFamily: 'Calibri',
+	fontSize: 10,
+	text: '',
+	fill: 'white'
+  });
+  var f7lift1 = new Konva.Rect({
+	fill: 'black',
+	stroke: 'black',
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
+  });
+  var textf7lift1 = new Konva.Text({
+	fontFamily: 'Calibri',
+	fontSize: 10,
+	text: '',
+	fill: 'white'
+  });
+  var f7lift2 = new Konva.Rect({
+	fill: 'black',
+	stroke: 'black',
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
+  });
+  var textf7lift2 = new Konva.Text({
+	fontFamily: 'Calibri',
+	fontSize: 10,
+	text: '',
+	fill: 'white'
+  });
+  var f7lift3 = new Konva.Rect({
+	fill: 'black',
+	stroke: 'black',
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
+  });
+  var textf7lift3 = new Konva.Text({
+	fontFamily: 'Calibri',
+	fontSize: 10,
+	text: '',
+	fill: 'white'
+  });
+  var f7lift4 = new Konva.Rect({
+	fill: 'black',
+	stroke: 'black',
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
+  });
+  var textf7lift4 = new Konva.Text({
+	fontFamily: 'Calibri',
+	fontSize: 10,
+	text: '',
+	fill: 'white'
+  });
+  var F7A01 = new Konva.Rect({
+	fill: '#754a0e',
+	stroke: 'black',
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
+  });
+  var textF7A01 = new Konva.Text({
+	fontFamily: 'Calibri',
+	fontSize: 14,
+	text: '',
+	fill: 'white'
+	});
+
+		var F7A02 = new Konva.Rect({
+			fill: '#754a0e',
+			stroke: 'black',
+			strokeWidth: 1,
+			shadowBlur: 10,
+			shadowOffset: [15, 15],
+			shadowOpacity: 0.9,
+			});
+			var textF7A02 = new Konva.Text({
+			fontFamily: 'Calibri',
+			fontSize: 14,
+			text: '',
+			fill: 'white'
+			});
+  var F7A03 = new Konva.Rect({
+	fill: '#754a0e',
+	stroke: 'black',
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
+  });
+  var textF7A03 = new Konva.Text({
+	fontFamily: 'Calibri',
+	fontSize: 14,
+	text: '',
+	fill: 'white'
+  });
+  var F7A04 = new Konva.Rect({
+	fill: '#754a0e',
+	stroke: 'black',
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
+  });
+  var textF7A04 = new Konva.Text({
+	fontFamily: 'Calibri',
+	fontSize: 14,
+	text: '',
+	fill: 'white'
+  });
+  var F7A05 = new Konva.Rect({
+	fill: '#754a0e',
+	stroke: 'black',
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
+  });
+  var textF7A05 = new Konva.Text({
+	fontFamily: 'Calibri',
+	fontSize: 14,
+	text: '',
+	fill: 'white'
+  });
+  var F7A06 = new Konva.Rect({
+	fill: '#754a0e',
+	stroke: 'black',
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
+  });
+  var textF7A06 = new Konva.Text({
+	fontFamily: 'Calibri',
+	fontSize: 14,
+	text: '',
+	fill: 'white'
+  });
+	var F7A07 = new Konva.Rect({
+		fill: '#754a0e',
+		stroke: 'black',
+		strokeWidth: 1,
+		shadowBlur: 10,
+		shadowOffset: [15, 15],
+		shadowOpacity: 0.9,
+		});
+		var textF7A07 = new Konva.Text({
+		fontFamily: 'Calibri',
+		fontSize: 14,
+		text: '',
+		fill: 'white'
+		});
+  var adminroom = new Konva.Rect({
+	fill: '#754a0e',
+	stroke: 'black',
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
+  });
+  var textAdminroom = new Konva.Text({
+	fontFamily: 'Calibri',
+	fontSize: 14,
+	text: '',
+	fill: 'white'
+  });
+  var teacherRoom = new Konva.Rect({
+	fill: '#754a0e',
+	stroke: 'black',
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
+  });
+  var textTeacherRoom = new Konva.Text({
+	fontFamily: 'Calibri',
+	fontSize: 14,
+	text: '',
+	fill: 'white'
+  });
+  var meetingRoom = new Konva.Rect({
+	fill: '#754a0e',
+	stroke: 'black',
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
+  });
+  var textMeetingRoom = new Konva.Text({
+	fontFamily: 'Calibri',
+	fontSize: 14,
+	text: '',
+	fill: 'white'
+	});
+	var mirrorRoom = new Konva.Rect({
+		fill: '#754a0e',
+		stroke: 'black',
+		strokeWidth: 1,
+		shadowBlur: 10,
+		shadowOffset: [15, 15],
+		shadowOpacity: 0.9,
+		});
+		var textMirrorRoom = new Konva.Text({
+		fontFamily: 'Calibri',
+		fontSize: 14,
+		text: '',
+		fill: 'white'
+		});
+	
+  var f7Toilet = new Konva.Rect({
+	fill: 'black',
+	stroke: 'black',
+	strokeWidth: 1,
+	shadowBlur: 10,
+	shadowOffset: [15, 15],
+	shadowOpacity: 0.9,
+  });
+  var textf7Toilet = new Konva.Text({
+	fontFamily: 'Calibri',
+	fontSize: 10,
+	text: '',
+	fill: 'white'
+  });
+  var F7doorfont = new Konva.Wedge({
+		radius: 70,
+		angle: 90,
+		fill: '#FFFF99',
+		stroke: 'black',
+		strokeWidth: 2,
+		rotation: -180,
+		shadowBlur: 10,
+		shadowOffset: [15, 15],
+		shadowOpacity: 0.9,
+	});
+
+	var F7doorExit = new Konva.Wedge({
+		x:-50,
+		y:-50,
+		radius: 40,
+		angle: 90,
+		fill: '#FFFF99',
+		stroke: 'black',
+		strokeWidth: 2,
+		rotation: -0,
+		shadowBlur: 10,
+		shadowOffset: [15, 15],
+		shadowOpacity: 0.9,
+	});
+//#endregion สร้างitemชั้น7
 //#endregion สร้างlayerและโครงสร้างitemทั้งหมดในstage
  
 //#region กำหนดhandleให้ชั้นต่างๆ
   floor3.on('mouseover touchstart', function () {
 	document.body.style.cursor = 'pointer';
 	writeMessage('Floor 3');
-	var fill = this.fill() == '#00FF99' ? '#6699FF' : '#00FF99';
+	var fill = this.fill() == '#00FF99' ? '#754a0e' : '#00FF99';
 	this.fill(fill);
 	layer.draw();
   });
   floor3.on('mouseout', function () {
 	document.body.style.cursor = 'default';
-	var fill = this.fill() == '#6699FF' ? '#00FF99' : '#6699FF';
+	var fill = this.fill() == '#754a0e' ? '#00FF99' : '#754a0e';
 	this.fill(fill);
 	layer.draw();
   });
@@ -1054,13 +1701,13 @@ var f6all = new Konva.Rect({
   floor4.on('mouseover touchstart', function () {
 	document.body.style.cursor = 'pointer';
 	writeMessage('Floor 4');
-	var fill = this.fill() == '#00FF99' ? '#6699FF' : '#00FF99';
+	var fill = this.fill() == '#00FF99' ? '#754a0e' : '#00FF99';
 	this.fill(fill);
 	layer.draw();
   });
   floor4.on('mouseout', function () {
 	document.body.style.cursor = 'default';
-	var fill = this.fill() == '#6699FF' ? '#00FF99' : '#6699FF';
+	var fill = this.fill() == '#754a0e' ? '#00FF99' : '#754a0e';
 	this.fill(fill);
 	layer.draw();
   });
@@ -1072,13 +1719,13 @@ var f6all = new Konva.Rect({
   floor5.on('mouseover touchstart', function () {
 	document.body.style.cursor = 'pointer';
 	writeMessage('Floor 5');
-	var fill = this.fill() == '#00FF99' ? '#6699FF' : '#00FF99';
+	var fill = this.fill() == '#00FF99' ? '#754a0e' : '#00FF99';
 	this.fill(fill);
 	layer.draw();
   });
   floor5.on('mouseout', function () {
 	document.body.style.cursor = 'default';
-	var fill = this.fill() == '#6699FF' ? '#00FF99' : '#6699FF';
+	var fill = this.fill() == '#754a0e' ? '#00FF99' : '#754a0e';
 	this.fill(fill);
 	layer.draw();
   });
@@ -1090,13 +1737,13 @@ var f6all = new Konva.Rect({
   floor6.on('mouseover touchstart', function () {
 	document.body.style.cursor = 'pointer';
 	writeMessage('Floor 6');
-	var fill = this.fill() == '#00FF99' ? '#6699FF' : '#00FF99';
+	var fill = this.fill() == '#00FF99' ? '#754a0e' : '#00FF99';
 	this.fill(fill);
 	layer.draw();
   });
   floor6.on('mouseout', function () {
 	document.body.style.cursor = 'default';
-	var fill = this.fill() == '#6699FF' ? '#00FF99' : '#6699FF';
+	var fill = this.fill() == '#754a0e' ? '#00FF99' : '#754a0e';
 	this.fill(fill);
 	layer.draw();
   });
@@ -1107,22 +1754,19 @@ var f6all = new Konva.Rect({
   floor7.on('mouseover touchstart', function () {
 	document.body.style.cursor = 'pointer';
 	writeMessage('Floor 7');
-	var fill = this.fill() == '#00FF99' ? '#6699FF' : '#00FF99';
+	var fill = this.fill() == '#00FF99' ? '#754a0e' : '#00FF99';
 	this.fill(fill);
 	layer.draw();
   });
   floor7.on('mouseout', function () {
 	document.body.style.cursor = 'default';
-	var fill = this.fill() == '#6699FF' ? '#00FF99' : '#6699FF';
+	var fill = this.fill() == '#754a0e' ? '#00FF99' : '#754a0e';
 	this.fill(fill);
 	layer.draw();
   });
   floor7.on('mousedown touchstart', function () {
 	document.body.style.cursor = 'pointer';
-	document.getElementById("tempFloor").value = "7";
-	var fill = this.fill() == '#00FF99' ? '#6699FF' : '#00FF99';
-	this.fill(fill);
-	layer.draw();
+	getMap7();
   });
   //#endregion กำหนดhandleให้ชั้นต่างๆ
 //#region additemเข้าไปในlayerและaddlayerเข้าstage  
@@ -1183,7 +1827,9 @@ var f6all = new Konva.Rect({
   layer.add(textf3lift1);
   layer.add(textf3lift2);
   layer.add(textf3lift3);
-  layer.add(textf3lift4);
+	layer.add(textf3lift4);
+	layer.add(F3doorfont);
+	layer.add(F3doorExit);
  //#endregion addชั้น3
 
  //#region addชั้น4
@@ -1224,7 +1870,9 @@ var f6all = new Konva.Rect({
   layer.add(textf4lift1);
   layer.add(textf4lift2);
   layer.add(textf4lift3);
-  layer.add(textf4lift4);
+	layer.add(textf4lift4);
+	layer.add(F4doorfont);
+	layer.add(F4doorExit);
  //#endregion addชั้น4
 
   //#region addชั้น5
@@ -1265,7 +1913,8 @@ var f6all = new Konva.Rect({
   layer.add(textf5lift2);
   layer.add(textf5lift3);
 	layer.add(textf5lift4);
-
+	layer.add(F5doorfont);
+	layer.add(F5doorExit);
  //#endregion addชั้น5
 
  //#region addชั้น6
@@ -1316,8 +1965,56 @@ var f6all = new Konva.Rect({
  layer.add(textf6lift2);
  layer.add(textf6lift3);
  layer.add(textf6lift4);
-
+ layer.add(F6doorfont);
+ layer.add(F6doorExit);
 //#endregion addชั้น6
+
+
+ //#region addชั้น7
+ layer.add(f7all);
+ layer.add(f7out);
+ layer.add(f7ToiletWoman1);
+ layer.add(f7ToiletMan1);
+ layer.add(f7lift1);
+ layer.add(f7lift2);
+ layer.add(f7lift3);
+ layer.add(f7lift4);
+ layer.add(F7A01);	
+ layer.add(F7A02);	
+ layer.add(F7A03);
+ layer.add(F7A04);
+ layer.add(F7A05);
+ layer.add(F7A06);
+ layer.add(F7A07);	
+ layer.add(adminroom);
+ layer.add(teacherRoom);
+ layer.add(meetingRoom);
+ layer.add(mirrorRoom);
+ layer.add(f7Toilet);
+
+ layer.add(textf7all);
+ layer.add(textf7out);
+ layer.add(textf7ToiletWoman1);
+ layer.add(textf7ToiletMan1);
+ layer.add(textF7A01);
+ layer.add(textF7A02);	
+ layer.add(textF7A03);
+ layer.add(textF7A04);
+ layer.add(textF7A05);
+ layer.add(textF7A06);
+ layer.add(textF7A07);
+ layer.add(textAdminroom);
+ layer.add(textTeacherRoom);
+ layer.add(textMeetingRoom);
+ layer.add(textMirrorRoom);
+ layer.add(textf7Toilet);
+ layer.add(textf7lift1);
+ layer.add(textf7lift2);
+ layer.add(textf7lift3);
+ layer.add(textf7lift4);
+ layer.add(F7doorfont);
+ layer.add(F7doorExit);
+//#endregion addชั้น7
   stage.add(layer);
 //#endregion additemเข้าไปในlayerและaddlayerเข้าstage  
 
@@ -1477,6 +2174,10 @@ function getMap3(){
 	textf3Toilet.text("ห้องน้ำพนักงาน");
 	textf3Toilet.x(0);
 	textf3Toilet.y(300);
+	F3doorfont.x(700);
+	F3doorfont.y(400);
+	F3doorExit.x(10);
+	F3doorExit.y(150);
 	layer.draw();
 		
   }
@@ -1623,7 +2324,15 @@ function getMap3(){
   });
   f3Toilet.on('mousedown touchstart', function () {
 	window.location.href='/search?room=ห้องน้ำเจ้าหน้าที่ชั้น3';
-  });
+	});
+	F3doorfont.on('mousedown mouseover touchstart', function () {
+		document.body.style.cursor = 'pointer';
+		writeMessage('Floor 3 ประตูหน้า');
+		});
+	F3doorExit.on('mousedown mouseover touchstart', function () {
+			document.body.style.cursor = 'pointer';
+			writeMessage('Floor 3 ประตูทางออก');
+			});
   
 //#endregion กำหนดhandleให้itemต่างๆในชั้น3  
 
@@ -1755,6 +2464,10 @@ function getMap4(){
 	textf4Toilet.text("ห้องน้ำพนักงาน");
 	textf4Toilet.x(0);
 	textf4Toilet.y(300);
+	F4doorfont.x(700);
+	F4doorfont.y(400);
+	F4doorExit.x(10);
+	F4doorExit.y(150);
 	layer.draw();
 		
 }
@@ -1876,7 +2589,15 @@ f4all.on('mouseover', function () {
   });
   f4Toilet.on('mousedown touchstart', function () {
 	window.location.href='/search?room=ห้องน้ำเจ้าหน้าที่ชั้น4';
-  });
+	});
+	F4doorfont.on('mousedown mouseover touchstart', function () {
+		document.body.style.cursor = 'pointer';
+		writeMessage('Floor 4 ประตูหน้า');
+		});
+	F4doorExit.on('mousedown mouseover touchstart', function () {
+			document.body.style.cursor = 'pointer';
+			writeMessage('Floor 4 ประตูทางออก');
+			});
 //#endregion กำหนดhandleให้itemต่างๆในชั้น4  
 
 //#region getMap5
@@ -1944,41 +2665,41 @@ function getMap5(){
 	textF5A01.text("5A01");
 	textF5A01.x(500);
 	textF5A01.y(150);
-	testcenter.width(100);
+	testcenter.width(80);
 	testcenter.height(150);
-	testcenter.x(400);
+	testcenter.x(420);
 	testcenter.y(150);
 	texttestcenter.text("test center");
-	texttestcenter.x(400);
+	texttestcenter.x(420);
 	texttestcenter.y(150);
 
-	F5A03.width(100);
+	F5A03.width(80);
 	F5A03.height(150);
-	F5A03.x(300);
+	F5A03.x(340);
 	F5A03.y(150);
 	textF5A03.text("5A03");
-	textF5A03.x(300);
+	textF5A03.x(340);
 	textF5A03.y(150);
-	F5A04.width(100);
+	F5A04.width(90);
 	F5A04.height(70);
-	F5A04.x(200);
+	F5A04.x(250);
 	F5A04.y(150);
 	textF5A04.text("5A04");
-	textF5A04.x(200);
+	textF5A04.x(250);
 	textF5A04.y(150);
 	F5A05.width(100);
 	F5A05.height(70);
-	F5A05.x(100);
+	F5A05.x(150);
 	F5A05.y(150);
 	textF5A05.text("5A05");
-	textF5A05.x(100);
+	textF5A05.x(150);
 	textF5A05.y(150);
 	F5A06.width(100);
 	F5A06.height(70);
-	F5A06.x(0);
+	F5A06.x(50);
 	F5A06.y(150);
 	textF5A06.text("5A06");
-	textF5A06.x(0);
+	textF5A06.x(50);
 	textF5A06.y(150);
 
 	F5A08.width(100);
@@ -2009,6 +2730,10 @@ function getMap5(){
 	textf5Toilet.text("ห้องน้ำพนักงาน");
 	textf5Toilet.x(0);
 	textf5Toilet.y(300);
+	F5doorfont.x(700);
+	F5doorfont.y(400);
+	F5doorExit.x(10);
+	F5doorExit.y(150);
 	layer.draw();
 		
 }
@@ -2129,7 +2854,15 @@ f5all.on('mouseover', function () {
   });
   f5Toilet.on('mousedown touchstart', function () {
 	window.location.href='/search?room=ห้องน้ำเจ้าหน้าที่ชั้น5';
-  });
+	});
+	F5doorfont.on('mousedown mouseover touchstart', function () {
+		document.body.style.cursor = 'pointer';
+		writeMessage('Floor 5 ประตูหน้า');
+		});
+	F5doorExit.on('mousedown mouseover touchstart', function () {
+			document.body.style.cursor = 'pointer';
+			writeMessage('Floor 5 ประตูทางออก');
+			});
 //#endregion กำหนดhandleให้itemต่างๆในชั้น5  
 
 
@@ -2248,47 +2981,47 @@ function getMap6(){
 	textF6A07.text("6A07");
 	textF6A07.x(210);
 	textF6A07.y(250);
-	F6A08.width(100);
+	F6A08.width(80);
 	F6A08.height(200);
-	F6A08.x(300);
+	F6A08.x(150);
 	F6A08.y(500);
 	textF6A08.text("6A08");
-	textF6A08.x(300);
+	textF6A08.x(150);
 	textF6A08.y(500);
-	F6A09.width(100);
-	F6A09.height(200);
-	F6A09.x(400);
+	F6A09.width(80);
+	F6A09.height(100);
+	F6A09.x(230);
 	F6A09.y(500);
 	textF6A09.text("6A09");
-	textF6A09.x(400);
+	textF6A09.x(230);
 	textF6A09.y(500);
-	F6A10.width(100);
-	F6A10.height(200);
-	F6A10.x(500);
-	F6A10.y(500);
+	F6A10.width(80);
+	F6A10.height(100);
+	F6A10.x(230);
+	F6A10.y(600);
 	textF6A10.text("6A10");
-	textF6A10.x(510);
-	textF6A10.y(500);
-	F6A11.width(100);
-	F6A11.height(200);
-	F6A11.x(500);
-	F6A11.y(500);
+	textF6A10.x(230);
+	textF6A10.y(600);
+	F6A11.width(80);
+	F6A11.height(100);
+	F6A11.x(400);
+	F6A11.y(600);
 	textF6A11.text("6A11");
-	textF6A11.x(510);
-	textF6A11.y(500);
-	F6A12.width(100);
-	F6A12.height(200);
-	F6A12.x(500);
+	textF6A11.x(400);
+	textF6A11.y(600);
+	F6A12.width(80);
+	F6A12.height(100);
+	F6A12.x(400);
 	F6A12.y(500);
 	textF6A12.text("6A12");
-	textF6A12.x(510);
+	textF6A12.x(400);
 	textF6A12.y(500);
-	F6A13.width(100);
+	F6A13.width(80);
 	F6A13.height(200);
-	F6A13.x(500);
+	F6A13.x(480);
 	F6A13.y(500);
 	textF6A13.text("6A13");
-	textF6A13.x(510);
+	textF6A13.x(480);
 	textF6A13.y(500);
 	f6Toilet.width(30);
 	f6Toilet.height(100);
@@ -2297,6 +3030,10 @@ function getMap6(){
 	textf6Toilet.text("ห้องน้ำพนักงาน");
 	textf6Toilet.x(0);
 	textf6Toilet.y(300);
+	F6doorfont.x(700);
+	F6doorfont.y(400);
+	F6doorExit.x(10);
+	F6doorExit.y(150);
 	layer.draw();
 		
 }
@@ -2452,8 +3189,310 @@ f6all.on('mouseover', function () {
   });
   f6Toilet.on('mousedown touchstart', function () {
 	window.location.href='/search?room=ห้องน้ำเจ้าหน้าที่ชั้น6';
-  });
+	});
+	F6doorfont.on('mousedown mouseover touchstart', function () {
+		document.body.style.cursor = 'pointer';
+		writeMessage('Floor 6 ประตูหน้า');
+		});
+	F6doorExit.on('mousedown mouseover touchstart', function () {
+			document.body.style.cursor = 'pointer';
+			writeMessage('Floor 6 ประตูทางออก');
+			});
 //#endregion กำหนดhandleให้itemต่างๆในชั้น6  
+
+
+//#region getMap7
+function getMap7(){
+	f7all.width(1000);
+	f7all.height(650);
+	f7all.x(0);
+	f7all.y(150);
+	textf7all.text("โถงทางเดินด้านในชั้น7");
+	textf7all.x(400);
+	textf7all.y(380);
+	f7out.x(700);
+	f7out.y(150);
+	f7out.width(300);
+	f7out.height(650);
+	textf7out.text("โถงทางเดินด้านนอกชั้น7");
+	textf7out.x(750);
+	textf7out.y(380);
+	f7ToiletWoman1.width(50);
+	f7ToiletWoman1.height(50);
+	f7ToiletWoman1.x(900);
+	f7ToiletWoman1.y(150);
+	textf7ToiletWoman1.text("ห้องน้ำหญิง");
+	textf7ToiletWoman1.x(900);
+	textf7ToiletWoman1.y(150);
+	f7ToiletMan1.width(50);
+	f7ToiletMan1.height(50);
+	f7ToiletMan1.x(750);
+	f7ToiletMan1.y(150);
+	textf7ToiletMan1.text("ห้องน้ำชาย");
+	textf7ToiletMan1.x(750);
+	textf7ToiletMan1.y(150);
+	f7lift1.width(50);
+	f7lift1.height(50);
+	f7lift1.x(700);
+	f7lift1.y(450);
+	textf7lift1.text("ลิฟท์");
+	textf7lift1.x(700);
+	textf7lift1.y(450);
+	f7lift2.width(50);
+	f7lift2.height(50);
+	f7lift2.x(950);
+	f7lift2.y(450);
+	textf7lift2.text("ลิฟท์");
+	textf7lift2.x(950);
+	textf7lift2.y(450);
+	f7lift3.width(50);
+	f7lift3.height(50);
+	f7lift3.x(950);
+	f7lift3.y(600);
+	textf7lift3.text("ลิฟท์");
+	textf7lift3.x(950);
+	textf7lift3.y(600);
+	f7lift4.width(50);
+	f7lift4.height(50);
+	f7lift4.x(700);
+	f7lift4.y(600);
+	textf7lift4.text("ลิฟท์");
+	textf7lift4.x(700);
+	textf7lift4.y(600);
+	F7A01.width(80);
+	F7A01.height(80);
+	F7A01.x(540);
+	F7A01.y(150);
+	textF7A01.text("7A01");
+	textF7A01.x(540);
+	textF7A01.y(150);
+	F7A02.width(80);
+	F7A02.height(120);
+	F7A02.x(460);
+	F7A02.y(150);
+	textF7A02.text("7A02");
+	textF7A02.x(460);
+	textF7A02.y(150);
+	F7A03.width(80);
+	F7A03.height(120);
+	F7A03.x(380);
+	F7A03.y(150);
+	textF7A03.text("7A03");
+	textF7A03.x(380);
+	textF7A03.y(150);
+	F7A04.width(80);
+	F7A04.height(120);
+	F7A04.x(300);
+	F7A04.y(150);
+	textF7A04.text("7A04");
+	textF7A04.x(300);
+	textF7A04.y(150);
+	F7A05.width(80);
+	F7A05.height(120);
+	F7A05.x(220);
+	F7A05.y(150);
+	textF7A05.text("7A05");
+	textF7A05.x(220);
+	textF7A05.y(150);
+	F7A06.width(80);
+	F7A06.height(120);
+	F7A06.x(140);
+	F7A06.y(150);
+	textF7A06.text("7A06");
+	textF7A06.x(140);
+	textF7A06.y(150);
+	F7A07.width(150);
+	F7A07.height(200);
+	F7A07.x(200);
+	F7A07.y(500);
+	textF7A07.text("7A07");
+	textF7A07.x(200);
+	textF7A07.y(500);
+	adminroom.width(80);
+	adminroom.height(80);
+	adminroom.x(620);
+	adminroom.y(150);
+	textAdminroom.text("ห้องadmin");
+	textAdminroom.x(620);
+	textAdminroom.y(150);
+	teacherRoom.width(100);
+	teacherRoom.height(200);
+	teacherRoom.x(430);
+	teacherRoom.y(500);
+	textTeacherRoom.text("ห้องอาจารย์");
+	textTeacherRoom.x(430);
+	textTeacherRoom.y(500);
+	meetingRoom.width(80);
+	meetingRoom.height(200);
+	meetingRoom.x(350);
+	meetingRoom.y(500);
+	textMeetingRoom.text("ห้องประชุม");
+	textMeetingRoom.x(350);
+	textMeetingRoom.y(500);
+	mirrorRoom.width(100);
+	mirrorRoom.height(200);
+	mirrorRoom.x(100);
+	mirrorRoom.y(500);
+	textMirrorRoom.text("ห้องกระจก");
+	textMirrorRoom.x(100);
+	textMirrorRoom.y(500);
+	f7Toilet.width(30);
+	f7Toilet.height(100);
+	f7Toilet.x(0);
+	f7Toilet.y(300);
+	textf7Toilet.text("ห้องน้ำพนักงาน");
+	textf7Toilet.x(0);
+	textf7Toilet.y(300);
+	F7doorfont.x(700);
+	F7doorfont.y(400);
+	F7doorExit.x(10);
+	F7doorExit.y(150);
+	layer.draw();
+		
+}
+//#endregion getMap7
+
+//#region กำหนดhandleให้itemต่างๆในชั้น6
+f7all.on('mouseover', function () {
+	document.body.style.cursor = 'pointer';
+	writeMessage('Floor 7 โถงทางเดินด้านใน');
+  });
+  f7all.on('mousedown touchstart', function () {
+	window.location.href='/search?room=โถงทางเดินด้านในชั้น7'
+  });
+  f7out.on('mouseover', function () {
+	document.body.style.cursor = 'pointer';
+	writeMessage('Floor 7 โถงทางเดินด้านนอก');
+  });
+  f7out.on('mousedown touchstart', function () {
+	window.location.href='/search?room=โถงทางเดินด้านนอกชั้น7'
+  });
+  f7ToiletWoman1.on('mouseover', function () {
+	document.body.style.cursor = 'pointer';
+	writeMessage('Floor 7 ห้องน้ำหญิงด้านนอก');
+  });
+  f7ToiletWoman1.on('mousedown touchstart', function () {
+	window.location.href='/search?room=ห้องน้ำหญิงด้านนอกชั้น7'
+  });
+  f7ToiletMan1.on('mouseover', function () {
+	document.body.style.cursor = 'pointer';
+	writeMessage('Floor 7 ห้องน้ำชายด้านนอก');
+  });
+  f7ToiletMan1.on('mousedown touchstart', function () {
+	window.location.href='/search?room=ห้องน้ำชายด้านนอกชั้น7'
+  });
+  f7lift1.on('mousedown mouseover touchstart', function () {
+	document.body.style.cursor = 'pointer';
+	writeMessage('Floor 7 ลิฟท์');
+  });
+  f7lift2.on('mousedown mouseover touchstart', function () {
+	document.body.style.cursor = 'pointer';
+	writeMessage('Floor 7 ลิฟท์');
+  });
+  f7lift3.on('mousedown mouseover touchstart', function () {
+	document.body.style.cursor = 'pointer';
+	writeMessage('Floor 7 ลิฟท์');
+  });
+  f7lift4.on('mousedown mouseover touchstart', function () {
+	document.body.style.cursor = 'pointer';
+	writeMessage('Floor 7 ลิฟท์');
+  });
+  F7A01.on('mouseover', function () {
+	document.body.style.cursor = 'pointer';
+	writeMessage('Floor 7 ห้อง 7A01');
+  });
+  F7A01.on('mousedown touchstart', function () {
+	window.location.href='/search?room=7A01';
+	});
+	F7A02.on('mouseover', function () {
+		document.body.style.cursor = 'pointer';
+		writeMessage('Floor 7 ห้อง 7A02');
+		});
+		F7A02.on('mousedown touchstart', function () {
+		window.location.href='/search?room=7A02';
+		});
+  F7A03.on(' mouseover ', function () {
+	document.body.style.cursor = 'pointer';
+	writeMessage('Floor 7 ห้อง 7A03');
+  });
+  F7A03.on('mousedown touchstart', function () {
+	window.location.href='/search?room=7A03';
+  });
+  F7A04.on(' mouseover ', function () {
+	document.body.style.cursor = 'pointer';
+	writeMessage('Floor 7 ห้อง 7A04');
+  });
+  F7A04.on('mousedown touchstart', function () {
+	window.location.href='/search?room=7A04';
+  });
+  F7A05.on('mouseover', function () {
+	document.body.style.cursor = 'pointer';
+	writeMessage('Floor 7 ห้อง 7A05');
+  });
+  F7A05.on('mousedown touchstart', function () {
+	window.location.href='/search?room=7A05';
+  });
+  F7A06.on('mouseover', function () {
+	document.body.style.cursor = 'pointer';
+	writeMessage('Floor 7 ห้อง 7A06');
+  });
+  F7A06.on('mousedown touchstart', function () {
+	window.location.href='/search?room=7A06';
+	});
+	F7A07.on('mouseover', function () {
+		document.body.style.cursor = 'pointer';
+		writeMessage('Floor 7 ห้อง 7A07');
+		});
+		F7A07.on('mousedown touchstart', function () {
+		window.location.href='/search?room=7A07';
+		});
+
+  adminroom.on('mouseover', function () {
+	document.body.style.cursor = 'pointer';
+	writeMessage('Floor 7 ห้อง admin');
+  });
+  adminroom.on('mousedown touchstart', function () {
+	window.location.href='/search?room=ห้องadminชั้น7';
+  });
+  teacherRoom.on('mouseover', function () {
+	document.body.style.cursor = 'pointer';
+	writeMessage('Floor 7 ห้องอาจารย์');
+  });
+  teacherRoom.on('mousedown touchstart', function () {
+	window.location.href='/search?room=ห้องอาจารย์ชั้น7';
+  });
+  meetingRoom.on('mouseover', function () {
+	document.body.style.cursor = 'pointer';
+	writeMessage('Floor 7 ห้องประชุม');
+  });
+  meetingRoom.on('mousedown touchstart', function () {
+	window.location.href='/search?room=ห้องประชุมชั้น7';
+  });
+	mirrorRoom.on('mouseover', function () {
+		document.body.style.cursor = 'pointer';
+		writeMessage('Floor 7 ห้องกระจก');
+		});
+		mirrorRoom.on('mousedown touchstart', function () {
+		window.location.href='/search?room=ห้องกระจกชั้น7';
+		});
+		
+  f7Toilet.on('mouseover', function () {
+	document.body.style.cursor = 'pointer';
+	writeMessage('Floor 7 ห้องน้ำเจ้าหน้าที่');
+  });
+  f7Toilet.on('mousedown touchstart', function () {
+	window.location.href='/search?room=ห้องน้ำเจ้าหน้าที่ชั้น7';
+	});
+	F7doorfont.on('mousedown mouseover touchstart', function () {
+		document.body.style.cursor = 'pointer';
+		writeMessage('Floor 7 ประตูหน้า');
+		});
+	F7doorExit.on('mousedown mouseover touchstart', function () {
+			document.body.style.cursor = 'pointer';
+			writeMessage('Floor 7 ประตูทางออก');
+			});
+//#endregion กำหนดhandleให้itemต่างๆในชั้น6  
+
 
 
 //#region ทำresponsive

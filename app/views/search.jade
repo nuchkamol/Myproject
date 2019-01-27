@@ -29,7 +29,6 @@ html( class="no-js")
                     });
                 });
 
-              
             });
                $( window ).on( "load", function() {
                     var url_string  = window.location.href;  
@@ -43,7 +42,7 @@ html( class="no-js")
                     });
                
                 });
-             
+                         
     body
         
             div#main-wrapper
@@ -66,21 +65,27 @@ html( class="no-js")
                                 div.col-xs-4.col-sm-4.col-md-4.col-lg-4 
                                     input.form-control#myInput.input-xs( type="text" placeholder="Search..")
  
-                    table#tbmaterial.tbUser.table.table-striped.table-bordered.table-sm(cellspacing="0" width="100%" data-show-header="true" data-pagination="true"
+                    table#tbmaterial.tb.table.table-striped.table-bordered.table-sm(cellspacing="0" width="100%" data-show-header="true" data-pagination="true"
            data-id-field="name"
            data-page-list="[5, 10, 25, 50, 100, ALL]"
            data-page-size="5")
                                 thead
-                                    tr.header
+                                    tr.header(style="background-color:#8e7863;color:white;")
+                                        td(style="font-weight: bold;") วันที่อัพเดท
                                         td(style="font-weight: bold;") ชื่อครุภัณฑ์
                                         td(style="font-weight: bold;") รูปภาพ
                                         td(style="font-weight: bold;") บาร์โคด
                                         td(style="font-weight: bold;") หมายเลขครุภัณฑ์
                                         td(style="font-weight: bold;") ตำแหน่ง
-                                        td(style="font-weight: bold;") จัดการ
+                                        if(role=='general')
+                                            td(style="font-weight: bold;text-align:center;") จัดการ
+                                        else
+                                            td(style="font-weight: bold;text-align:center;" colspan="2") จัดการ
+                                       
                                 tbody
                                    - each item in rows
                                         tr
+                                            td= item.updateDate.toDateString()
                                             td= item.nameobject
                                             td(style="width:15%") 
                                                 img.picintb(src='data:image/jpg;base64,'+item.imageobject.data style="width:100%;display: block;"  class="img-responsive")
@@ -89,20 +94,30 @@ html( class="no-js")
                                             
                                             td= item.materialid
                                             td= item.location
-                                            td 
-                                                div(style="display:inline;")
-                                                    a.btn.btn-warning.btn-xs.btnEditDelete(type='submit' style="float:left;" href="/editUser/"+item._id  )
-                                                        i.fa.fa-pencil-square-o  แก้ไข
-                                                 form(name="deleteUser" , method="POST" , action="/deleteUser") 
-                                                    input(type="text",name="id",value=item._id style="display:none;") 
-                                                    button.btn.btn-danger.btn-xs.btnEditDelete(type='submit' style="float:left; margin-left:10px;" onClick="return confirm('Are you sure you want to delete " + item.fullName + "?')") 
-                                                        i.fa.fa-trash-o  ลบ
+
+                                            if(role=='general')
+                                                td 
+                                                    div(style="display:inline;")
+                                                        a.btn.btn-warning.btn-xs.btnEditDelete(type='submit' style="float:left;" href="/detail/"+item._id  )
+                                                            i.fa.fa-pencil-square-o  แก้ไข
+                                            else
+                                                td 
+                                                    div(style="display:inline;")
+                                                        a.btn.btn-warning.btn-xs.btnEditDelete(type='submit' style="float:left;" href="/detail/"+item._id  )
+                                                            i.fa.fa-pencil-square-o  แก้ไข
+                                            
+                                                td
+                                                    form(name="deleteMat" , method="POST" , action="/deleteMat") 
+                                                        input(type="text",name="id",value=item._id style="display:none;") 
+                                                        button.btn.btn-danger.btn-xs.btnEditDelete(type='submit' style="float:left; margin-left:10px;" onClick="return confirm('Are you sure you want to delete " + item.materialid + "?')") 
+                                                            i.fa.fa-trash-o  ลบ
                                                       
             script(src='templateInside/js/jquery.min.js')
-            script(src='templateInside/js/jquery.backstretch.min.js')
-            script(src='templateInside/js/jquery.flexslider.min.js')
-            script(src='templateInside/js/bootstrap.min.js')
-            script(src='templateInside/js/templatemo_script.js')
+            //- script(src='templateInside/js/jquery.backstretch.min.js')
+            //- script(src='templateInside/js/jquery.flexslider.min.js')
+            //- script(src='templateInside/js/bootstrap.min.js')
+            script(src='bootstrap/dist/js/bootstrap.js')
+            //- script(src='templateInside/js/templatemo_script.js')
    
            
 //- if username

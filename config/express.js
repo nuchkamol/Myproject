@@ -1,4 +1,6 @@
 var express = require('express');
+const fs = require('fs');
+
 var morgan = require('morgan');
 var compression = require('compression');
 var bodyParser = require('body-parser');
@@ -9,7 +11,7 @@ var config = require('./config');
 const expressip = require('express-ip');
 const PORT = process.env.PORT || 7000;
 const path = require('path');
-
+const directoryToServe = 'client';
 // const requestIp = require('request-ip');
 
 module.exports = function(){
@@ -35,6 +37,7 @@ module.exports = function(){
     app.use(passport.initialize());
     app.use(passport.session());
     app.use(expressip().getIpInfoMiddleware);
+    app.use('/' , express.static(path.join(__dirname,'..',directoryToServe)))
     app.set("PORT", PORT);
     // app.use(multer({dest:'./upload/'}).single('singleInputFileName'));
     // app.use(requestIp.mw())

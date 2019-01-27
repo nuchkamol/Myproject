@@ -131,9 +131,6 @@ exports.deleteUser = function(req,res){
             // redirect to users list page
             res.redirect('/manageUser')
         } else {
-            alert('success User deleted successfully! ');
-            //req.flash('success', 'User deleted successfully! name : ' + req.params.fullName)
-            // redirect to users list page
             res.redirect('/manageUser')
         }
     })    

@@ -1,0 +1,112 @@
+doctype html
+html( class="no-js")  
+    head
+        title= title
+       
+
+        link(href='../css/main.css', rel='stylesheet')
+        //-    //- link(href='/css/all.css', rel='stylesheet') 
+        //-   <meta charset="utf-8">
+        //- //- <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+        meta( name='keywords', content='' ) 
+        meta( name='description', content='' ) 
+        
+        //- <!--    Authentic Template   http://www.templatemo.com/tm-412-authentic    -->
+        meta( name='viewport', content='width=device-width' ) 
+        link(rel='stylesheet', type='text/css', href='../templateInside/css/templatemo_main.css') 
+        style.
+            .vertical-align {
+                display: flex;
+                align-items: center;
+            }
+    body
+        div#main-wrapper
+                div.container
+                    if(role=='general')
+                        include ./templateGeneral
+                    else
+                        include ./templateAdmin
+                    div.pagename Detail Material
+            
+         form(name='detail' , method='POST' , action='/detail') 
+           
+            .container
+                div.row.vertical-align
+                    .col-xs-2.col-sm-2.col-md-2.col-lg-2
+                    .col-xs-4.col-sm-4.col-md-4.col-lg-4
+                        img.picintb(src='data:image/jpg;base64,'+imgbarcode style="width:100%;display: block;"  class="img-responsive")
+                    .input-group.col-xs-4.col-sm-4.col-md-4.col-lg-4
+                        img.picintb(src='data:image/jpg;base64,'+imgobject style="width:100%;display: block;"  class="img-responsive")
+                    .col-xs-2.col-sm-2.col-md-2.col-lg-2
+                div.row
+                    .col-xs-2.col-sm-2.col-md-2.col-lg-2
+                    .input-group.col-xs-8.col-sm-8.col-md-8.col-lg-8
+                        .input-group-prepend
+                            span.input-group-text หมายเลขครุภัณฑ์
+                          input.form-control(placeholder="material id" type='text' name="materialid"  width="200px" value=txt_materialID  style="pointer-events:none;background-color:#DCDCDC;")
+                    .col-xs-2.col-sm-2.col-md-2.col-lg-2
+                    .input-group.col-xs-8.col-sm-8.col-md-8.col-lg-8
+                        .input-group-prepend
+                            span.input-group-text ชื่อครุภัณฑ์
+                        input.form-control(placeholder="object name" type='text' name="nameobject"  width="200px" value=txt_objectname style="pointer-events:none;background-color:#DCDCDC;" )
+                    .col-xs-2.col-sm-2.col-md-2.col-lg-2
+                    .input-group.col-xs-8.col-sm-8.col-md-8.col-lg-8
+                        .input-group-prepend
+                            span.input-group-text ชื่อผู้เบิก
+                        input.form-control(placeholder="person name" name="nameuser"  width="200px"  value=txt_personname style="pointer-events:none;background-color:#DCDCDC;" )
+                    .col-xs-2.col-sm-2.col-md-2.col-lg-2
+                    .input-group.col-xs-8.col-sm-8.col-md-8.col-lg-8
+                        .input-group-prepend
+                            span.input-group-text วันที่
+                        input.form-control(placeholder="date" name="txt_datetime"  width="200px"  value=txt_datetime.toDateString() disabled='disabled' )
+                    .col-xs-2.col-sm-2.col-md-2.col-lg-2
+                    .input-group.col-xs-8.col-sm-8.col-md-8.col-lg-8
+                        .input-group-prepend
+                            span.input-group-text ราคา
+                        input.form-control(placeholder="price" name="price"  width="200px"  value=txt_price style="pointer-events:none;background-color:#DCDCDC;")
+                    .col-xs-2.col-sm-2.col-md-2.col-lg-2
+                    .input-group.col-xs-8.col-sm-8.col-md-8.col-lg-8
+                        .input-group-prepend
+                            span.input-group-text ตำแหน่งครุภัณฑ์
+                        input.form-control(placeholder="location" name="location"  width="200px"  value=txt_location )
+                    .col-xs-2.col-sm-2.col-md-2.col-lg-2
+                    .input-group.col-xs-8.col-sm-8.col-md-8.col-lg-8
+                        .input-group-prepend
+                            span.input-group-text สถานะ
+                        select.form-control( name="status"  width="200px" )
+                          if(ddlStatus=='ปกติ')
+                             option(value='ปกติ' selected) ปกติ
+                             option(value='ยืม' ) ยืม
+                             option(value='จำหน่าย' ) จำหน่าย
+                          else if(ddlStatus=='ยืม')                     
+                             option(value='ปกติ' ) ปกติ
+                             option(value='ยืม' selected) ยืม
+                             option(value='จำหน่าย' ) จำหน่าย
+                          else if(ddlStatus=='จำหน่าย')                     
+                             option(value='ปกติ' ) ปกติ
+                             option(value='ยืม') ยืม
+                             option(value='จำหน่าย' selected ) จำหน่าย
+                    .col-xs-2.col-sm-2.col-md-2.col-lg-2
+
+                    .input-group.col-xs-8.col-sm-8.col-md-8.col-lg-8
+                        .input-group-prepend
+                            span.input-group-text รายละเอียด
+                        textarea.form-control(placeholder="detail" rows="4" cols="50" width="200px" name="detail" )=txt_detail
+                    .col-xs-2.col-sm-2.col-md-2.col-lg-2
+                        input( name="admin"  type="text" value=admin style="display:none;" )
+                        input( name="ip" id="ip" type="text" value=ipClient style="display:none;"  )
+                        input( name="ua"  type="text" value=ua style="display:none;"  )
+                        input( name="_id"  type="text" value=id style="display:none;"  )
+
+                    br 
+                    input.btn.btn-primary.btn-block(type="submit"  value="Save" style="width:150px; margin:auto;"  )
+                    br 
+                    each msg in messages   
+                        .flash
+                            = msg
+                
+                script(src='../templateInside/js/jquery.min.js')
+                script(src='../templateInside/js/jquery.backstretch.min.js')
+                script(src='../templateInside/js/jquery.flexslider.min.js')
+                script(src='../templateInside/js/bootstrap.min.js')
+                script(src='../templateInside/js/templatemo_script.js')
