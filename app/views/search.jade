@@ -22,25 +22,52 @@ html( class="no-js")
         script(src='bootstrap/dist/js/dataTables.bootstrap.min.js')
         script.
             $(document).ready(function(){
+                var t = ''; 
+                var flag = false;
                 $("#myInput").on("keyup", function() {
-                    var value = $(this).val().toLowerCase();
-                    $("#tbmaterial tr").filter(function() {
-                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                    });
+                 
+                   $("#tbmaterial").show().fadeIn(function(){
+                       
+                       flag = true;
+                   })
+                  
+                    if(flag){  
+                         $("#imgbg").hide();
+                        var value = $(this).val().toLowerCase();
+                        if(value!=""){
+                           $("#tbmaterial tr").filter(function() {
+                                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)  
+                            });
+                        }else{
+                             $("#tbmaterial").hide();
+                               $("#imgbg").show();
+                        }
+                    }
+                  
                 });
+
+               
 
             });
                $( window ).on( "load", function() {
                     var url_string  = window.location.href;  
-                    const urlParams = new URLSearchParams(window.location.search);
-                    const myParam = urlParams.get('room');
-                   
                   
-                    var value = myParam.toLowerCase();
-                    $("#tbmaterial tr").filter(function() {
-                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                    });
-               
+                    if(url_string.indexOf("room") > -1){
+                        $("#tbmaterial").show();
+                         $("#imgbg").hide();
+                        const urlParams = new URLSearchParams(window.location.search);
+                        const myParam = urlParams.get('room');
+                        var value = myParam.toLowerCase();  
+                        $("#tbmaterial tr").filter(function() {
+                 
+                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                        });
+                    } else{
+                        flag = false;
+                        $("#tbmaterial").hide();
+                        $("#imgbg").show();
+                    }
+
                 });
                          
     body
@@ -63,8 +90,8 @@ html( class="no-js")
                                 div.col-xs-8.col-sm-8.col-md-8.col-lg-8
                                
                                 div.col-xs-4.col-sm-4.col-md-4.col-lg-4 
-                                    input.form-control#myInput.input-xs( type="text" placeholder="Search..")
- 
+                                    input.form-control#myInput.input-xs( type="text" placeholder="Search.." name="btnsearch")
+                    div#imgbg.col-xs-12.col-sm-12.col-md-12.col-lg-12(style="background-image:url('img/aaa.jpg');margin-top:20px;width:100% ;background-size: cover;")
                     table#tbmaterial.tb.table.table-striped.table-bordered.table-sm(cellspacing="0" width="100%" data-show-header="true" data-pagination="true"
            data-id-field="name"
            data-page-list="[5, 10, 25, 50, 100, ALL]"
@@ -89,7 +116,7 @@ html( class="no-js")
                                             td= item.nameobject
                                             td(style="width:15%") 
                                                 img.picintb(src='data:image/jpg;base64,'+item.imageobject.data style="width:100%;display: block;"  class="img-responsive")
-                                            td(style="width:15%") 
+                                            td(style="width:15%")=item.textbarcode
                                                 img.picintb(src='data:image/jpg;base64,'+item.imagebarcode.data style="width:100%;display: block;"  class="img-responsive")
                                             
                                             td= item.materialid

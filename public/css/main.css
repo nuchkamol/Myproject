@@ -89,7 +89,9 @@ h3{
   .tb{
     font-size: 1.3em;
   }
-
+  #imgbg{
+    height: 800px;
+}
 
 /* ipad */
   @media only screen and (max-width: 1200px) {
@@ -129,7 +131,9 @@ h3{
       vertical-align:bottom;
       width:150px;
     }
-   
+    #imgbg{
+        height: 900px;
+    }
     }
 
     @media only screen and (max-width: 1000px) {
@@ -168,7 +172,9 @@ h3{
           vertical-align:bottom;
           width:100px;
         }
-    
+        #imgbg{
+            height: 900px;
+        }
         }
 
   @media only screen and (max-width: 800px) {
@@ -212,7 +218,9 @@ h3{
       vertical-align:bottom;
       width:100px;
     }
-  
+    #imgbg{
+        height: 600px;
+    }
     }
 @media only screen and (max-width: 500px) {
     .tb{
@@ -252,7 +260,9 @@ h3{
     vertical-align:bottom;
     width:50px;
   }
-  
+  #imgbg{
+    height: 350px;
+}
     }
   
       
@@ -301,7 +311,9 @@ h3{
           vertical-align:bottom;
           width:50px;
         }
-       
+        #imgbg{
+            height: 300px;
+        }
         }
       
         @media only screen and (max-width: 360px) {
@@ -348,7 +360,9 @@ h3{
 
             }
     
-            
+            #imgbg{
+                height: 300px;
+            }
             }
           @media only screen and (max-width: 320px) {
             .tb{
@@ -401,5 +415,7 @@ h3{
               vertical-align:bottom;
               width:50px;
             }
-          
+            #imgbg{
+                height: 250px;
+            }
             }

@@ -11,7 +11,7 @@ var UserSchema = new Schema({
     position: String,
     mobileNo: String,
     lineId: String,
-    email: String,
+    email: { type:String, unique:true},
     role: String,
     createDate: String,
     updateDate: String,

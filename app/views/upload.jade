@@ -14,7 +14,77 @@ html( class="no-js")
         //- <!--    Authentic Template   http://www.templatemo.com/tm-412-authentic    -->
         meta( name='viewport', content='width=device-width' ) 
         link(rel='stylesheet', type='text/css', href='../templateInside/css/templatemo_main.css') 
+        script(src="scan/jquery-1.9.0.min.js" type="text/javascript")
+        script(src="scan/quagga.js" type="text/javascript")
+        script(src="scan/file_input.js" type="text/javascript")
+        script.
+            $(function() {
+                var urlimg = [];
+                var temp = [];
+                document.getElementById("decodetext").value = temp;
+                const sleep = m => new Promise(r => setTimeout(r, m))
+                $('#barcodeFile').change( function(event) {    
+                                //var tmppath = URL.createObjectURL();
+                             decode();
+                                
+                });
 
+            async function decode(){
+                    var input = $("#barcodeFile");
+                              
+                                var tmpImgURL = "";
+                                var decode = "";
+                                if (input[0].files && input[0].files.length) {
+                                            quagga();           
+                              
+                                }else{
+                                    alert("ไม่มีไฟล์");
+                                }         
+
+                             
+                }
+            var i = 0;                     //  set your counter to 1
+
+              
+            function quagga(){
+                var input = $("#barcodeFile");
+                tmpImgURL = URL.createObjectURL(input[0].files[i]);
+                setTimeout(function () {  
+                 Quagga.decodeSingle({
+                                            src: tmpImgURL,// The image doesn't seem matter, I used a sample image from the repo
+                                            numOfWorkers: 0,  // Needs to be 0 when used within node
+                                            inputStream: {
+                                                size: 800  // restrict input-size to be 800px in width (long-side)
+                                            },
+                                            decoder: {
+                                                readers: ["upc_reader", "code_128_reader", "code_39_reader", "code_39_vin_reader", "ean_8_reader", "ean_reader", "upc_e_reader", "codabar_reader"]
+                                            },
+                                            }, function(result) {
+                                                if(result && result.codeResult && result.codeResult.code)
+                                                {
+                                                    temp.push( result.codeResult.code + "|" + input[0].files[i-1].name+ "\n");    
+                                                    document.getElementById("decodetext").value = temp ;
+                                                    console.log( result.codeResult.code);
+                                                                //- $("#codeResult").text('Code - '+result.codeResult.code);
+                                                }else{
+                                                    temp.push( "unable to read"+ "|" + input[0].files[i-1].name + "\n" );     
+                                                    document.getElementById("decodetext").value = temp ;
+                                                    console.log( "unable to read");
+                                                                //- $("#codeResult").text("unable to read");
+                                                }
+                                        }); 
+
+                                        i++;   
+                                        if (i < input[0].files.length) {            //  if the counter < 10, call the loop function
+                                           quagga();             //  ..  again which will trigger another 
+                                        }     
+                        }, 1000)
+                      
+                         
+            }                    
+            });
+
+        
     body
         div#main-wrapper
                 div.container
@@ -70,11 +140,13 @@ html( class="no-js")
                             i.fa.fa-barcode   Upload Barcode
                         div.panel-body
                            form(name='Upload' , method='POST' , action='/uploadBarcode' enctype="multipart/form-data") 
-                           
-                            input( type="file" name="txtFolderBarcode" style="width:150px; margin:auto;" webkitdirectory directory multiple)
+
+                            input#barcodeFile( type="file" name="txtFolderBarcode" style="width:150px; margin:auto;" webkitdirectory directory multiple)
+                            textarea.form-control#decodetext(type="text" rows="4" cols="50" style="width:600px" name="decodetext")
+                          
                             br 
                             br 
-                            input.btn.btn-default.btn-block(type="submit"  value="Upload" style="width:150px; margin:auto;"  )
+                            input.btn.btn-default.btn-block#startDecode(type="submit"  value="Upload" style="width:150px; margin:auto;"  )
                             br 
                             br 
                     .col-xs-3.col-sm-3.col-md-3.col-lg-3

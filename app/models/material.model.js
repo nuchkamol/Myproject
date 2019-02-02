@@ -5,6 +5,7 @@ var Schema = mongoose.Schema;
 var UserSchema = new Schema({
     materialid: { type:String, unique:true},
     imagebarcode:{ data: Buffer, contentType: String },
+    textbarcode:String,
     nameobject: String,
     imageobject: { data: Buffer, contentType: String },
     nameuser: String,

@@ -1,7 +1,8 @@
 var User = require('mongoose').model('User');
 var users = require('../models/user.model');
 var alert = require('alert-node');
-
+var nodemailer = require('nodemailer');
+var smtpTransport = require('nodemailer-smtp-transport');
 
 var getErrorMessage = function(err){
     var message = '';
@@ -22,6 +23,15 @@ var getErrorMessage = function(err){
         }
     }
     return message;
+}
+
+exports.renderForgot = function(req,res){
+   
+        res.render('forgotpassword' , {
+           'title' : "ระบบจัดการครุภัณฑ์" ,
+            messages: req.flash('error') || req.flash('info')          
+       });
+   
 }
 
 exports.renderLogin = function(req,res){
@@ -179,6 +189,85 @@ exports.login = function(req,res){
                 }else{
                     res.render('index' , {
                         messages: 'Invalid username'
+                    });
+
+                }
+            }
+        });
+           
+}
+
+exports.forgot = function(req,res){
+
+    var user = new User(req.body);
+    
+        User.findOne({email:req.body.email},function(err,user){
+            if(!user){
+                res.render('forgotpassword' , {
+                    'title' : "ระบบจัดการครุภัณฑ์" ,
+                     messages: 'ไม่มี email นี้ในระบบ'
+                });
+            }else{
+                if(req.body.email == user.email){
+                    process.nextTick(function() {
+                        var passhash = users.decrypt(user.passWord, user.salt);
+                        console.log('passhash : ' + passhash);
+
+                        var transporter = nodemailer.createTransport(smtpTransport ({ tls: { },
+                            host: '',
+                            secureConnection: false,
+                            port: 587,
+                            auth: {
+                            user: 'nuchkamol@gmail.com',
+                            pass: 'happyandgoodlife'
+                            }
+                            }));
+
+                        var transporter = nodemailer.createTransport({
+                            service: 'gmail',
+                            auth: {
+                              user: 'nuchkamol@gmail.com',
+                              pass: 'happyandgoodlife'
+                            },
+                            debug: true
+                          });
+                        
+                          
+                          var mailOptions = {
+                            from: 'nuchkamol@gmail.com',
+                            to:user.email,
+                            subject: 'ระบบจัดการครุภัณฑ์ password',
+                            text: 'Your password is ' + passhash,
+                          };
+                          
+                          transporter.sendMail(mailOptions, function(error, info){
+                            if (error) {
+                                res.render('forgotpassword' , {
+                                    messages: error
+                                });
+                            } else {
+                              console.log(info.response.indexof('OK'));
+                              var buf = Buffer.from(info.response);
+
+                            console.log(buf.indexOf('OK'));
+
+                              if(buf.indexOf('OK')!= -1){
+                                    res.render('forgotpassword' , {
+                                        messages: 'ส่งemail เรียบร้อย โปรดตรวจสอบที่ junkmail'
+                                    });
+                              }else{
+                                    res.render('forgotpassword' , {
+                                        messages: 'Email sent: ' + info.response
+                                    });
+                              }
+                             
+                            }
+                          });
+                        
+                    });
+                }else{
+                    res.render('forgotpassword' , {
+                        messages: 'Invalid email'
                     });
 
                 }

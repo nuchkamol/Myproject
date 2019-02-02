@@ -293,38 +293,93 @@ exports.uploadImage = function(req,res){
   
 }
 
+
+
+function decode(src) {
+        QuaggaB.Quagga.decodeSingle(
+                {
+                inputStream: {
+                    size: 640,
+                    singleChannel: false
+                },
+                locator: {
+                    patchSize: "large",
+                    halfSample: false
+                },
+                decoder: {
+                    readers: ["upc_reader", "code_128_reader", "code_39_reader", "code_39_vin_reader", "ean_8_reader", "ean_reader", "upc_e_reader", "codabar_reader"]
+                },
+                locate: true,
+                src: src
+                },
+            function(result){
+                if(result && result.codeResult && result.codeResult.code)
+                {
+                    return result.codeResult.code;
+                  
+                    //- $("#codeResult").text('Code - '+result.codeResult.code);
+                }else{
+                    return '';
+                   
+                    //- $("#codeResult").text("unable to read");
+                }
+                });
+        }
+
+
 exports.uploadBarcode = function(req,res){
     const Ifolder = './uploadB/';
     var allfile = req.files;
-    for (var i in allfile) {
-        console.log(allfile[i].filename);
-        var data = fs.readFileSync(Ifolder+allfile[i].filename);
-
-        var myquery = { materialid: allfile[i].originalname.split(".")[0] };
-            var newvalues = { $set: {imagebarcode:{ data:data.toString('base64'),contentType:'jpg'}}};
-            Material.updateOne(myquery, newvalues, function(err, res) {
-                if (err){
-                    console.log('update ไม่สำเร็จ!! เนื่องจาก :' + err);
-                }
-                else{
-                    console.log("1 document updated");
-                   
-                }
-              }); 
-    }
-
-    fs.readdir(Ifolder, (err, files) => {
-        if (err) throw err;
-      
-        for (const file of files) {
-          fs.unlink(path.join(Ifolder, file), err => {
-            if (err) throw err;
-          });
+    if(allfile != null || allfile != ""){
+        for (var i in allfile) {
+            console.log(allfile[i].filename);
+            var data = fs.readFileSync(Ifolder+allfile[i].filename);
+        
+            var myquery = { materialid: allfile[i].originalname.split(".")[0] };
+                var newvalues = { $set: {imagebarcode:{ data:data.toString('base64'),contentType:'jpg'}}};
+                Material.updateOne(myquery, newvalues, function(err, res) {
+                    if (err){
+                        console.log('update ไม่สำเร็จ!! เนื่องจาก :' + err);
+                    }
+                    else{
+                        console.log("1 document updated");
+                    
+                    }
+                }); 
         }
-      });
 
-    alert("upload successfully !!")
-    res.redirect('/Search');
-   
-  
+            var textdecode = req.body.decodetext;
+            console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" + textdecode);
+            var decode = textdecode.split('\n,');
+            console.log(decode);
+          for(var j in decode){ 
+              var dec = decode[j].split('|');  
+            var myquery = { materialid: dec[1].split('.')[0] };
+                var newvalues = { $set: {textbarcode:dec[0]}};
+                Material.updateOne(myquery, newvalues, function(err, res) {
+                    if (err){
+                        console.log('update ไม่สำเร็จ!! เนื่องจาก :' + err);
+                    }
+                    else{
+                        console.log("1 document updated");
+                    }
+                }); 
+            }
+        fs.readdir(Ifolder, (err, files) => {
+            if (err) throw err;
+        
+            for (const file of files) {
+            fs.unlink(path.join(Ifolder, file), err => {
+                if (err) throw err;
+            });
+            }
+        }
+        );
+           alert("upload successfully !!")
+            res.redirect('/Search');
+    }else{
+        alert("กรุณาเลือก folder")
+    }
+ 
+
 }
