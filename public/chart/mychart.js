@@ -4,6 +4,7 @@ var randomScalingFactor = function() {
 var countSale =  $("#countSale").val();
 var countNormal =  $("#countNormal").val();
 var countBorrow =  $("#countBorrow").val();
+var nameobject = $('#objectname').val();
 var chartColors = window.chartColors;
 var color = Chart.helpers.color;
 var config = {
@@ -35,7 +36,7 @@ var config = {
         },
         title: {
             display: true,
-            text: 'Polar Area Chart'
+            text: 'Polar Area Chart of ' + nameobject
         },
         scale: {
             ticks: {

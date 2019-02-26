@@ -6,6 +6,15 @@ var http = require('http');
 var multer  = require('multer');
 var alert = require('alert-node');
 
+exports.imageprocess = function(req,res){
+    var id =   req.session.dbid;
+    if(id){
+        console.log(id);
+    }else{
+        res.redirect('/login')
+    }
+};
+
 exports.renderUpload = function(req,res){
     var id =   req.session.dbid;
     if(id){
@@ -79,7 +88,8 @@ exports.overview = function(req,res){
                         rows : mat,
                         countSale : countSale,
                         countNormal : countNormal,
-                        countBorrow : countBorrow
+                        countBorrow : countBorrow,
+                        objectname : req.body.nameobject
                     });
 
             });

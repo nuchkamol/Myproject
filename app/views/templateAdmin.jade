@@ -1,4 +1,5 @@
 body
+
     div.row
         div.col-xs-2.col-sm-2.col-md-2.col-lg-2
             img(src="/img/logoooinside.png" id="logohead"  class="img-responsive" style="width:100%")  
@@ -23,27 +24,27 @@ body
             div.navbar-collapse.collapse
                 ul.nav.navbar-nav
                     li
-                        a(href="/upload")
+                        a.menuupload(href="/upload")
                             i.fa.fa-upload
                             span Upload
                     li
-                        a(href="/scan")
+                        a.menuscan(href="/scan")
                             i.fa.fa-barcode
                             span Scan
                     li
-                        a(href="/overview")
+                        a.menuoverview(href="/overview")
                             i.fa.fa-eye
                             span View
                     li
-                        a(href="/search")
+                        a.menusearch(href="/search")
                             i.fa.fa-search
                             span Search
                     li
-                        a(href="/manageUser")
+                        a.menuuser(href="/manageUser")
                             i.fa.fa-cog
                             span User
                     li
-                        a(href="/myAccount")
+                        a.menumyaccount(href="/myAccount")
                             i.fa.fa-user
                             span(style="font-size:0.9em") My account
             //- div.image-section

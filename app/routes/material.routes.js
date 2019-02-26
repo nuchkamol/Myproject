@@ -31,5 +31,7 @@ module.exports = function(app){
       
     app.route('/scan')
         .get(material.renderScan)
-        
+    app.route('/imageprocess')
+        .get(material.imageprocess)
+           
 }

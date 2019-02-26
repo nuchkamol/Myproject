@@ -110,13 +110,114 @@ img {  vertical-align: middle; }
 .nav .fa { font-size: 2em; }
 .navbar-default .navbar-nav > li > a {
     color: white;
-    background-color:black;
+    background-color:red;
     width: 120px;
     height: 120px;
     -moz-border-radius: 70px; 
     -webkit-border-radius: 70px; 
     border-radius: 70px;
     
+}
+.navbar-default .navbar-nav > li > .menuupload {  background-color:#007fff;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, .5), 
+0px -15px 35px 0px rgba(9, 72, 146, .8) inset;
+ -moz-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, .5), 
+0px -15px 35px 0px rgba(9, 72, 146, .8) inset;
+ box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, .5), 
+0px -15px 35px 0px rgba(9, 72, 146, .8) inset;
+}
+.navbar-default .navbar-nav > li > .menuupload:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #222270;
+    background-color: #5656ff;
+    border:5px solid #4c4c4c;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) inset;
+	-moz-box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) inset;
+	box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) inset;
+}
+
+.navbar-default .navbar-nav > li > .menuscan {  background-color:#FF6633; 
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, .5), 
+0px -15px 35px 0px rgba(9, 72, 146, .8) inset;
+ -moz-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, .5), 
+0px -15px 35px 0px rgba(9, 72, 146, .8) inset;
+ box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, .5), 
+0px -15px 35px 0px rgba(9, 72, 146, .8) inset;
+}
+.navbar-default .navbar-nav > li > .menuscan:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #CC3300;
+    background-color: #FF9966;
+    border:5px solid #4c4c4c;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) inset;
+	-moz-box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) inset;
+	box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) inset;
+}
+
+.navbar-default .navbar-nav > li > .menuoverview {  background-color:#55aa00; 
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, .5), 
+0px -15px 35px 0px rgba(9, 72, 146, .8) inset;
+ -moz-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, .5), 
+0px -15px 35px 0px rgba(9, 72, 146, .8) inset;
+ box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, .5), 
+0px -15px 35px 0px rgba(9, 72, 146, .8) inset;
+}
+.navbar-default .navbar-nav > li > .menuoverview:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #2e5b00;
+    background-color: #aaff56;
+    border:5px solid #4c4c4c;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) inset;
+	-moz-box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) inset;
+	box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) inset;
+}
+
+.navbar-default .navbar-nav > li > .menuuser {  background-color:#ff5656; 
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, .5), 
+0px -15px 35px 0px rgba(9, 72, 146, .8) inset;
+ -moz-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, .5), 
+0px -15px 35px 0px rgba(9, 72, 146, .8) inset;
+ box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, .5), 
+0px -15px 35px 0px rgba(9, 72, 146, .8) inset;
+}
+.navbar-default .navbar-nav > li > .menuuser:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #930148;
+    background-color: #ffaaaa;
+    border:5px solid #4c4c4c;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) inset;
+	-moz-box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) inset;
+	box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) inset;
+}
+
+.navbar-default .navbar-nav > li > .menusearch {  background-color:#8411ff; 
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, .5), 
+0px -15px 35px 0px rgba(9, 72, 146, .8) inset;
+ -moz-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, .5), 
+0px -15px 35px 0px rgba(9, 72, 146, .8) inset;
+ box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, .5), 
+0px -15px 35px 0px rgba(9, 72, 146, .8) inset;
+}
+.navbar-default .navbar-nav > li > .menusearch:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #3f007f;
+    background-color: #d4aaff;
+    border:5px solid #4c4c4c;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) inset;
+	-moz-box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) inset;
+	box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) inset;
+}
+
+.navbar-default .navbar-nav > li > .menumyaccount {  background-color:#ffcc00; 
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, .5), 
+0px -15px 35px 0px rgba(9, 72, 146, .8) inset;
+ -moz-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, .5), 
+0px -15px 35px 0px rgba(9, 72, 146, .8) inset;
+ box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, .5), 
+0px -15px 35px 0px rgba(9, 72, 146, .8) inset;
+}
+.navbar-default .navbar-nav > li > .menumyaccount:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #7a6100;
+    background-color: #ffffaa;
+    border:5px solid #4c4c4c;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) inset;
+	-moz-box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) inset;
+	box-shadow: 5px 5px 15px 5px rgba(50, 50, 50, .5) inset;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     color: yellow;

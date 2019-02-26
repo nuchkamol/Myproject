@@ -34,7 +34,7 @@ body
 				div.col-xs-2.col-sm-2.col-md-2.col-lg-2
 				div.col-xs-8.col-sm-8.col-md-8.col-lg-8
 					form
-						input.btn.btn-info.btn-block#startDecode(type="button" value="Scan"  style="width:150px; margin:auto;")
+						input.btn.btn-info.btn-block#startDecode.btn-lg(type="button" value="Scan"  style="width:150px; margin:auto;")
 				div.col-xs-2.col-sm-2.col-md-2.col-lg-2
 			br
 			div#codeResult
@@ -150,6 +150,7 @@ body
 									//- $("#codeResult").text('Code - '+result.codeResult.code);
 								}else{
 									alert("unable to read");
+									//- window.location.href='/imageprocess?
 									//- $("#codeResult").text("unable to read");
 								}
 								});

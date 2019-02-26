@@ -246,22 +246,15 @@ exports.forgot = function(req,res){
                                     messages: error
                                 });
                             } else {
-                              console.log(info.response.indexof('OK'));
-                              var buf = Buffer.from(info.response);
+                           
+                            //   var buf = Buffer.from(info.response);
 
-                            console.log(buf.indexOf('OK'));
-
-                              if(buf.indexOf('OK')!= -1){
                                     res.render('forgotpassword' , {
                                         messages: 'ส่งemail เรียบร้อย โปรดตรวจสอบที่ junkmail'
                                     });
-                              }else{
-                                    res.render('forgotpassword' , {
-                                        messages: 'Email sent: ' + info.response
-                                    });
                               }
                              
-                            }
+                            
                           });
                         
                     });
