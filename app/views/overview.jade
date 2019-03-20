@@ -6,7 +6,7 @@ html( class="no-js")
         //- link(rel='stylesheet', type='text/css', href='Login_v9/fonts/font-awesome-4.7.0/css/font-awesome.min.css')
         //- link(rel='stylesheet', type='text/css', href='Login_v9/fonts/iconic/css/material-design-iconic-font.min.css')
         //- link(href='/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
-        link(href='/css/main.css', rel='stylesheet')
+        link(href='../css/main.css', rel='stylesheet')
        
         //- link(href='/css/all.css', rel='stylesheet') 
           <meta charset="utf-8">
@@ -16,8 +16,8 @@ html( class="no-js")
         
         //- <!--    Authentic Template   http://www.templatemo.com/tm-412-authentic    -->
         meta( name='viewport', content='width=device-width' ) 
-        link(rel='stylesheet', type='text/css', href='templateInside/css/templatemo_main.css')
-        link(rel='stylesheet', type='text/css', href='chart/wbn-datepicker.css')
+        link(rel='stylesheet', type='text/css', href='../templateInside/css/templatemo_main.css')
+        link(rel='stylesheet', type='text/css', href='../chart/wbn-datepicker.css')
 
         script(src='chart/Chart.bundle.js')
         script(src='chart/utils.js')
@@ -43,79 +43,78 @@ html( class="no-js")
                 });
            
     body
-        div#main-wrapper
-         
-                div.container
-                        include ./templateAdmin
-                    div.pagename 
-                        span overview   
-                        br
-        form(name='overview' , method='POST' , action='/overview') 
-            div.row   
-                div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
-                div.col-xs-6.col-sm-6.col-md-6.col-lg-6  
-                    span ครุภัณฑ์ 
-                    select.form-control( name="nameobject"  width="200px" id="ddlobname" )
-                        each obj in rows   
-                            option(value=obj)=obj
-                div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
-            div.row    
-                div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
-                div.col-xs-6.col-sm-6.col-md-6.col-lg-6  
-                    span วันที่เริ่มต้น 
-                    input#start-date.form-control.wbn-datepicker(type="text" name="updateDate"  width="200px")
-                div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
-            div.row    
-                div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
-                div.col-xs-6.col-sm-6.col-md-6.col-lg-6  
-                    span วันที่สิ้นสุด 
-                    input#end-date.form-control.wbn-datepicker(type="text" name="createDate"  data-start-src="start-date"  width="200px")
-                div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
-             
-            div.row    
-                div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
-                input.btn.btn-default.col-xs-6.col-sm-6.col-md-6.col-lg-6(type="submit"  value="ตกลง"  style="margin-top:10px;" id="btn_submit")
-                div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
-                input#countSale(type="text" name="countSale" value=countSale style="display:none;")
-                input#countNormal(type="text" name="countNormal" value=countNormal style="display:none;")
-                input#countBorrow(type="text" name="countBorrow" value=countBorrow style="display:none;")
-                input#objectname(type="text" name="objectname" value=objectname style="display:none;")
-            div.row( style="text-align:center;")
-                div.col-xs-12.col-sm-12.col-md-12.col-lg-12  
-            div.row( style="text-align:center; font-size:20px;")
-                div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
-                div.col-xs-6.col-sm-6.col-md-6.col-lg-6  
-                    span(id="sp_objName")
-                div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
-            div.row   
-                div.col-md-2.col-lg-2
-                div.col-xs-12.col-sm-12.col-md-8.col-lg-8  
-                     div#stage-parent(style="width: 100%;") 
-                        canvas#chart-area
+        div#main-wrapper        
+            div.container
+                    include ./templateAdmin
+                    div(style="display: table;  overflow: hidden; width:100%;")
+                        div.pagename overview   
+                 
+                form(name='overview' , method='POST' , action='/overview') 
+                    div.row   
+                        div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
+                        div.col-xs-6.col-sm-6.col-md-6.col-lg-6  
+                            span.textfield ครุภัณฑ์ 
+                            select.form-control( name="nameobject"  width="200px" id="ddlobname" )
+                                each obj in rows   
+                                    option(value=obj)=obj
+                        div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
+                    div.row    
+                        div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
+                        div.col-xs-6.col-sm-6.col-md-6.col-lg-6  
+                            span.textfield วันที่เริ่มต้น 
+                            input#start-date.form-control.wbn-datepicker(type="text" name="updateDate"  width="200px")
+                        div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
+                    div.row    
+                        div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
+                        div.col-xs-6.col-sm-6.col-md-6.col-lg-6  
+                            span.textfield วันที่สิ้นสุด 
+                            input#end-date.form-control.wbn-datepicker(type="text" name="createDate"  data-start-src="start-date"  width="200px")
+                        div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
+                    
+                    div.row    
+                        div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
+                        input.btn.btn-default.col-xs-6.col-sm-6.col-md-6.col-lg-6(type="submit"  value="ตกลง"  style="margin-top:10px;" id="btn_submit")
+                        div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
+                        input#countSale(type="text" name="countSale" value=countSale style="display:none;")
+                        input#countNormal(type="text" name="countNormal" value=countNormal style="display:none;")
+                        input#countBorrow(type="text" name="countBorrow" value=countBorrow style="display:none;")
+                        input#objectname(type="text" name="objectname" value=objectname style="display:none;")
+                    div.row( style="text-align:center;")
+                        div.col-xs-12.col-sm-12.col-md-12.col-lg-12  
+                    div.row( style="text-align:center; font-size:20px;")
+                        div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
+                        div.col-xs-6.col-sm-6.col-md-6.col-lg-6  
+                            span(id="sp_objName")
+                        div.col-xs-3.col-sm-3.col-md-3.col-lg-3  
+                    div.row   
+                        div.col-md-2.col-lg-2
+                        div.col-xs-12.col-sm-12.col-md-8.col-lg-8  
+                            div#stage-parent(style="width: 100%;") 
+                                canvas#chart-area
 
 
-                div.col-md-2.col-lg-2     
+                        div.col-md-2.col-lg-2     
 
-            //- script(src='templateInside/js/jquery.min.js')
-            script(src='chart/jquery-3.3.1.min.js')
-            script(src='templateInside/js/jquery.backstretch.min.js')
-            script(src='templateInside/js/jquery.flexslider.min.js')
-            script(src='templateInside/js/bootstrap.min.js')
-            script(src='templateInside/js/templatemo_script.js')
-            script(src='templateInside/js/templatemo_script.js')
-            script(src='chart/wbn-datepicker.js')
-            script(src='chart/mychart.js')
-            script.
-            
-                $(document).ready(function(){
-                   
-                   $('.wbn-datepicker').datepicker()
+                    //- script(src='templateInside/js/jquery.min.js')
+                    script(src='chart/jquery-3.3.1.min.js')
+                    script(src='templateInside/js/jquery.backstretch.min.js')
+                    script(src='templateInside/js/jquery.flexslider.min.js')
+                    script(src='templateInside/js/bootstrap.min.js')
+                    script(src='templateInside/js/templatemo_script.js')
+                    script(src='templateInside/js/templatemo_script.js')
+                    script(src='chart/wbn-datepicker.js')
+                    script(src='chart/mychart.js')
+                    script.
+                    
+                        $(document).ready(function(){
+                        
+                        $('.wbn-datepicker').datepicker()
 
-                  
-                });
+                        
+                        });
 
-           
-            //- script(src="map/konva.min.js")
+                
+                    //- script(src="map/konva.min.js")
            
 
 

@@ -12,7 +12,8 @@ body
                     button.btn.btn-default.btn-sm#btn_signout(type='submit' style="float:right; margin-right:10px; margin-bottom:10px;")
                         i.fa.fa-sign-out sign out
         div.row  
-                span.col-xs-12.col-sm-12.col-md-12.col-lg-12.fa.fa-user(id="accountname")=fullname 
+                i.col-xs-12.col-sm-12.col-md-12.col-lg-12.fa.fa-user.accountname
+                    span.accountname=fullname 
     div.navbar.navbar-default( role="navigation")
         div.container-fluid
             div.navbar-header

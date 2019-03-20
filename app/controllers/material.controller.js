@@ -152,23 +152,26 @@ exports.editDetail = function(req,res){
     var n = d.toISOString();
 
     var newvalues = { $set: {materialid: mat.materialid, nameobject: mat.nameobject , nameuser:req.session.fullname , price:mat.price , location:mat.location , status:mat.status , detail:mat.detail  , admin:req.session.username , updateDate:n.toString() , ip:mat.ip, ua:mat.ua } };
-    Material.updateOne(myquery, newvalues, function(err, res) {
+    Material.updateOne(myquery, newvalues, function(err) {
         if (err){
-            alert('update ไม่สำเร็จ!! เนื่องจาก :' + err);
-           
+            req.flash('error','update ไม่สำเร็จ!! เนื่องจาก : '+ err);
+            return res.redirect('/search');
         }
         else{
-            console.log("1 document updated");
-            alert('update successfully!!');
+            console.log("1 document updated");    
+            req.flash('error','update successfully!!');
+            res.redirect('/search');
            
         }
-      });  res.redirect('/search');
+      });  
     }else{
         res.redirect('/login');
     }
 }
 
 exports.deleteMat = function(req,res){
+    var id =   req.session.dbid;
+    if(id){
     var o_id = req.body.id;
     Material.remove({"_id": o_id}, function(err, result) {
         if (err) {
@@ -178,6 +181,9 @@ exports.deleteMat = function(req,res){
             res.redirect('/search')
         }
     })    
+}else{
+    res.redirect('/login');
+}
 }
 
 exports.renderSearch = function(req,res){
@@ -200,30 +206,46 @@ exports.renderSearch = function(req,res){
     };
 
     exports.renderMap = function(req,res){
-       
+        var id =   req.session.dbid;
+        if(id){
             res.render('map' , {
                 title: 'ระบบจัดการครุภัณฑ์',
                 messages:req.flash('error'),
                 fullname:  req.session.fullname,
                 role: req.session.role 
             });
+        }else{
+            res.redirect('/login')
+        }
         };
     
        
 
 exports.uploadData = function(req,res){
-
+    var id =   req.session.dbid;
+    if(id){
     var filenameold =   req.file;
-    console.log(filenameold.filename);
+    if(filenameold != null && filenameold != ""){
+    console.log("filenameold.filename"+filenameold.filename);
 
     fs.unlink('./uploadD/xxxx.xlsx',function(err){
-        if(err) return console.log(err);
-        console.log('file deleted successfully');
+        if(err){
+            req.flash('error','ไม่สามารถอัพโหลดได้กรุณาลองใหม่อีกครั้ง : '+ err);
+            return res.redirect('/upload');
+        } else{
+            console.log('file deleted successfully');
+        }
+        
     });  
    
   
     fs.rename('./uploadD/'+filenameold.filename, './uploadD/xxxx.xlsx', function(err) {
-        if ( err ) console.log('ERROR: ' + err);
+        if ( err ){
+            console.log('ERROR: ' + err);
+            req.flash('error','ไม่สามารถอัพโหลดได้กรุณาลองใหม่อีกครั้ง : '+ err);
+            return res.redirect('/upload');;
+        }
+      
     });
 
    
@@ -238,6 +260,8 @@ exports.uploadData = function(req,res){
    Material.insertMany(docs, function(error, inserted) {
     if(error) {
         console.error(error);
+        req.flash('error',"ไม่สามารถอัพโหลดได้กรุณาลองใหม่อีกครั้ง : insert" + error);
+        return res.redirect('/upload');
     }
     else {
         console.log("Successfully inserted: " , inserted );
@@ -249,7 +273,7 @@ exports.uploadData = function(req,res){
 
             var myquery = { _id: val._id };
             var newvalues = { $set: {createDate: n.toString(), updateDate: n.toString() , ip:req.headers['x-forwarded-for'], ua:req.headers['user-agent'] , admin:req.session.username }};
-            Material.updateOne(myquery, newvalues, function(err, res) {
+            Material.updateOne(myquery, newvalues, function(err) {
                 if (err){
                     console.log('update ไม่สำเร็จ!! เนื่องจาก :' + err);
                 }
@@ -259,17 +283,28 @@ exports.uploadData = function(req,res){
                 }
               }); 
           }
-
+        req.flash('error','upload successfully !!');
+        return res.redirect('/search');
     }
-    alert("upload successfully !!")
-    res.redirect('/Search');
+  
 
 });
+}else{
+    req.flash('error','กรุณาเลือก ไฟล์ xlsx');
+    return res.redirect('/upload');
+}
+    }
+else{
+    res.redirect('/login')
+}
 }
 
 exports.uploadImage = function(req,res){
+    var id =   req.session.dbid;
+    if(id){
     const Ifolder = './uploadI/';
     var allfile = req.files;
+    if(allfile != null && allfile != ""){
     for (var i in allfile) {
         console.log(allfile[i].filename);
         var data = fs.readFileSync(Ifolder+allfile[i].filename);
@@ -297,10 +332,17 @@ exports.uploadImage = function(req,res){
         }
       });
 
-    alert("upload successfully !!")
-    res.redirect('/Search');
+          req.flash('error','upload successfully !!');
+          return res.redirect('/Search');
+    }else{
+        req.flash('error','กรุณาเลือก folder');
+        return res.redirect('/upload');
+    }
+
    
-  
+}else{
+    res.redirect('/login')
+}
 }
 
 
@@ -338,9 +380,12 @@ function decode(src) {
 
 
 exports.uploadBarcode = function(req,res){
+    var id =   req.session.dbid;
+    if(id){
     const Ifolder = './uploadB/';
     var allfile = req.files;
-    if(allfile != null || allfile != ""){
+    console.log('allfile>>' + allfile);
+    if(allfile != null && allfile != ""){
         for (var i in allfile) {
             console.log(allfile[i].filename);
             var data = fs.readFileSync(Ifolder+allfile[i].filename);
@@ -366,7 +411,7 @@ exports.uploadBarcode = function(req,res){
               var dec = decode[j].split('|');  
             var myquery = { materialid: dec[1].split('.')[0] };
                 var newvalues = { $set: {textbarcode:dec[0]}};
-                Material.updateOne(myquery, newvalues, function(err, res) {
+                Material.updateOne(myquery, newvalues, function(err) {
                     if (err){
                         console.log('update ไม่สำเร็จ!! เนื่องจาก :' + err);
                     }
@@ -385,11 +430,14 @@ exports.uploadBarcode = function(req,res){
             }
         }
         );
-           alert("upload successfully !!")
-            res.redirect('/Search');
+            req.flash('error','upload successfully !!');
+            return res.redirect('/Search');
     }else{
-        alert("กรุณาเลือก folder")
+        req.flash('error','กรุณาเลือก folder');
+        return res.redirect('/upload');
     }
- 
+}else{
+    res.redirect('/login')
+}
 
 }

@@ -26,13 +26,14 @@ html( class="no-js")
                         include ./templateGeneral
                     else
                         include ./templateAdmin
-                    div.pagename 
-                        div.row    
-                                div.col-xs-1.col-sm-1.col-md-1.col-lg-1
-                                    button.btn.btn-info.btn-sm(type='submit' style="float:left;" onclick="window.location.href='/search'")
-                                        i.fa.fa-search  Search
-                                div.col-xs-11.col-sm-11.col-md-11.col-lg-11
-                                    span Map   
+                    div(style="display: table;  overflow: hidden; width:100%;")
+                        div.pagename 
+                            div.row    
+                                    div.col-xs-1.col-sm-1.col-md-1.col-lg-1
+                                        button.btn.btn-info.btn-sm(type='submit' style="float:left;" onclick="window.location.href='/search'")
+                                            i.fa.fa-search  Search
+                                    div.col-xs-11.col-sm-11.col-md-11.col-lg-11
+                                        span Map   
                         br
             div.row   
                 div.col-xs-2.col-sm-2.col-md-2.col-lg-2

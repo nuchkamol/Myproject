@@ -15,7 +15,21 @@ html( class="no-js")
         //- <!--    Authentic Template   http://www.templatemo.com/tm-412-authentic    -->
         meta( name='viewport', content='width=device-width' ) 
         link(rel='stylesheet', type='text/css', href='templateInside/css/templatemo_main.css') 
-        link(rel='stylesheet', type='text/css', href='css/main.css') 
+       
+        script(src='jquery/dist/jquery-3.3.1.js')
+        script.
+            $(document).ready(function() {
+                $(window).on('load',function(){
+                    
+                    var altext = $('#alerttext').val();
+
+                    if(typeof altext === "undefined" || altext == ""){
+                       
+                    }else{
+                        $('#myModal').modal('show');
+                    }
+                });
+            });
     body
         div#main-wrapper
                 div.container
@@ -23,14 +37,14 @@ html( class="no-js")
                         include ./templateGeneral
                     else
                         include ./templateAdmin
-
-                    div.pagename 
-                        div.row    
-                            div.col-xs-1.col-sm-1.col-md-1.col-lg-1
-                                button.btn.btn-info.btn-sm(type='submit' style="float:left;" onclick="window.location.href='/addUser'")
-                                    i.fa.fa-plus-square  Add User
-                            div.col-xs-11.col-sm-11.col-md-11.col-lg-11
-                            span Manage User         
+                    div(style="display: table;  overflow: hidden; width:100%;")
+                        div.pagename 
+                            div.row    
+                                div.col-xs-1.col-sm-1.col-md-1.col-lg-1
+                                    button.btn.btn-info.btn-sm(type='submit' style="float:left;" onclick="window.location.href='/addUser'")
+                                        i.fa.fa-plus-square  Add User
+                                div.col-xs-11.col-sm-11.col-md-11.col-lg-11
+                                span Manage User         
                     div.row
                         div.col-xs-12.col-sm-12.col-md-12.col-lg-12
                        
@@ -49,22 +63,40 @@ html( class="no-js")
                                             else 
                                                 td="ผู้ดูแลระบบ"
                                             td 
-                                                div(style="display:inline;")
-                                                        a.btn.btn-warning.btn-xs.btnEditDelete(type='submit' style="float:left;" href="/editUser/"+item._id  )
-                                                            i.fa.fa-pencil-square-o  แก้ไข
+                                                if(item.userName == "admin")
+                                                     div(style="display:inline;")
+                                                        a.btn.btn-warning.btn-xs(type='submit' style="float:left;" href="/editUser/"+item._id  )
+                                                            i.fa.fa-pencil-square-o.btnEditDelete  
+                                                            span.btnEditDelete แก้ไข
+                                                else
+                                                    div(style="display:inline;")
+                                                        a.btn.btn-warning.btn-xs(type='submit' style="float:left;" href="/editUser/"+item._id  )
+                                                            i.fa.fa-pencil-square-o.btnEditDelete  
+                                                            span.btnEditDelete แก้ไข
                                                     form(name="deleteUser" , method="POST" , action="/deleteUser") 
                                                             input(type="text",name="id",value=item._id style="display:none;") 
-                                                            button.btn.btn-danger.btn-xs.btnEditDelete(type='submit' style="float:left; margin-left:10px;" onClick="return confirm('Are you sure you want to delete " + item.fullName + "?')") 
-                                                                 i.fa.fa-trash-o  ลบ
+                                                            button.btn.btn-danger.btn-xs(type='submit' style="float:left; margin-left:10px;" onClick="return confirm('Are you sure you want to delete " + item.fullName + "?')") 
+                                                                 i.fa.fa-trash-o.btnEditDelete  
+                                                                 span.btnEditDelete   ลบ
                                                       
-                    each msg in messages   
-                        .flash
-                            = msg                        
-                                   
-                             
+                                        
+                //- button.btn.btn-info.btn-lg(type="button" data-toggle="modal" data-target="#myModal") Open Modal  
+                input(type="hidden" value=messages id="alerttext")
+                div.modal.fade#myModal(role="dialog" style="width:30%;margin-left:auto;margin-right:auto;")
+                    div.modal-dialog
+                    div.modal-content
+                        div.modal-header
+                        button.close(type="button" data-dismiss="modal") &times;
+                        div.modal-title(style="color:grey;font-size:10px")&nbsp; ข้อความ!
+                        div.modal-body(style="font-size:8px;color:#78c17f")
+                                each msg in messages   
+                                    .flash=msg                      
+                        div.modal-footer
+                            button.btn.btn-default( type="button" data-dismiss="modal") Close
+            
 
                         
-                script(src='templateInside/js/jquery.min.js')
+                //- script(src='templateInside/js/jquery.min.js')
                 script(src='templateInside/js/jquery.backstretch.min.js')
                 script(src='templateInside/js/jquery.flexslider.min.js')
                 script(src='templateInside/js/bootstrap.min.js')

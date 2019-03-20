@@ -49,6 +49,8 @@ exports.renderLogin = function(req,res){
 
   
 exports.renderManageUser = function(req,res){
+    var id =   req.session.dbid;
+    if(id){
     User.find({},function(err,users){
         res.render('manageUser' , {
             title: 'ระบบจัดการครุภัณฑ์',
@@ -57,13 +59,16 @@ exports.renderManageUser = function(req,res){
             fullname:  req.session.fullname,
             role: req.session.role 
         });
-    })
+    })}else{
+        res.redirect('/login')
+    }
 };
         
 
 
 exports.renderAddUser = function(req,res){
-   
+    var id =   req.session.dbid;
+    if(id){
     res.render('addUser' , {
         title: 'ระบบจัดการครุภัณฑ์',
         messages:req.flash('error'),
@@ -72,10 +77,14 @@ exports.renderAddUser = function(req,res){
         admin:req.session.username,
         ipClient:req.headers['x-forwarded-for'],
         ua:req.headers['user-agent']
-    });
+    });}else{
+        res.redirect('/login')
+    }
 };
 
 exports.renderEditUser = function(req,res){
+    var id =   req.session.dbid;
+    if(id){
     var o_id = req.params.id
 
     User.findOne({_id:o_id},function(err,user){   
@@ -98,7 +107,9 @@ exports.renderEditUser = function(req,res){
             salt:user.salt
         });
             
-    });
+    });}else{
+        res.redirect('/login')
+    }
 
 };
 
@@ -134,6 +145,8 @@ exports.renderMyAccount = function(req,res){
 
 
 exports.deleteUser = function(req,res){
+    var id =   req.session.dbid;
+    if(id){
     var o_id = req.body.id;
     User.remove({"_id": o_id}, function(err, result) {
         if (err) {
@@ -143,7 +156,9 @@ exports.deleteUser = function(req,res){
         } else {
             res.redirect('/manageUser')
         }
-    })    
+    })  }  else{
+        res.redirect('/login')
+    }
 }
 exports.login = function(req,res){
 
@@ -164,6 +179,8 @@ exports.login = function(req,res){
                 if(req.body.username == user.userName){
                     process.nextTick(function() {
                     var passhash = users.authenticate(req.body.password, user.salt)
+                    var decryptpass = users.decrypt(user.passWord, user.salt);
+                    console.log("password=" +decryptpass);
                         console.log(passhash);
                         if(passhash == user.passWord){
                                 req.login(user,function(err){
@@ -274,27 +291,37 @@ exports.forgot = function(req,res){
 
 
 exports.addUser = function(req,res){
-    
+    var id =   req.session.dbid;
+    if(id){
         var user = new User(req.body);
         user.save(function(err){
             if(err){ 
                 var messages = getErrorMessage(err);
-                req.flash('error',messages);
-                alert('ไม่สามารถ add user ได้ เนื่องจาก : ' + messages);
+                // req.flash('error',messages);
+                if(messages == "Username already exists"){
+                    req.flash('error','โปรดตรวจสอบ username หรือ email เนื่องจากมีในระบบแล้ว');
+                    //   alert('โปรดตรวจสอบ username หรือ email เนื่องจากมีในระบบแล้ว');
+                }else{
+                    req.flash('error','ไม่สามารถเพิ่มผู้ใช้งานได้เนื่องจาก : '+ messages);
+               
+                }
+              
                 return res.redirect('/manageUser');
             }else{
-                // req.login(user,function(err){
-                //     if(err) return next(err);
-                    alert('Add User successfully! name ' + user.fullName);
+              
+                    req.flash('error','เพิ่มผู้ใช้งานชื่อ' + user.fullName + "สำเร็จแล้ว");
                     return res.redirect('/manageUser');
-                // });
+
              }
         });
-    
+    }  else{
+        res.redirect('/login')
+    }
 }
 
 exports.editUser = function(req,res){
-    
+    var id =   req.session.dbid;
+    if(id){
     var user = new User(req.body);
     console.log('user._id ' +user._id );
     console.log('user.salt ' +user.salt );
@@ -313,21 +340,26 @@ exports.editUser = function(req,res){
      
 
     var newvalues = { $set: {userName: user.userName, passWord: passhash , role:user.role, fullName:user.fullName , position:user.position , mobileNo:user.mobileNo , lineId:user.lineId , email:user.email , admin:req.session.username , updateDate:n.toString() , ip:'1.1.2.2', ua:'chorme' } };
-    User.updateOne(myquery, newvalues, function(err, res) {
+    User.updateOne(myquery, newvalues, function(err) {
         if (err){
-            alert('update ไม่สำเร็จ!! เนื่องจาก :' + err);
-           
+            req.flash('error','update ไม่สำเร็จ!! เนื่องจาก : '+ err);
+           return res.redirect('/manageUser');
         }
         else{
             console.log("1 document updated");
-            alert('update successfully!!');
-           
+            req.flash('error','update successfully!!');
+            return res.redirect('/manageUser');
         }
-      });  res.redirect('/manageUser');
-   
+        
+      });  
+    }  else{
+        res.redirect('/login')
+    }
 }
 
 exports.create = function(req,res,next){
+    var id =   req.session.dbid;
+    if(id){
     var user = new User(req.body);
     user.save(function(err){
         if(err){
@@ -336,6 +368,9 @@ exports.create = function(req,res,next){
             res.json(user);
         }
     });
+}  else{
+    res.redirect('/login')
+}
 };
 
 exports.list = function(req,res,next){

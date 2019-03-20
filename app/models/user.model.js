@@ -74,7 +74,7 @@ module.exports.authenticate = function(text, salt){
 };
 
 module.exports.decrypt = (encrypted, salt) => {
-    console.log('เข้ามาkkkkkkkkkkkk');
+    console.log('เข้ามาkkkkkkkkkkkk'+ encrypted + "," + salt);
     var decipher = crypto.createDecipher('aes-256-cbc',salt)
     console.log('decipher' + decipher);
     var dec = decipher.update(encrypted,'hex','utf8')

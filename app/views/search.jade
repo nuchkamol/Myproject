@@ -1,28 +1,26 @@
 doctype html
 html( class="no-js")  
-    head    
-        title=title
-        //- meta( name='viewport', content='width=device-width, initial-scale=1.0' ) 
-        //- link(rel='stylesheet', type='text/css', href='Login_v9/fonts/font-awesome-4.7.0/css/font-awesome.min.css')
-        //- link(rel='stylesheet', type='text/css', href='Login_v9/fonts/iconic/css/material-design-iconic-font.min.css')
-        //- link(href='/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
-        link(href='/css/main.css', rel='stylesheet')
+    head
+        title= title
        
-        //- link(href='/css/all.css', rel='stylesheet') 
-          <meta charset="utf-8">
-        //- <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+
+        link(href='/css/main.css', rel='stylesheet')
+        link(rel='stylesheet', type='text/css', href='templateInside/css/bootstrap.min.css') 
+        //-    //- link(href='/css/all.css', rel='stylesheet') 
+        //-   <meta charset="utf-8">
+        //- //- <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
         meta( name='keywords', content='' ) 
         meta( name='description', content='' ) 
         
         //- <!--    Authentic Template   http://www.templatemo.com/tm-412-authentic    -->
         meta( name='viewport', content='width=device-width' ) 
-        link(rel='stylesheet', type='text/css', href='templateInside/css/templatemo_main.css')
-        script(src='jquery/dist/jquery-3.3.1.js')
+        link(rel='stylesheet', type='text/css', href='templateInside/css/templatemo_main.css') 
         script(src='jquery/dist/jquery.dataTables.min.js')
         script(src='bootstrap/dist/js/dataTables.bootstrap.min.js')
+        script(src='jquery/dist/jquery-3.3.1.js')
         script.
-            $(document).ready(function(){
-                var t = ''; 
+           $(document).ready(function() {
+               var t = ''; 
                 var flag = false;
                 $("#myInput").on("keyup", function() {
                  
@@ -48,9 +46,19 @@ html( class="no-js")
 
                
 
-            });
-               $( window ).on( "load", function() {
-                    var url_string  = window.location.href;  
+        
+                $(window).on('load',function(){
+                    
+                    var altext = $('#alerttext').val();
+
+                    if(typeof altext === "undefined" || altext == ""){
+                       
+                    }else{
+                        $('#myModal').modal('show');
+                    }
+
+
+                     var url_string  = window.location.href;  
                   
                     if(url_string.indexOf("room") > -1){
                         $("#tbmaterial").show();
@@ -67,17 +75,16 @@ html( class="no-js")
                         $("#tbmaterial").hide();
                         $("#imgbg").show();
                     }
-
                 });
-                         
+            });
     body
-        
-            div#main-wrapper
-                div.container
-                    if(role=='general')
-                        include ./templateGeneral
-                    else
-                        include ./templateAdmin
+        div#main-wrapper
+            div.container
+                if(role=='general')
+                    include ./templateGeneral
+                else
+                    include ./templateAdmin
+                div(style="display: table;  overflow: hidden; width:100%;")
                     div.pagename 
                         div.row    
                                 div.col-xs-1.col-sm-1.col-md-1.col-lg-1
@@ -85,14 +92,13 @@ html( class="no-js")
                                         i.fa.fa-map-marker  Map
                                 div.col-xs-11.col-sm-11.col-md-11.col-lg-11
                                     span Search   
-                        br
-                        div.row    
-                                div.col-xs-8.col-sm-8.col-md-8.col-lg-8
-                               
-                                div.col-xs-4.col-sm-4.col-md-4.col-lg-4 
-                                    input.form-control#myInput.input-xs( type="text" placeholder="Search.." name="btnsearch")
-                    div#imgbg.col-xs-12.col-sm-12.col-md-12.col-lg-12(style="background-image:url('img/aaa.jpg');margin-top:20px;width:100% ;background-size: cover;")
-                    table#tbmaterial.tb.table.table-striped.table-bordered.table-sm(cellspacing="0" width="100%" data-show-header="true" data-pagination="true"
+               
+                div.row    
+                    div.col-xs-6.col-sm-6.col-md-6.col-lg-6                            
+                    div.col-xs-6.col-sm-6.col-md-6.col-lg-6 
+                        input.form-control#myInput.input-xs( type="text" placeholder="Search.." name="btnsearch")
+                div#imgbg.col-xs-12.col-sm-12.col-md-12.col-lg-12(style="background-image:url('img/aaa.jpg');margin-top:20px;width:100% ;background-size: cover;")
+                table#tbmaterial.tb.table.table-striped.table-bordered.table-sm(cellspacing="0" width="100%" data-show-header="true" data-pagination="true"
            data-id-field="name"
            data-page-list="[5, 10, 25, 50, 100, ALL]"
            data-page-size="5")
@@ -125,28 +131,45 @@ html( class="no-js")
                                             if(role=='general')
                                                 td 
                                                     div(style="display:inline;")
-                                                        a.btn.btn-warning.btn-xs.btnEditDelete(type='submit' style="float:left;" href="/detail/"+item._id  )
-                                                            i.fa.fa-pencil-square-o  แก้ไข
+                                                        a.btn.btn-warning.btn-xs(type='submit' style="float:left;" href="/detail/"+item._id  )
+                                                            i.fa.fa-pencil-square-o.btnEditDelete   
+                                                            span.btnEditDelete  แก้ไข
                                             else
                                                 td 
                                                     div(style="display:inline;")
-                                                        a.btn.btn-warning.btn-xs.btnEditDelete(type='submit' style="float:left;" href="/detail/"+item._id  )
-                                                            i.fa.fa-pencil-square-o  แก้ไข
+                                                        a.btn.btn-warning.btn-xs(type='submit' style="float:left;" href="/detail/"+item._id  )
+                                                            i.fa.fa-pencil-square-o.btnEditDelete  
+                                                            span.btnEditDelete    แก้ไข
                                             
                                                 td
                                                     form(name="deleteMat" , method="POST" , action="/deleteMat") 
                                                         input(type="text",name="id",value=item._id style="display:none;") 
-                                                        button.btn.btn-danger.btn-xs.btnEditDelete(type='submit' style="float:left; margin-left:10px;" onClick="return confirm('Are you sure you want to delete " + item.materialid + "?')") 
-                                                            i.fa.fa-trash-o  ลบ
+                                                        button.btn.btn-danger.btn-xs(type='submit' style="float:left; margin-left:10px;" onClick="return confirm('Are you sure you want to delete " + item.materialid + "?')") 
+                                                            i.fa.fa-trash-o.btnEditDelete  
+                                                            span.btnEditDelete    ลบ
+
                                                       
-            script(src='templateInside/js/jquery.min.js')
-            //- script(src='templateInside/js/jquery.backstretch.min.js')
-            //- script(src='templateInside/js/jquery.flexslider.min.js')
-            //- script(src='templateInside/js/bootstrap.min.js')
-            script(src='bootstrap/dist/js/bootstrap.js')
-            //- script(src='templateInside/js/templatemo_script.js')
-   
-           
-//- if username
-//-             h2 Hello #{username}
-  
+                                        
+                //- button.btn.btn-info.btn-lg(type="button" data-toggle="modal" data-target="#myModal") Open Modal  
+                input(type="hidden" value=messages id="alerttext")
+                div.modal.fade#myModal(role="dialog" style="width:30%;margin-left:auto;margin-right:auto;")
+                    div.modal-dialog
+                    div.modal-content
+                        div.modal-header
+                        button.close(type="button" data-dismiss="modal") &times;
+                        h4.modal-title(style="color:grey;")&nbsp;&nbsp; ข้อความ!
+
+                        div.modal-body(style="font-size:15px;color:#78c17f")
+                             each msg in messages   
+                                .flash=msg   
+                        
+                        div.modal-footer
+                            button.btn.btn-default( type="button" data-dismiss="modal") Close
+            
+
+                        
+                //- script(src='templateInside/js/jquery.min.js')
+                script(src='templateInside/js/jquery.backstretch.min.js')
+                script(src='templateInside/js/jquery.flexslider.min.js')
+                script(src='templateInside/js/bootstrap.min.js')
+                script(src='templateInside/js/templatemo_script.js')

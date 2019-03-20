@@ -52,24 +52,28 @@ h3{
   min-width:200px;height:auto;
      
   }
-
+  .btnEditDelete{
+    font-size:12px;
+}
   .pagename{
       width:100%;
       height:30px;
       text-align: center;
       background-color:#b1e7ff;
-      font-size: 1.5em;
+      font-size: 20px;
+      display: table-cell;
+      vertical-align: middle;
   }
 
-  #accountname{
+  .accountname{
     color: black; text-shadow: black 0.1em 0.1em 0.9em;
-    font-size: 14px;
+    font-size: 18px;
     text-align: center;
     padding-bottom:10px;
 }
-#accountname:hover{
+.accountname:hover{
     color: black; text-shadow: black 0.1em 0.1em 0.5em;
-    font-size: 14px;
+    font-size: 18px;
     text-align: center;
     padding-bottom:10px;
 }
@@ -92,6 +96,9 @@ h3{
   #imgbg{
     height: 800px;
 }
+.textfield{
+  font-size: 15px;
+}
 
 /* ipad */
   @media only screen and (max-width: 1200px) {
@@ -99,20 +106,25 @@ h3{
     .tb{
         font-size: 1.0em;
       }
+      .btnEditDelete{
+        font-size:12px;
+    }
     .pagename{
         width:100%;
         height:30px;
         text-align: center;
         background-color:#b1e7ff;
-        font-size: 1em;
+        font-size: 20px;
+        display: table-cell;
+        vertical-align: middle;
     }
-    #accountname{
+    .accountname{
         color: black; text-shadow: black 0.1em 0.1em 0.9em;
         font-size: 14px;
         text-align: center;
         padding-bottom:10px;
     }
-    #accountname:hover{
+    .accountname:hover{
         color: black; text-shadow: black 0.1em 0.1em 0.5em;
         font-size: 14px;
         text-align: center;
@@ -134,26 +146,34 @@ h3{
     #imgbg{
         height: 900px;
     }
+    .textfield{
+      font-size: 15px;
+    }
     }
 
     @media only screen and (max-width: 1000px) {
         .tb{
             font-size: 1.0em;
           }
+          .btnEditDelete{
+            font-size:12px;
+        }
         .pagename{
             width:100%;
             height:30px;
             text-align: center;
             background-color:#b1e7ff;
-            font-size: 1em;
+            font-size: 20px;
+            display: table-cell;
+            vertical-align: middle;
         }
-        #accountname{
+        .accountname{
             color: black; text-shadow: black 0.1em 0.1em 0.9em;
             font-size: 14px;
             text-align: center;
             padding-bottom:10px;
         }
-        #accountname:hover{
+        .accountname:hover{
             color: black; text-shadow: black 0.1em 0.1em 0.5em;
             font-size: 14px;
             text-align: center;
@@ -175,27 +195,35 @@ h3{
         #imgbg{
             height: 900px;
         }
+        .textfield{
+          font-size: 15px;
+        }
         }
 
   @media only screen and (max-width: 800px) {
     .tb{
         font-size: 1.0em;
       }
+      .btnEditDelete{
+        font-size:12px;
+    }
     .pagename{
         width:100%;
         height:30px;
         text-align: center;
         background-color:#b1e7ff;
-        font-size: 1em;
+        font-size: 20px;
+        display: table-cell;
+        vertical-align: middle;
     }
 
-    #accountname{
+    .accountname{
         color: black; text-shadow: black 0.1em 0.1em 0.9em;
         font-size: 18px;;
         text-align: center;
         padding-bottom:10px;
     }
-    #accountname:hover{
+    .accountname:hover{
         color: black; text-shadow: black 0.1em 0.1em 0.5em;
         font-size: 18px;;
         text-align: center;
@@ -221,24 +249,32 @@ h3{
     #imgbg{
         height: 600px;
     }
+    .textfield{
+      font-size: 15px;
+    }
     }
 @media only screen and (max-width: 500px) {
     .tb{
         font-size: 1.0em;
       }
+      .btnEditDelete{
+        font-size:12px;
+    }
     .pagename{
         width:100%;
         height:30px;
         text-align: center;
         background-color:#b1e7ff;
         font-size: 1em;
+        display: table-cell;
+        vertical-align: middle;
     }
-    #accountname{
+    .accountname{
         color: black; text-shadow: black 0.1em 0.1em 0.9em;
         font-size: 15px;
         text-align: center;
     }
-    #accountname:hover{
+    .accountname:hover{
         color: black; text-shadow: black 0.1em 0.1em 0.5em;
         font-size: 15px;
         text-align: center;
@@ -263,6 +299,9 @@ h3{
   #imgbg{
     height: 350px;
 }
+.textfield{
+  font-size: 15px;
+}
     }
   
       
@@ -272,7 +311,7 @@ h3{
             font-size: 1.0em;
           }
         .btnEditDelete{
-            font-size:0.4em;
+            font-size:12px;
         }
         body {
             font-size: 0.6em;
@@ -282,14 +321,16 @@ h3{
             height:30px;
             text-align: center;
             background-color:#b1e7ff;
-            font-size: 1.5em;
+            font-size: 17px;
+            display: table-cell;
+            vertical-align: middle;
         }
-        #accountname{
+        .accountname{
             color: black; text-shadow: black 0.1em 0.1em 0.9em;
             font-size: 13px;;
             text-align: center;
         }
-        #accountname:hover{
+        .accountname:hover{
             color: black; text-shadow: black 0.1em 0.1em 0.5em;
             font-size: 13px;;
             text-align: center;
@@ -314,6 +355,9 @@ h3{
         #imgbg{
             height: 300px;
         }
+        .textfield{
+          font-size: 15px;
+        }
         }
       
         @media only screen and (max-width: 360px) {
@@ -332,13 +376,15 @@ h3{
                 height:30px;
                 text-align: center;
                 background-color:#b1e7ff;
-                font-size: 1.5em;
+                font-size: 17px;;
+                display: table-cell;
+                vertical-align: middle;
             }
-            #accountname{
+            .accountname{
                 color: black; text-shadow: black 0.1em 0.1em 0.9em;
                 font-size: 12px;;
             }
-            #accountname:hover{
+            .accountname:hover{
                 color: black; text-shadow: black 0.1em 0.1em 0.5em;
                 font-size: 12px;;
             }
@@ -363,6 +409,9 @@ h3{
             #imgbg{
                 height: 300px;
             }
+            .textfield{
+              font-size: 15px;
+            }
             }
           @media only screen and (max-width: 320px) {
             .tb{
@@ -370,7 +419,7 @@ h3{
               }
 
             .btnEditDelete{
-                font-size: 0.4em;
+                font-size: 12px;
             }
             body {
                 font-size: 0.4em;
@@ -382,16 +431,18 @@ h3{
                 height:30px;
                 text-align: center;
                 background-color:#b1e7ff;
-                font-size: 1.5em;
+                font-size: 17px;
+                display: table-cell;
+                vertical-align: middle;
             }
-            #accountname{
+            .accountname{
                 /* color:#16A085;  */
                 font-size:10px;
                 text-align: center;
                 padding:3px;
                 color: black; text-shadow: black 0.1em 0.1em 0.9em;
             }
-            #accountname:hover{
+            .accountname:hover{
                 /* color:#16A085;  */
                 font-size:10px;
                 text-align: center;
@@ -417,5 +468,8 @@ h3{
             }
             #imgbg{
                 height: 250px;
+            }
+            .textfield{
+              font-size: 15px;
             }
             }

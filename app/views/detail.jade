@@ -26,7 +26,8 @@ html( class="no-js")
                         include ./templateGeneral
                     else
                         include ./templateAdmin
-                    div.pagename Detail Material
+                    div(style="display: table;  overflow: hidden; width:100%;")
+                        div.pagename Detail Material
             
          form(name='detail' , method='POST' , action='/detail') 
            
@@ -42,37 +43,37 @@ html( class="no-js")
                     .col-xs-2.col-sm-2.col-md-2.col-lg-2
                     .input-group.col-xs-8.col-sm-8.col-md-8.col-lg-8
                         .input-group-prepend
-                            span.input-group-text หมายเลขครุภัณฑ์
+                            span.input-group-text.textfield หมายเลขครุภัณฑ์
                           input.form-control(placeholder="material id" type='text' name="materialid"  width="200px" value=txt_materialID  style="pointer-events:none;background-color:#DCDCDC;")
                     .col-xs-2.col-sm-2.col-md-2.col-lg-2
                     .input-group.col-xs-8.col-sm-8.col-md-8.col-lg-8
                         .input-group-prepend
-                            span.input-group-text ชื่อครุภัณฑ์
+                            span.input-group-text.textfield ชื่อครุภัณฑ์
                         input.form-control(placeholder="object name" type='text' name="nameobject"  width="200px" value=txt_objectname style="pointer-events:none;background-color:#DCDCDC;" )
                     .col-xs-2.col-sm-2.col-md-2.col-lg-2
                     .input-group.col-xs-8.col-sm-8.col-md-8.col-lg-8
                         .input-group-prepend
-                            span.input-group-text ชื่อผู้เบิก
+                            span.input-group-text.textfield ชื่อผู้เบิก
                         input.form-control(placeholder="person name" name="nameuser"  width="200px"  value=txt_personname style="pointer-events:none;background-color:#DCDCDC;" )
                     .col-xs-2.col-sm-2.col-md-2.col-lg-2
                     .input-group.col-xs-8.col-sm-8.col-md-8.col-lg-8
                         .input-group-prepend
-                            span.input-group-text วันที่
+                            span.input-group-text.textfield วันที่
                         input.form-control(placeholder="date" name="txt_datetime"  width="200px"  value=txt_datetime.toDateString() disabled='disabled' )
                     .col-xs-2.col-sm-2.col-md-2.col-lg-2
                     .input-group.col-xs-8.col-sm-8.col-md-8.col-lg-8
                         .input-group-prepend
-                            span.input-group-text ราคา
+                            span.input-group-text.textfield ราคา
                         input.form-control(placeholder="price" name="price"  width="200px"  value=txt_price style="pointer-events:none;background-color:#DCDCDC;")
                     .col-xs-2.col-sm-2.col-md-2.col-lg-2
                     .input-group.col-xs-8.col-sm-8.col-md-8.col-lg-8
                         .input-group-prepend
-                            span.input-group-text ตำแหน่งครุภัณฑ์
+                            span.input-group-text.textfield ตำแหน่งครุภัณฑ์
                         input.form-control(placeholder="location" name="location"  width="200px"  value=txt_location )
                     .col-xs-2.col-sm-2.col-md-2.col-lg-2
                     .input-group.col-xs-8.col-sm-8.col-md-8.col-lg-8
                         .input-group-prepend
-                            span.input-group-text สถานะ
+                            span.input-group-text.textfield สถานะ
                         select.form-control( name="status"  width="200px" )
                           if(ddlStatus=='ปกติ')
                              option(value='ปกติ' selected) ปกติ
@@ -90,7 +91,7 @@ html( class="no-js")
 
                     .input-group.col-xs-8.col-sm-8.col-md-8.col-lg-8
                         .input-group-prepend
-                            span.input-group-text รายละเอียด
+                            span.input-group-text.textfield รายละเอียด
                         textarea.form-control(placeholder="detail" rows="4" cols="50" width="200px" name="detail" )=txt_detail
                     .col-xs-2.col-sm-2.col-md-2.col-lg-2
                         input( name="admin"  type="text" value=admin style="display:none;" )

@@ -22,7 +22,8 @@ html( class="no-js")
                         include ./templateGeneral
                     else
                         include ./templateAdmin
-                    div.pagename My Account
+                    div(style="display: table;  overflow: hidden; width:100%;")
+                        div.pagename My Account
             
         form(name='myAccount' , method='POST' , action='/editUser') 
            
@@ -30,38 +31,38 @@ html( class="no-js")
                     .col-xs-3.col-sm-3.col-md-3.col-lg-3
                     .input-group.col-xs-6.col-sm-6.col-md-6.col-lg-6
                         .input-group-prepend
-                            span.input-group-text Username
+                            span.input-group-text.textfield Username
                         input.form-control(placeholder="username" name="userName" width="200px" value=txt_username )
                     .col-xs-3.col-sm-3.col-md-3.col-lg-3
                     .input-group.col-xs-6.col-sm-6.col-md-6.col-lg-6
                         .input-group-prepend
-                            span.input-group-text Password
+                            span.input-group-text.textfield Password
                         input.form-control(placeholder="password" type='text' name="passWord"  width="200px" value=txt_password )
                     .col-xs-3.col-sm-3.col-md-3.col-lg-3
                     
                     .input-group.col-xs-6.col-sm-6.col-md-6.col-lg-6
                         .input-group-prepend
-                            span.input-group-text ชื่อ นามสกุล
+                            span.input-group-text.textfield ชื่อ นามสกุล
                         input.form-control(placeholder="fullname" name="fullName"  width="200px"  value=txt_fullname )
                     .col-xs-3.col-sm-3.col-md-3.col-lg-3
                     .input-group.col-xs-6.col-sm-6.col-md-6.col-lg-6
                         .input-group-prepend
-                            span.input-group-text ตำแหน่ง
+                            span.input-group-text.textfield ตำแหน่ง
                         input.form-control(placeholder="position" name="position"  width="200px" value=txt_position )
                     .col-xs-3.col-sm-3.col-md-3.col-lg-3
                     .input-group.col-xs-6.col-sm-6.col-md-6.col-lg-6
                         .input-group-prepend
-                            span.input-group-text เบอร์โทรศัพท์
+                            span.input-group-text.textfield เบอร์โทรศัพท์
                         input.form-control(placeholder="mobileno" name="mobileNo"  width="200px"  type="tel" maxlength="13" value=txt_mobile )
                     .col-xs-3.col-sm-3.col-md-3.col-lg-3
                     .input-group.col-xs-6.col-sm-6.col-md-6.col-lg-6
                         .input-group-prepend
-                            span.input-group-text Line ID
+                            span.input-group-text.textfield Line ID
                         input.form-control(placeholder="lineid" name="lineId"  width="200px" value=txt_lineid )
                     .col-xs-3.col-sm-3.col-md-3.col-lg-3
                     .input-group.col-xs-6.col-sm-6.col-md-6.col-lg-6
                         .input-group-prepend
-                            span.input-group-text Email
+                            span.input-group-text.textfield Email
                         input.form-control(placeholder="email" name="email"  width="200px" type="email" value=txt_email )
                     .col-xs-3.col-sm-3.col-md-3.col-lg-3 
                         input(type="text",name="_id",value=_id style="display:none;") 
